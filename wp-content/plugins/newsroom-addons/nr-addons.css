@@ -1,0 +1,8 @@
+\
+.nr-actions{opacity:0; position:absolute; top:10px; right:10px; display:flex; gap:8px}
+.post-card:hover .nr-actions, .news-card:hover .nr-actions{opacity:1; transition:.2s}
+.nr-actions .nr-edit, .nr-actions .nr-del{padding:6px 10px; border-radius:6px; border:1px solid #ddd; background:#fff; cursor:pointer}
+
+.nr-link-card{display:flex; gap:12px; align-items:flex-start; border:1px solid #eee; padding:10px; border-radius:8px; margin-top:8px}
+.nr-link-card img{max-width:160px; height:auto; border-radius:6px}
+.nr-link-card .nr-link-meta p{margin:.3em 0 0}

@@ -1,0 +1,27 @@
+/* Force Font Awesome to load fonts from the correct theme folder */
+@font-face {
+  font-family: "Font Awesome 7 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("<?php echo get_template_directory_uri(); ?>/assets/fontawesome/webfonts/fa-brands-400.woff2") format("woff2"),
+       url("<?php echo get_template_directory_uri(); ?>/assets/fontawesome/webfonts/fa-brands-400.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("<?php echo get_template_directory_uri(); ?>/assets/fontawesome/webfonts/fa-regular-400.woff2") format("woff2"),
+       url("<?php echo get_template_directory_uri(); ?>/assets/fontawesome/webfonts/fa-regular-400.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("<?php echo get_template_directory_uri(); ?>/assets/fontawesome/webfonts/fa-solid-900.woff2") format("woff2"),
+       url("<?php echo get_template_directory_uri(); ?>/assets/fontawesome/webfonts/fa-solid-900.woff") format("woff");
+}
