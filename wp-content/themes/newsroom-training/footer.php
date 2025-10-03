@@ -364,6 +364,94 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
+    // Edit Modal Handlers for Single Post Pages
+    // Twitter Edit Modal
+    const editTwitterModal = document.getElementById('editTwitterModal');
+    if (editTwitterModal) {
+        editTwitterModal.addEventListener('show.bs.modal', function(event) {
+            let button = event.relatedTarget;
+            if (button && button.tagName === 'I') {
+                button = button.closest('button');
+            }
+
+            if (!button) return;
+
+            const postId = button.getAttribute('data-post-id');
+            const displayName = button.getAttribute('data-display-name');
+            const handle = button.getAttribute('data-handle');
+            const text = button.getAttribute('data-text');
+
+            document.getElementById('editTwitterPostId').value = postId || '';
+            document.getElementById('editTwitterDisplayName').value = displayName || '';
+            document.getElementById('editTwitterHandle').value = handle || '';
+            document.getElementById('editTwitterText').value = text || '';
+
+            // Clear media input
+            const mediaInput = document.getElementById('editTwitterMedia');
+            const mediaPreview = document.getElementById('editTwitterMediaPreview');
+            if (mediaInput) mediaInput.value = '';
+            if (mediaPreview) mediaPreview.innerHTML = '';
+        });
+    }
+
+    // Facebook Edit Modal
+    const editFacebookModal = document.getElementById('editFacebookModal');
+    if (editFacebookModal) {
+        editFacebookModal.addEventListener('show.bs.modal', function(event) {
+            let button = event.relatedTarget;
+            if (button && button.tagName === 'I') {
+                button = button.closest('button');
+            }
+
+            if (!button) return;
+
+            const postId = button.getAttribute('data-post-id');
+            const displayName = button.getAttribute('data-display-name');
+            const handle = button.getAttribute('data-handle');
+            const text = button.getAttribute('data-text');
+
+            document.getElementById('editFacebookPostId').value = postId || '';
+            document.getElementById('editFacebookDisplayName').value = displayName || '';
+            document.getElementById('editFacebookHandle').value = handle || '';
+            document.getElementById('editFacebookText').value = text || '';
+
+            // Clear media input
+            const mediaInput = document.getElementById('editFacebookMedia');
+            const mediaPreview = document.getElementById('editFacebookMediaPreview');
+            if (mediaInput) mediaInput.value = '';
+            if (mediaPreview) mediaPreview.innerHTML = '';
+        });
+    }
+
+    // Instagram Edit Modal
+    const editInstagramModal = document.getElementById('editInstagramModal');
+    if (editInstagramModal) {
+        editInstagramModal.addEventListener('show.bs.modal', function(event) {
+            let button = event.relatedTarget;
+            if (button && button.tagName === 'I') {
+                button = button.closest('button');
+            }
+
+            if (!button) return;
+
+            const postId = button.getAttribute('data-post-id');
+            const displayName = button.getAttribute('data-display-name');
+            const handle = button.getAttribute('data-handle');
+            const text = button.getAttribute('data-text');
+
+            document.getElementById('editInstagramPostId').value = postId || '';
+            document.getElementById('editInstagramDisplayName').value = displayName || '';
+            document.getElementById('editInstagramHandle').value = handle || '';
+            document.getElementById('editInstagramText').value = text || '';
+
+            // Clear media input
+            const mediaInput = document.getElementById('editInstagramMedia');
+            const mediaPreview = document.getElementById('editInstagramMediaPreview');
+            if (mediaInput) mediaInput.value = '';
+            if (mediaPreview) mediaPreview.innerHTML = '';
+        });
+    }
 });
 
 </script>
