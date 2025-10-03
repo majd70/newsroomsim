@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'i8928288_b9rc1' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'i8928288_b9rc1' );
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'T.DNUnWjHz7xRTzlDkA45' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -91,10 +91,7 @@ $table_prefix = 'jp6v_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_LOG', true );
-define( 'WP_DEBUG_DISPLAY', false );
-@ini_set( 'display_errors', 0 );
+define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
