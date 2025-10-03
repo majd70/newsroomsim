@@ -1797,6 +1797,80 @@ add_action('wp_ajax_delete_all_posts', function() {
     }
 });
 
+// AJAX handler for deleting a comment
+add_action('wp_ajax_delete_comment', function() {
+    $comment_id = intval($_POST['comment_id']);
+
+    if (!$comment_id) {
+        wp_send_json_error('Invalid comment ID');
+    }
+
+    // Check nonce
+    check_ajax_referer('delete_comment_' . $comment_id, 'nonce');
+
+    $comment = get_comment($comment_id);
+
+    if (!$comment) {
+        wp_send_json_error('Comment not found');
+    }
+
+    // Check permissions - user can delete their own comment or moderators can delete any
+    $can_delete = (get_current_user_id() == $comment->user_id) || current_user_can('moderate_comments');
+
+    if (!$can_delete) {
+        wp_send_json_error('Permission denied');
+    }
+
+    // Delete the comment
+    $result = wp_delete_comment($comment_id, true);
+
+    if ($result) {
+        wp_send_json_success('Comment deleted successfully');
+    } else {
+        wp_send_json_error('Failed to delete comment');
+    }
+});
+
+// Handle comment submission (non-AJAX)
+add_action('template_redirect', function() {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_comment_nonce'])) {
+        // Verify nonce
+        if (!wp_verify_nonce($_POST['add_comment_nonce'], 'add_comment_action')) {
+            return;
+        }
+
+        // Check if user is logged in
+        if (!is_user_logged_in()) {
+            return;
+        }
+
+        $post_id = intval($_POST['post_id']);
+        $comment_content = sanitize_textarea_field($_POST['comment_content']);
+
+        if (!$post_id || empty($comment_content)) {
+            return;
+        }
+
+        // Add the comment
+        $comment_data = array(
+            'comment_post_ID' => $post_id,
+            'comment_content' => $comment_content,
+            'comment_author' => wp_get_current_user()->display_name,
+            'comment_author_email' => wp_get_current_user()->user_email,
+            'user_id' => get_current_user_id(),
+            'comment_approved' => 1,
+        );
+
+        $comment_id = wp_insert_comment($comment_data);
+
+        if ($comment_id) {
+            // Redirect back to the post
+            wp_safe_redirect(get_permalink($post_id) . '#comment-' . $comment_id);
+            exit;
+        }
+    }
+});
+
 add_action('template_redirect', function() {
     if ( isset($_POST['bulk_delete']) && !empty($_POST['delete_ids']) ) {
 

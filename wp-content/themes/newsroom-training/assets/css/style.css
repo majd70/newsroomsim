@@ -481,11 +481,66 @@ footer a:hover {
     footer {
         display: none;
     }
-    
+
     .content-card {
         break-inside: avoid;
         box-shadow: none;
         border: 1px solid #ddd;
         margin-bottom: 1rem;
     }
+}
+
+/* Comments Section Styles */
+.comments-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.comment-item {
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.comment-item:hover {
+    background: #e9ecef;
+}
+
+.comment-item strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.comment-item p {
+    color: #495057;
+    line-height: 1.5;
+}
+
+.add-comment-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.social-action-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #f8f9fa;
+    color: #495057;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.social-action-btn:hover {
+    background: #e9ecef;
+    color: #2c3e50;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.social-action-btn i {
+    color: #6c757d;
 }

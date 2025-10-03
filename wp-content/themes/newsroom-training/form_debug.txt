@@ -1635,3 +1635,53 @@ FILES: Array
 )
 
 
+2025-10-03 12:00:33 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 3b945c4eaa
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => majd
+    [insert_handle] => @majd
+    [insert_text] => fffrfrf
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpE90.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+

@@ -227,6 +227,90 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Handle delete comment button
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.delete-comment-btn')) {
+            e.preventDefault();
+
+            const button = e.target.closest('.delete-comment-btn');
+            const commentId = button.getAttribute('data-comment-id');
+            const nonce = button.getAttribute('data-nonce');
+
+            // Show SweetAlert2 confirmation
+            Swal.fire({
+                title: 'Delete Comment?',
+                text: "This action cannot be undone!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Show loading
+                    Swal.fire({
+                        title: 'Deleting...',
+                        text: 'Please wait',
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+
+                    // Send AJAX request
+                    fetch('<?php echo function_exists("admin_url") ? admin_url("admin-ajax.php") : "/wp-admin/admin-ajax.php"; ?>', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            action: 'delete_comment',
+                            comment_id: commentId,
+                            nonce: nonce
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire({
+                                title: 'Deleted!',
+                                text: 'Comment has been deleted.',
+                                icon: 'success',
+                                timer: 1500,
+                                showConfirmButton: false
+                            });
+
+                            // Remove the comment from DOM
+                            const commentItem = document.getElementById('comment-' + commentId);
+                            if (commentItem) {
+                                commentItem.style.transition = 'opacity 0.3s';
+                                commentItem.style.opacity = '0';
+                                setTimeout(() => {
+                                    commentItem.remove();
+                                }, 300);
+                            }
+                        } else {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: data.data || 'Failed to delete comment',
+                                icon: 'error'
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'An error occurred while deleting the comment',
+                            icon: 'error'
+                        });
+                    });
+                }
+            });
+        }
+    });
 });
 
 </script>

@@ -47,59 +47,76 @@ while (have_posts()) : the_post();
                             </div>
                         <?php endif; ?>
                         
-                        <div class="social-stats border-top pt-3">
-                            <div class="row text-center">
-                                <?php if ($platform === 'twitter'): ?>
-                                    <div class="col-4">
-                                        <i class="fas fa-comment text-primary"></i>
-                                        <div><?php echo $comments; ?></div>
-                                        <small class="text-muted">Comments</small>
-                                    </div>
-                                    <div class="col-4">
-                                        <i class="fas fa-retweet text-success"></i>
-                                        <div><?php echo $retweets; ?></div>
-                                        <small class="text-muted">Retweets</small>
-                                    </div>
-                                    <div class="col-4">
-                                        <i class="fas fa-heart text-danger"></i>
-                                        <div><?php echo $likes; ?></div>
-                                        <small class="text-muted">Likes</small>
-                                    </div>
-                                <?php elseif ($platform === 'facebook'): ?>
-                                    <div class="col-4">
-                                        <i class="fas fa-thumbs-up text-primary"></i>
-                                        <div><?php echo $likes; ?></div>
-                                        <small class="text-muted">Likes</small>
-                                    </div>
-                                    <div class="col-4">
-                                        <i class="fas fa-comment text-success"></i>
-                                        <div><?php echo $comments; ?></div>
-                                        <small class="text-muted">Comments</small>
-                                    </div>
-                                    <div class="col-4">
-                                        <i class="fas fa-share text-warning"></i>
-                                        <div><?php echo $retweets; ?></div>
-                                        <small class="text-muted">Shares</small>
-                                    </div>
-                                <?php elseif ($platform === 'instagram'): ?>
-                                    <div class="col-6">
-                                        <i class="fas fa-heart text-danger"></i>
-                                        <div><?php echo $likes; ?></div>
-                                        <small class="text-muted">Likes</small>
-                                    </div>
-                                    <div class="col-6">
-                                        <i class="fas fa-comment text-primary"></i>
-                                        <div><?php echo $comments; ?></div>
-                                        <small class="text-muted">Comments</small>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
                     </div>
-                    <div class="card-footer text-center">
-                        <a href="<?php echo home_url(); ?>" class="btn btn-primary">
-                            <i class="fas fa-arrow-left me-1"></i> Back to Feed
-                        </a>
+
+                    <!-- Comments Section -->
+                    <div class="card-footer">
+                        <h5 class="mb-3"><i class="fas fa-comments me-2"></i>Comments</h5>
+
+                        <?php
+                        // Get comments for this post
+                        $post_comments = get_comments(array(
+                            'post_id' => get_the_ID(),
+                            'status' => 'approve',
+                            'order' => 'ASC'
+                        ));
+
+                        if ($post_comments): ?>
+                            <div class="comments-list mb-4">
+                                <?php foreach ($post_comments as $comment):
+                                    $comment_author = get_userdata($comment->user_id);
+                                    $can_delete = (get_current_user_id() == $comment->user_id) || current_user_can('moderate_comments');
+                                ?>
+                                    <div class="comment-item border-bottom pb-3 mb-3" id="comment-<?php echo $comment->comment_ID; ?>">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div class="flex-grow-1">
+                                                <strong><?php echo esc_html($comment_author ? $comment_author->display_name : $comment->comment_author); ?></strong>
+                                                <small class="text-muted ms-2"><?php echo human_time_diff(strtotime($comment->comment_date), current_time('timestamp')) . ' ago'; ?></small>
+                                                <p class="mb-0 mt-1"><?php echo esc_html($comment->comment_content); ?></p>
+                                            </div>
+                                            <?php if ($can_delete): ?>
+                                                <button type="button"
+                                                        class="btn btn-sm btn-danger delete-comment-btn"
+                                                        data-comment-id="<?php echo $comment->comment_ID; ?>"
+                                                        data-nonce="<?php echo wp_create_nonce('delete_comment_' . $comment->comment_ID); ?>">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php else: ?>
+                            <p class="text-muted">No comments yet. Be the first to comment!</p>
+                        <?php endif; ?>
+
+                        <?php if (is_user_logged_in()): ?>
+                            <div class="add-comment-form">
+                                <h6 class="mb-2">Add a Comment</h6>
+                                <form id="commentForm" method="post">
+                                    <?php wp_nonce_field('add_comment_action', 'add_comment_nonce'); ?>
+                                    <input type="hidden" name="post_id" value="<?php echo get_the_ID(); ?>">
+                                    <div class="mb-3">
+                                        <textarea name="comment_content"
+                                                  class="form-control"
+                                                  rows="3"
+                                                  placeholder="Write your comment here..."
+                                                  required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane me-1"></i> Post Comment
+                                    </button>
+                                </form>
+                            </div>
+                        <?php else: ?>
+                            <p class="text-muted">Please <a href="<?php echo wp_login_url(get_permalink()); ?>">login</a> to comment.</p>
+                        <?php endif; ?>
+
+                        <div class="mt-3 text-center">
+                            <a href="<?php echo home_url(); ?>" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left me-1"></i> Back to Feed
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
