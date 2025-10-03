@@ -1472,3 +1472,166 @@ FILES: Array
 )
 
 
+2025-10-03 11:53:52 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 3b945c4eaa
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => majd
+    [insert_handle] => @majd
+    [insert_text] => sssssss
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => itachi-uchiha-naruto-amoled-black-background-minimal-art-3840x2160-6478.jpg
+                    [2] => H.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => itachi-uchiha-naruto-amoled-black-background-minimal-art-3840x2160-6478.jpg
+                    [2] => H.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/jpeg
+                    [2] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpF16B.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\phpF17C.tmp
+                    [2] => C:\xampp-php8.2-new\tmp\phpF17D.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                    [2] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 790565
+                    [2] => 131400
+                )
+
+        )
+
+)
+
+
+2025-10-03 11:54:24 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 3b945c4eaa
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => majd s
+    [insert_handle] => ddd
+    [insert_text] => ddddd
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php6B9F.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+
+2025-10-03 11:58:32 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 3b945c4eaa
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => majd
+    [insert_handle] => majd
+    [insert_text] => rfrfrfrfref
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php37DB.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+

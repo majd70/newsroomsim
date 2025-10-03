@@ -15,6 +15,21 @@ get_header();
             </h1>
         </div>
     </div>
+
+    <!-- Action Buttons -->
+    <div class="d-flex justify-content-end gap-2 mb-3">
+        <?php if (current_user_can('delete_posts')): ?>
+        <button type="button" class="btn btn-danger" id="deleteAllPostsBtn" data-nonce="<?php echo wp_create_nonce('delete_all_posts_nonce'); ?>">
+            <i class="fas fa-trash-alt me-2"></i>Delete All Posts
+        </button>
+        <?php endif; ?>
+
+        <?php if (current_user_can('edit_posts')): ?>
+        <a href="<?php echo home_url('/'); ?>" class="btn btn-publish-post">
+            <i class="fas fa-plus-circle me-2"></i>Publish Post
+        </a>
+        <?php endif; ?>
+    </div>
     
     <div class="row">
         <div class="col-lg-8 mx-auto">

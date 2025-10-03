@@ -476,8 +476,14 @@ if (function_exists('get_header')) {
     }
     ?>
 
-    <!-- Publish Post Button -->
-    <div class="d-flex justify-content-end mb-3">
+    <!-- Action Buttons -->
+    <div class="d-flex justify-content-end gap-2 mb-3">
+        <?php if (current_user_can('delete_posts')): ?>
+        <button type="button" class="btn btn-danger" id="deleteAllPostsBtn" data-nonce="<?php echo wp_create_nonce('delete_all_posts_nonce'); ?>">
+            <i class="fas fa-trash-alt me-2"></i>Delete All Posts
+        </button>
+        <?php endif; ?>
+
         <button type="button" class="btn btn-publish-post" data-bs-toggle="modal" data-bs-target="#insertModal">
             <i class="fas fa-plus-circle me-2"></i>Publish Post
         </button>
@@ -1558,82 +1564,6 @@ window.confirmDelete = function(button, postId) {
 };
 
 console.log('✅ confirmDelete function defined globally (WordPress Mode)');
-
-// Add a visual console on the page for debugging (WordPress Mode)
-const debugConsole = document.createElement('div');
-debugConsole.id = 'debug-console';
-debugConsole.style.cssText = `
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-height: 300px;
-    overflow-y: auto;
-    background: #1e1e1e;
-    color: #d4d4d4;
-    font-family: 'Courier New', monospace;
-    font-size: 12px;
-    padding: 10px;
-    border-top: 3px solid #4ec9b0;
-    z-index: 99999;
-    display: none;
-`;
-
-const debugHeader = document.createElement('div');
-debugHeader.innerHTML = `
-    <strong style="color: #4ec9b0;">🐛 DEBUG CONSOLE (WordPress Mode)</strong>
-    <button onclick="document.getElementById('debug-console').style.display='none'"
-            style="float: right; background: #c5c5c5; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">
-        Close
-    </button>
-    <button onclick="document.getElementById('debug-logs').innerHTML=''"
-            style="float: right; background: #0e639c; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; margin-right: 5px;">
-        Clear
-    </button>
-    <hr style="border-color: #4ec9b0; margin: 10px 0;">
-`;
-debugConsole.appendChild(debugHeader);
-
-const debugLogs = document.createElement('div');
-debugLogs.id = 'debug-logs';
-debugConsole.appendChild(debugLogs);
-
-document.body.appendChild(debugConsole);
-
-// Show console on page load
-setTimeout(() => {
-    debugConsole.style.display = 'block';
-}, 500);
-
-// Override console.log to also show in our debug console
-const originalLog = console.log;
-const originalError = console.error;
-
-console.log = function(...args) {
-    originalLog.apply(console, args);
-    const logEntry = document.createElement('div');
-    logEntry.style.cssText = 'padding: 3px; border-left: 3px solid #4ec9b0; margin: 2px 0;';
-    logEntry.textContent = args.join(' ');
-    const debugLogsEl = document.getElementById('debug-logs');
-    if (debugLogsEl) {
-        debugLogsEl.appendChild(logEntry);
-        debugLogsEl.scrollTop = debugLogsEl.scrollHeight;
-    }
-};
-
-console.error = function(...args) {
-    originalError.apply(console, args);
-    const logEntry = document.createElement('div');
-    logEntry.style.cssText = 'padding: 3px; border-left: 3px solid #f48771; margin: 2px 0; color: #f48771;';
-    logEntry.textContent = '❌ ' + args.join(' ');
-    const debugLogsEl = document.getElementById('debug-logs');
-    if (debugLogsEl) {
-        debugLogsEl.appendChild(logEntry);
-        debugLogsEl.scrollTop = debugLogsEl.scrollHeight;
-    }
-};
-
-console.log('🐛 Debug console initialized - Delete button logs will appear here (WordPress Mode)');
 </script>
 
 <?php
@@ -2278,76 +2208,6 @@ console.log('🐛 Debug console initialized - Delete button logs will appear her
 
 // Action buttons initialized
 console.log('✅ Action buttons ready!');
-
-// Add a visual console on the page for debugging
-const debugConsole = document.createElement('div');
-debugConsole.id = 'debug-console';
-debugConsole.style.cssText = `
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-height: 300px;
-    overflow-y: auto;
-    background: #1e1e1e;
-    color: #d4d4d4;
-    font-family: 'Courier New', monospace;
-    font-size: 12px;
-    padding: 10px;
-    border-top: 3px solid #4ec9b0;
-    z-index: 99999;
-    display: none;
-`;
-
-const debugHeader = document.createElement('div');
-debugHeader.innerHTML = `
-    <strong style="color: #4ec9b0;">🐛 DEBUG CONSOLE</strong>
-    <button onclick="document.getElementById('debug-console').style.display='none'"
-            style="float: right; background: #c5c5c5; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">
-        Close
-    </button>
-    <button onclick="document.getElementById('debug-logs').innerHTML=''"
-            style="float: right; background: #0e639c; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; margin-right: 5px;">
-        Clear
-    </button>
-    <hr style="border-color: #4ec9b0; margin: 10px 0;">
-`;
-debugConsole.appendChild(debugHeader);
-
-const debugLogs = document.createElement('div');
-debugLogs.id = 'debug-logs';
-debugConsole.appendChild(debugLogs);
-
-document.body.appendChild(debugConsole);
-
-// Show console on page load
-setTimeout(() => {
-    debugConsole.style.display = 'block';
-}, 500);
-
-// Override console.log to also show in our debug console
-const originalLog = console.log;
-const originalError = console.error;
-
-console.log = function(...args) {
-    originalLog.apply(console, args);
-    const logEntry = document.createElement('div');
-    logEntry.style.cssText = 'padding: 3px; border-left: 3px solid #4ec9b0; margin: 2px 0;';
-    logEntry.textContent = args.join(' ');
-    debugLogs.appendChild(logEntry);
-    debugLogs.scrollTop = debugLogs.scrollHeight;
-};
-
-console.error = function(...args) {
-    originalError.apply(console, args);
-    const logEntry = document.createElement('div');
-    logEntry.style.cssText = 'padding: 3px; border-left: 3px solid #f48771; margin: 2px 0; color: #f48771;';
-    logEntry.textContent = '❌ ' + args.join(' ');
-    debugLogs.appendChild(logEntry);
-    debugLogs.scrollTop = debugLogs.scrollHeight;
-};
-
-console.log('🐛 Debug console initialized - Delete button logs will appear here');
 </script>
     <?php get_footer();
 }

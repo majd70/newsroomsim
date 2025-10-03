@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// AJAX Delete Handler
+// AJAX Delete Handler with SweetAlert2
 document.addEventListener('DOMContentLoaded', function() {
     // Handle single post delete via AJAX
     document.addEventListener('click', function(e) {
@@ -65,52 +65,168 @@ document.addEventListener('DOMContentLoaded', function() {
             const postId = button.getAttribute('data-post-id');
             const nonce = button.getAttribute('data-nonce');
 
-            if (!confirm('Are you sure you want to delete this post?')) {
-                return;
-            }
+            // Show SweetAlert2 confirmation
+            Swal.fire({
+                title: 'Delete Post?',
+                text: "This action cannot be undone!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Disable button during deletion
+                    button.disabled = true;
+                    button.style.opacity = '0.5';
 
-            // Disable button during deletion
-            button.disabled = true;
-            button.style.opacity = '0.5';
+                    // Show loading
+                    Swal.fire({
+                        title: 'Deleting...',
+                        text: 'Please wait',
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
 
-            // Send AJAX request
-            fetch('<?php echo function_exists("admin_url") ? admin_url("admin-ajax.php") : "/wp-admin/admin-ajax.php"; ?>', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    action: 'delete_single_post',
-                    post_id: postId,
-                    nonce: nonce
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Find and remove the post card
-                    const postCard = button.closest('.content-card, .social-card, .news-card');
-                    if (postCard) {
-                        postCard.style.transition = 'opacity 0.3s';
-                        postCard.style.opacity = '0';
-                        setTimeout(() => {
-                            postCard.remove();
-                        }, 300);
-                    }
-                } else {
-                    alert('Error: ' + (data.data || 'Failed to delete post'));
-                    button.disabled = false;
-                    button.style.opacity = '1';
+                    // Send AJAX request
+                    fetch('<?php echo function_exists("admin_url") ? admin_url("admin-ajax.php") : "/wp-admin/admin-ajax.php"; ?>', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            action: 'delete_single_post',
+                            post_id: postId,
+                            nonce: nonce
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Find and remove the post card
+                            const postCard = button.closest('.content-card, .social-card, .news-card');
+                            if (postCard) {
+                                Swal.fire({
+                                    title: 'Deleted!',
+                                    text: 'Post has been deleted successfully.',
+                                    icon: 'success',
+                                    timer: 1500,
+                                    showConfirmButton: false
+                                });
+
+                                postCard.style.transition = 'opacity 0.3s';
+                                postCard.style.opacity = '0';
+                                setTimeout(() => {
+                                    postCard.remove();
+                                }, 300);
+                            }
+                        } else {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: data.data || 'Failed to delete post',
+                                icon: 'error'
+                            });
+                            button.disabled = false;
+                            button.style.opacity = '1';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'An error occurred while deleting the post',
+                            icon: 'error'
+                        });
+                        button.disabled = false;
+                        button.style.opacity = '1';
+                    });
                 }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while deleting the post');
-                button.disabled = false;
-                button.style.opacity = '1';
             });
         }
     });
+
+    // Handle delete all posts button
+    const deleteAllBtn = document.getElementById('deleteAllPostsBtn');
+    if (deleteAllBtn) {
+        deleteAllBtn.addEventListener('click', function() {
+            const nonce = this.getAttribute('data-nonce');
+
+            // Show SweetAlert2 confirmation
+            Swal.fire({
+                title: 'Delete ALL Posts?',
+                html: '<p>This will permanently delete <strong>ALL</strong> news articles and social media posts!</p><p class="text-danger">This action cannot be undone!</p>',
+                icon: 'error',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete everything!',
+                cancelButtonText: 'Cancel',
+                input: 'checkbox',
+                inputPlaceholder: 'I understand this will delete all posts'
+            }).then((result) => {
+                if (result.isConfirmed && result.value) {
+                    // Show loading
+                    Swal.fire({
+                        title: 'Deleting All Posts...',
+                        text: 'Please wait, this may take a moment',
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+
+                    // Send AJAX request
+                    fetch('<?php echo function_exists("admin_url") ? admin_url("admin-ajax.php") : "/wp-admin/admin-ajax.php"; ?>', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            action: 'delete_all_posts',
+                            nonce: nonce
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire({
+                                title: 'Success!',
+                                text: data.data.message,
+                                icon: 'success',
+                                confirmButtonText: 'OK'
+                            }).then(() => {
+                                // Reload the page to show empty state
+                                window.location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: data.data || 'Failed to delete posts',
+                                icon: 'error'
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'An error occurred while deleting posts',
+                            icon: 'error'
+                        });
+                    });
+                } else if (result.isConfirmed && !result.value) {
+                    Swal.fire({
+                        title: 'Confirmation Required',
+                        text: 'Please check the confirmation box to proceed',
+                        icon: 'info'
+                    });
+                }
+            });
+        });
+    }
 });
 
 </script>

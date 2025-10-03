@@ -1748,6 +1748,55 @@ add_action('wp_ajax_delete_single_post', function() {
     }
 });
 
+// AJAX handler for deleting all posts
+add_action('wp_ajax_delete_all_posts', function() {
+    // Check nonce
+    check_ajax_referer('delete_all_posts_nonce', 'nonce');
+
+    // Check permissions - only administrators can delete all posts
+    if (!current_user_can('delete_posts')) {
+        wp_send_json_error('Permission denied');
+    }
+
+    // Get all news articles and social posts
+    $news_posts = get_posts(array(
+        'post_type' => 'news_article',
+        'post_status' => 'any',
+        'posts_per_page' => -1,
+        'fields' => 'ids'
+    ));
+
+    $social_posts = get_posts(array(
+        'post_type' => 'social_post',
+        'post_status' => 'any',
+        'posts_per_page' => -1,
+        'fields' => 'ids'
+    ));
+
+    $all_post_ids = array_merge($news_posts, $social_posts);
+    $deleted_count = 0;
+    $failed_count = 0;
+
+    foreach ($all_post_ids as $post_id) {
+        $result = wp_delete_post($post_id, true); // true = force delete (skip trash)
+        if ($result) {
+            $deleted_count++;
+        } else {
+            $failed_count++;
+        }
+    }
+
+    if ($deleted_count > 0) {
+        wp_send_json_success(array(
+            'message' => "Successfully deleted {$deleted_count} post(s)",
+            'deleted' => $deleted_count,
+            'failed' => $failed_count
+        ));
+    } else {
+        wp_send_json_error('No posts were deleted');
+    }
+});
+
 add_action('template_redirect', function() {
     if ( isset($_POST['bulk_delete']) && !empty($_POST['delete_ids']) ) {
 
