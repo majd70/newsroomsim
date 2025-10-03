@@ -1,3 +1,5 @@
+
+text/x-generic .htaccess ( ASCII text )
 # Block the include-only files.
 <IfModule mod_rewrite.c>
 RewriteEngine On
