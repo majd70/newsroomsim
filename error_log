@@ -641,3 +641,4 @@ Energy Transfer has not yet responded to requests for information. As more infor
    'comment_count' => '0',
    'filter' => 'raw',
 ))
+[29-Sep-2025 23:38:46 UTC] Cron reschedule event error for hook: elementor_1_elementor_updater_cron, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"elementor_1_elementor_updater_cron_interval","args":[],"interval":300}
