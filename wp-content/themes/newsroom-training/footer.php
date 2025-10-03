@@ -228,6 +228,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Handle copy link button
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.copy-link-btn')) {
+            e.preventDefault();
+
+            const button = e.target.closest('.copy-link-btn');
+            const permalink = button.getAttribute('data-permalink');
+
+            if (!permalink) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Could not get post link',
+                    icon: 'error',
+                    timer: 2000
+                });
+                return;
+            }
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(permalink).then(() => {
+                // Show success message
+                Swal.fire({
+                    title: 'Copied!',
+                    text: 'Post link copied to clipboard',
+                    icon: 'success',
+                    timer: 1500,
+                    showConfirmButton: false,
+                    toast: true,
+                    position: 'top-end'
+                });
+
+                // Change icon temporarily
+                const icon = button.querySelector('i');
+                const originalClass = icon.className;
+                icon.className = 'fas fa-check';
+                button.style.color = '#28a745';
+
+                setTimeout(() => {
+                    icon.className = originalClass;
+                    button.style.color = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to copy link',
+                    icon: 'error',
+                    timer: 2000
+                });
+            });
+        }
+    });
+
     // Handle delete comment button
     document.addEventListener('click', function(e) {
         if (e.target.closest('.delete-comment-btn')) {

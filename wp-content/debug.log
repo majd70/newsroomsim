@@ -2515,3 +2515,44 @@
 
 [03-Oct-2025 12:13:58 UTC] ❌ Not a POST request - exiting
 [03-Oct-2025 12:13:59 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[03-Oct-2025 12:15:58 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 12:15:58 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 12:15:58 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 12:15:59 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 12:15:59 UTC] Request Method: GET
+[03-Oct-2025 12:15:59 UTC] Request Method: GET
+[03-Oct-2025 12:15:59 UTC] POST data: Array
+(
+)
+
+[03-Oct-2025 12:15:59 UTC] POST data: Array
+(
+)
+
+[03-Oct-2025 12:15:59 UTC] ❌ Not a POST request - exiting
+[03-Oct-2025 12:15:59 UTC] ❌ Not a POST request - exiting
+[03-Oct-2025 12:21:02 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 12:21:02 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 12:21:02 UTC] Request Method: GET
+[03-Oct-2025 12:21:02 UTC] POST data: Array
+(
+)
+
+[03-Oct-2025 12:21:02 UTC] ❌ Not a POST request - exiting
+[03-Oct-2025 12:21:10 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 12:21:10 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 12:21:10 UTC] Request Method: GET
+[03-Oct-2025 12:21:10 UTC] POST data: Array
+(
+)
+
+[03-Oct-2025 12:21:10 UTC] ❌ Not a POST request - exiting
+[03-Oct-2025 12:21:10 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[03-Oct-2025 12:21:27 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 12:21:27 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 12:21:27 UTC] Request Method: GET
+[03-Oct-2025 12:21:27 UTC] POST data: Array
+(
+)
+
+[03-Oct-2025 12:21:27 UTC] ❌ Not a POST request - exiting

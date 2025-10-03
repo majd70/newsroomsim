@@ -103,6 +103,7 @@ $bulk_value = (function_exists('get_the_ID') && get_the_ID()) ? get_the_ID() : (
             <button type="button"
                     class="action-btn action-btn-copy copy-link-btn"
                     data-post-id="<?php echo get_the_ID(); ?>"
+                    data-permalink="<?php echo esc_url(get_permalink()); ?>"
                     title="Copy Link">
                 <i class="fas fa-link"></i>
             </button>
