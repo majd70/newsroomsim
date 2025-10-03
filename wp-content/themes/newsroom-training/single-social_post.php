@@ -120,7 +120,10 @@ while (have_posts()) : the_post();
                         <div class="comments-list mb-4">
                             <?php foreach ($post_comments as $comment):
                                 $comment_author = get_userdata($comment->user_id);
-                                $can_delete = (get_current_user_id() == $comment->user_id) || current_user_can('moderate_comments');
+                                // Trainee can delete their own comments, Newsroom Operator and Admin can delete any comment
+                                $can_delete = (get_current_user_id() == $comment->user_id && current_user_can('delete_own_reply'))
+                                           || current_user_can('moderate_comments')
+                                           || current_user_can('delete_others_posts');
                             ?>
                                 <div class="comment-item border-bottom pb-3 mb-3 bg-white p-3 rounded" id="comment-<?php echo $comment->comment_ID; ?>">
                                     <div class="d-flex justify-content-between align-items-start">
@@ -145,7 +148,10 @@ while (have_posts()) : the_post();
                         <p class="text-muted">No comments yet. Be the first to comment!</p>
                     <?php endif; ?>
 
-                    <?php if (is_user_logged_in()): ?>
+                    <?php
+                    // Only Trainee and above can add comments (not Viewer)
+                    if (is_user_logged_in() && (current_user_can('add_reply') || current_user_can('edit_posts'))):
+                    ?>
                         <div class="add-comment-form bg-white p-3 rounded">
                             <h6 class="mb-2">Add a Comment</h6>
                             <form id="commentForm" method="post">
@@ -163,8 +169,10 @@ while (have_posts()) : the_post();
                                 </button>
                             </form>
                         </div>
-                    <?php else: ?>
+                    <?php elseif (!is_user_logged_in()): ?>
                         <p class="text-muted">Please <a href="<?php echo wp_login_url(get_permalink()); ?>">login</a> to comment.</p>
+                    <?php else: ?>
+                        <p class="text-muted">You don't have permission to add comments.</p>
                     <?php endif; ?>
 
                     <div class="mt-3 text-center">

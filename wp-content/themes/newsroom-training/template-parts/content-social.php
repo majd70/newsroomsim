@@ -52,23 +52,23 @@ if (function_exists('get_post_meta')) {
 
    <div class="social-avatar" style="position: relative; display: inline-block;">
 
-    <?php if ( current_user_can('delete_post', get_the_ID()) ): ?>
-
-<?php
-$bulk_value = (function_exists('get_the_ID') && get_the_ID()) ? get_the_ID() : (isset($item['id']) ? $item['id'] : '');
-?>
-<div class="bulk-select">
-<div >
-    <!-- Hover Checkbox -->
- <input type="checkbox" 
-       name="delete_ids[]" 
-       value="<?php echo (function_exists('get_the_ID') ? get_the_ID() : ($item['id'] ?? '')); ?>" 
-       class="delete-checkbox">
-</div>
-
-</div>
-
-        <?php endif; ?>
+    <?php
+    // Only show checkbox for users who can delete others' posts (Newsroom Operator and Administrator)
+    if ( current_user_can('delete_others_posts') ):
+    ?>
+        <?php
+        $bulk_value = (function_exists('get_the_ID') && get_the_ID()) ? get_the_ID() : (isset($item['id']) ? $item['id'] : '');
+        ?>
+        <div class="bulk-select">
+            <div>
+                <!-- Hover Checkbox -->
+                <input type="checkbox"
+                       name="delete_ids[]"
+                       value="<?php echo (function_exists('get_the_ID') ? get_the_ID() : ($item['id'] ?? '')); ?>"
+                       class="delete-checkbox">
+            </div>
+        </div>
+    <?php endif; ?>
 
 
     <img src="<?php echo esc_url($avatar); ?>" alt="<?php echo esc_attr($display_name); ?> avatar">

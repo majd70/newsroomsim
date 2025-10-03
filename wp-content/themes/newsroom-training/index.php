@@ -478,15 +478,23 @@ if (function_exists('get_header')) {
 
     <!-- Action Buttons -->
     <div class="d-flex justify-content-end gap-2 mb-3">
-        <?php if (current_user_can('delete_posts')): ?>
+        <?php
+        // Only Newsroom Operator and Administrator can delete all posts
+        if (current_user_can('delete_others_posts')):
+        ?>
         <button type="button" class="btn btn-danger" id="deleteAllPostsBtn" data-nonce="<?php echo wp_create_nonce('delete_all_posts_nonce'); ?>">
             <i class="fas fa-trash-alt me-2"></i>Delete All Posts
         </button>
         <?php endif; ?>
 
+        <?php
+        // Only Newsroom Operator and Administrator can publish posts
+        if (current_user_can('publish_posts')):
+        ?>
         <button type="button" class="btn btn-publish-post" data-bs-toggle="modal" data-bs-target="#insertModal">
             <i class="fas fa-plus-circle me-2"></i>Publish Post
         </button>
+        <?php endif; ?>
     </div>
     <!-- Insert Modal -->
     <div class="modal fade" id="insertModal" tabindex="-1" aria-labelledby="insertModalLabel" aria-hidden="true">
@@ -871,24 +879,28 @@ if (function_exists('get_header')) {
                         get_template_part('template-parts/content', 'social'); 
                     endif;
                 ?>
-                <!-- Reply Button -->
+                <!-- Reply Button - Only for Trainee and above (not Viewer) -->
+                <?php if (current_user_can('add_reply') || current_user_can('edit_posts')): ?>
                 <div class="mb-4 text-end">
                     <a href="<?php echo get_permalink($post->ID); ?>" class="btn btn-primary">
                         Reply
                     </a>
                 </div>
+                <?php endif; ?>
                 <?php endforeach; wp_reset_postdata(); ?>
-                <!-- Bulk Delete Button -->
+                <!-- Bulk Delete Button - Only for Newsroom Operator and Administrator -->
+                <?php if (current_user_can('delete_others_posts')): ?>
                 <div class="text-end my-3">
-                    <button type="submit" 
-                            name="bulk_delete" 
-                            value="1" 
-                            id="bulkDeleteBtn" 
-                            class="btn btn-danger" 
+                    <button type="submit"
+                            name="bulk_delete"
+                            value="1"
+                            id="bulkDeleteBtn"
+                            class="btn btn-danger"
                             style="display:none;">
                         Delete Selected
                     </button>
                 </div>
+                <?php endif; ?>
             </form>
             <?php endif; ?>
         </div>

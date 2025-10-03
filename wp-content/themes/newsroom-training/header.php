@@ -25,6 +25,23 @@
         echo '<link href="' . (defined('ASSETS_URL') ? ASSETS_URL : '/themes/newsroom-training/assets') . '/css/style.css" rel="stylesheet">' . "\n";
     }
     ?>
+    <style>
+        /* Ensure dropdown menu works properly */
+        .navbar-nav .dropdown-menu {
+            position: absolute !important;
+            z-index: 1050 !important;
+        }
+
+        /* Fix dropdown positioning */
+        .navbar-nav .dropdown {
+            position: relative;
+        }
+
+        /* Ensure dropdown shows on click */
+        .navbar-nav .dropdown-menu.show {
+            display: block !important;
+        }
+    </style>
 </head>
 <body <?php if (function_exists('body_class')) body_class(); ?>>
 
@@ -48,26 +65,43 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="<?php echo function_exists('home_url') ? home_url() : '/'; ?>">Feed</a>
                 </li>
-                <?php 
-                $can_edit = false;
+
+                <?php
+                // Check user capabilities
+                $is_admin = false;
+                $can_create_content = false;
+
                 if (function_exists('current_user_can')) {
-                    $can_edit = current_user_can('edit_posts');
+                    // Administrator - Full access
+                    $is_admin = current_user_can('manage_options');
+
+                    // Newsroom Operator OR Administrator - Can create content
+                    $can_create_content = current_user_can('edit_posts') || current_user_can('publish_posts');
                 } elseif (isset($GLOBALS['user']) && $GLOBALS['user']) {
-                    $can_edit = ($GLOBALS['user']['role'] === 'operator');
+                    $is_admin = ($GLOBALS['user']['role'] === 'administrator');
+                    $can_create_content = in_array($GLOBALS['user']['role'], ['administrator', 'newsroom_operator']);
                 }
-                
-                if ($can_edit): 
+
+                // Show "Create Content" for Administrator and Newsroom Operator only
+                if ($can_create_content):
                 ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo function_exists('admin_url') ? admin_url('admin.php?page=newsroom-create-content') : 'create-content.php'; ?>">Create Content</a>
                 </li>
+                <?php endif; ?>
+
+                <?php
+                // Show "Admin" for Administrator only
+                if ($is_admin):
+                ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo function_exists('admin_url') ? admin_url('admin.php?page=newsroom-training') : 'admin.php'; ?>">Admin</a>
                 </li>
-				<li class="nav-item">
-                    <a class="nav-link active" href="<?php echo function_exists('home_url') ? home_url() : '/'; ?>">Blog</a>
-                </li>
                 <?php endif; ?>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo function_exists('home_url') ? home_url() : '/'; ?>">Blog</a>
+                </li>
             </ul>
             <ul class="navbar-nav">
                 <?php 
@@ -98,10 +132,10 @@
                 
                 if ($logged_in): ?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user me-1"></i><?php echo esc_html($user_name); ?>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <?php if (function_exists('admin_url')): ?>
                         <!-- <li><a class="dropdown-item" href="<?php echo admin_url(); ?>">Dashboard</a></li> -->
                         <?php endif; ?>

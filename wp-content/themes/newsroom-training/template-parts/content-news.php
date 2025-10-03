@@ -51,10 +51,13 @@ if (function_exists('get_post_meta')) {
         </div>
     <?php endif; ?>   
 
-<?php if ( current_user_can('delete_post', get_the_ID()) ): ?>
+<?php
+// Only show checkbox for users who can delete others' posts (Newsroom Operator and Administrator)
+if ( current_user_can('delete_others_posts') ):
+?>
     <?php
-    $bulk_value = (function_exists('get_the_ID') && get_the_ID()) 
-        ? get_the_ID() 
+    $bulk_value = (function_exists('get_the_ID') && get_the_ID())
+        ? get_the_ID()
         : (isset($item['id']) ? $item['id'] : '');
     ?>
 
@@ -69,9 +72,9 @@ if (function_exists('get_post_meta')) {
         <?php endif; ?>
 
         <!-- Hover Checkbox -->
-        <input type="checkbox" 
-               name="delete_ids[]" 
-               value="<?php echo esc_attr($bulk_value); ?>" 
+        <input type="checkbox"
+               name="delete_ids[]"
+               value="<?php echo esc_attr($bulk_value); ?>"
                class="delete-checkbox">
     </div>
 <?php endif; ?>
@@ -146,11 +149,11 @@ if (function_exists('get_post_meta')) {
         <?php endif; ?>
     </div>
 
-    <!-- Checkbox overlay -->
-    <?php if ( current_user_can('delete_post', get_the_ID()) ): ?>
-        <input type="checkbox" 
-               name="delete_ids[]" 
-               value="<?php echo esc_attr(get_the_ID()); ?>" 
+    <!-- Checkbox overlay - Only for Newsroom Operator and Administrator -->
+    <?php if ( current_user_can('delete_others_posts') ): ?>
+        <input type="checkbox"
+               name="delete_ids[]"
+               value="<?php echo esc_attr(get_the_ID()); ?>"
                class="delete-checkbox">
     <?php endif; ?>
 </div>
