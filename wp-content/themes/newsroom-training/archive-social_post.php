@@ -19,10 +19,14 @@ get_header();
     <div class="row">
         <div class="col-lg-8 mx-auto">
             <?php if (have_posts()): ?>
-                <?php while (have_posts()): the_post(); ?>
-                    <?php get_template_part('template-parts/content', 'social'); ?>
-                <?php endwhile; ?>
-                
+                <form method="post" action="">
+                    <?php wp_nonce_field('bulk_delete_action', 'bulk_delete_nonce'); ?>
+
+                    <?php while (have_posts()): the_post(); ?>
+                        <?php get_template_part('template-parts/content', 'social'); ?>
+                    <?php endwhile; ?>
+                </form>
+
                 <div class="pagination-wrapper">
                     <?php the_posts_pagination(array(
                         'mid_size' => 2,

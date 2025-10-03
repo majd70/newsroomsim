@@ -1,0 +1,1846 @@
+[30-Sep-2025 10:48:29 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 10:48:29 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [insert_title] => 
+    [insert_author] => 
+    [insert_text] => 
+    [insert_category] => 
+    [insert_featured_image] => 
+    [insert_video_url] => 
+    [content_type] => social_twitter
+    [insert_display_name] => 
+    [insert_handle] => 
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+[30-Sep-2025 10:48:29 UTC] Content Type: social_twitter
+[30-Sep-2025 10:48:29 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 170
+[30-Sep-2025 10:48:29 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 276
+[30-Sep-2025 10:50:26 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 10:50:26 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [insert_title] => 
+    [insert_author] => 
+    [insert_text] => 
+    [insert_category] => 
+    [insert_featured_image] => 
+    [insert_video_url] => 
+    [content_type] => social_twitter
+    [insert_display_name] => 
+    [insert_handle] => 
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+[30-Sep-2025 10:50:26 UTC] Content Type: social_twitter
+[30-Sep-2025 10:50:26 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 170
+[30-Sep-2025 10:50:26 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 276
+[30-Sep-2025 10:57:52 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 10:57:52 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [insert_title] => 
+    [insert_author] => 
+    [insert_text] => 
+    [insert_category] => 
+    [insert_featured_image] => 
+    [insert_video_url] => 
+    [content_type] => social_twitter
+    [insert_display_name] => 
+    [insert_handle] => 
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+[30-Sep-2025 10:57:52 UTC] Content Type: social_twitter
+[30-Sep-2025 10:57:52 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 170
+[30-Sep-2025 10:57:53 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 276
+[30-Sep-2025 10:58:13 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 10:58:13 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => rgerg
+    [insert_handle] => @rtgtg
+    [insert_text] => tgtgtg
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+[30-Sep-2025 10:58:13 UTC] Content Type: social_twitter
+[30-Sep-2025 10:58:13 UTC] Creating social post: twitter - rgerg
+[30-Sep-2025 10:58:13 UTC] Social post created successfully: 199
+[30-Sep-2025 10:58:13 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 10:58:13 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 10:59:45 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 10:59:45 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [insert_title] => test s
+    [insert_author] => test s
+    [insert_text] => sssssssss
+    [insert_category] => Business
+    [insert_featured_image] => 
+    [insert_video_url] => https://www.youtube.com/watch?v=tbal-HMuACo&list=RDtbal-HMuACo&start_radio=1
+)
+
+[30-Sep-2025 10:59:45 UTC] Content Type: news_article
+[30-Sep-2025 10:59:45 UTC] Creating news article: test s
+[30-Sep-2025 10:59:45 UTC] News article created successfully: 200
+[30-Sep-2025 10:59:45 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 10:59:45 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 11:16:15 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 374
+[30-Sep-2025 11:16:55 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 11:16:55 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => so
+    [insert_handle] => so
+    [insert_text] => regergrg
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+[30-Sep-2025 11:16:55 UTC] Content Type: social_facebook
+[30-Sep-2025 11:16:55 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbc27d1f00.jpg
+[30-Sep-2025 11:16:55 UTC] Creating social post: facebook - so
+[30-Sep-2025 11:16:55 UTC] Avatar: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbc27d1f00.jpg
+[30-Sep-2025 11:16:55 UTC] Social post created successfully: 201
+[30-Sep-2025 11:16:55 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 11:16:55 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 11:26:39 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 395
+[30-Sep-2025 11:27:47 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 11:27:47 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => mdf
+    [insert_handle] => mdf
+    [insert_text] => msdfrffref
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+[30-Sep-2025 11:27:47 UTC] FILES Data: Array
+(
+    [insert_avatar_file] => Array
+        (
+            [name] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [full_path] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp-php8.2-new\tmp\phpFD32.tmp
+            [error] => 0
+            [size] => 41299
+        )
+
+    [insert_media_file] => Array
+        (
+            [name] => 
+            [full_path] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+)
+
+[30-Sep-2025 11:27:47 UTC] Content Type: social_facebook
+[30-Sep-2025 11:27:47 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbeb3b520f.jpg
+[30-Sep-2025 11:27:47 UTC] Creating social post: facebook - mdf
+[30-Sep-2025 11:27:47 UTC] Avatar: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbeb3b520f.jpg
+[30-Sep-2025 11:27:47 UTC] Social post created successfully: 202
+[30-Sep-2025 11:27:47 UTC] Avatar saved in DB: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbeb3b520f.jpg
+[30-Sep-2025 11:27:47 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 11:27:47 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 11:29:19 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 11:29:19 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => 4r34r
+    [insert_handle] => 34r34r
+    [insert_text] => r34r34r
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+[30-Sep-2025 11:29:19 UTC] FILES Data: Array
+(
+    [insert_avatar_file] => Array
+        (
+            [name] => 
+            [full_path] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [insert_media_file] => Array
+        (
+            [name] => 
+            [full_path] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+)
+
+[30-Sep-2025 11:29:19 UTC] Content Type: social_facebook
+[30-Sep-2025 11:29:19 UTC] Creating social post: facebook - 4r34r
+[30-Sep-2025 11:29:20 UTC] Social post created successfully: 203
+[30-Sep-2025 11:29:20 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 11:29:20 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 11:31:38 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 395
+[30-Sep-2025 11:31:38 UTC] Post ID: 203 - Media URL: EMPTY
+[30-Sep-2025 11:31:38 UTC] Post ID: 202 - Media URL: EMPTY
+[30-Sep-2025 11:31:38 UTC] Post ID: 201 - Media URL: EMPTY
+[30-Sep-2025 11:31:38 UTC] Post ID: 199 - Media URL: EMPTY
+[30-Sep-2025 11:31:38 UTC] Post ID: 198 - Media URL: EMPTY
+[30-Sep-2025 11:31:38 UTC] Post ID: 193 - Media URL: EMPTY
+[30-Sep-2025 11:31:38 UTC] Post ID: 192 - Media URL: EMPTY
+[30-Sep-2025 11:32:12 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 11:32:12 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => fweef
+    [insert_handle] => @weff
+    [insert_text] => fwefwef
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+[30-Sep-2025 11:32:12 UTC] FILES Data: Array
+(
+    [insert_avatar_file] => Array
+        (
+            [name] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [full_path] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp-php8.2-new\tmp\php80D.tmp
+            [error] => 0
+            [size] => 41299
+        )
+
+    [insert_media_file] => Array
+        (
+            [name] => 
+            [full_path] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+)
+
+[30-Sep-2025 11:32:12 UTC] Content Type: social_twitter
+[30-Sep-2025 11:32:12 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbfbc7b9f9.jpg
+[30-Sep-2025 11:32:12 UTC] Creating social post: twitter - fweef
+[30-Sep-2025 11:32:12 UTC] Avatar: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbfbc7b9f9.jpg
+[30-Sep-2025 11:32:12 UTC] Social post created successfully: 204
+[30-Sep-2025 11:32:12 UTC] Avatar saved in DB: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbfbc7b9f9.jpg
+[30-Sep-2025 11:32:12 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 11:32:12 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 11:32:13 UTC] Post ID: 204 - Media URL: EMPTY
+[30-Sep-2025 11:32:13 UTC] Post ID: 203 - Media URL: EMPTY
+[30-Sep-2025 11:32:13 UTC] Post ID: 202 - Media URL: EMPTY
+[30-Sep-2025 11:32:13 UTC] Post ID: 201 - Media URL: EMPTY
+[30-Sep-2025 11:32:13 UTC] Post ID: 199 - Media URL: EMPTY
+[30-Sep-2025 11:32:13 UTC] Post ID: 198 - Media URL: EMPTY
+[30-Sep-2025 11:32:13 UTC] Post ID: 193 - Media URL: EMPTY
+[30-Sep-2025 11:32:13 UTC] Post ID: 192 - Media URL: EMPTY
+[30-Sep-2025 11:32:58 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 11:32:58 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [insert_title] => fwefwef
+    [insert_author] => efwefef
+    [insert_text] => wefwefeffe
+    [insert_category] => Politics
+    [insert_featured_image] => 
+    [insert_video_url] => 
+)
+
+[30-Sep-2025 11:32:58 UTC] FILES Data: Array
+(
+    [insert_featured_image_file] => Array
+        (
+            [name] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [full_path] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp-php8.2-new\tmp\phpBF29.tmp
+            [error] => 0
+            [size] => 41299
+        )
+
+)
+
+[30-Sep-2025 11:32:58 UTC] Content Type: news_article
+[30-Sep-2025 11:32:58 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbfea32d21.jpg
+[30-Sep-2025 11:32:58 UTC] Creating news article: fwefwef
+[30-Sep-2025 11:32:58 UTC] Featured image: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbfea32d21.jpg
+[30-Sep-2025 11:32:58 UTC] News article created successfully: 205
+[30-Sep-2025 11:32:58 UTC] Featured image saved in DB: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbbfea32d21.jpg
+[30-Sep-2025 11:32:58 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 11:32:58 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 11:32:58 UTC] Post ID: 204 - Media URL: EMPTY
+[30-Sep-2025 11:32:58 UTC] Post ID: 203 - Media URL: EMPTY
+[30-Sep-2025 11:32:58 UTC] Post ID: 202 - Media URL: EMPTY
+[30-Sep-2025 11:32:58 UTC] Post ID: 201 - Media URL: EMPTY
+[30-Sep-2025 11:32:58 UTC] Post ID: 199 - Media URL: EMPTY
+[30-Sep-2025 11:32:58 UTC] Post ID: 198 - Media URL: EMPTY
+[30-Sep-2025 11:32:58 UTC] Post ID: 193 - Media URL: EMPTY
+[30-Sep-2025 11:32:58 UTC] Post ID: 192 - Media URL: EMPTY
+[30-Sep-2025 11:38:21 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 395
+[30-Sep-2025 11:38:54 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 11:38:54 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => ko
+    [insert_handle] => @ko
+    [insert_text] => gergrgrgr
+    [insert_media_url] => 
+)
+
+[30-Sep-2025 11:38:54 UTC] FILES Data: Array
+(
+    [insert_media_file] => Array
+        (
+            [name] => itachi-uchiha-naruto-amoled-black-background-minimal-art-3840x2160-6478.jpg
+            [full_path] => itachi-uchiha-naruto-amoled-black-background-minimal-art-3840x2160-6478.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp-php8.2-new\tmp\php2FAE.tmp
+            [error] => 0
+            [size] => 790565
+        )
+
+)
+
+[30-Sep-2025 11:38:54 UTC] Content Type: social_twitter
+[30-Sep-2025 11:38:54 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc14ee7c0d.jpg
+[30-Sep-2025 11:38:54 UTC] Creating social post: twitter - ko
+[30-Sep-2025 11:38:54 UTC] Media: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc14ee7c0d.jpg
+[30-Sep-2025 11:38:54 UTC] Social post created successfully: 206
+[30-Sep-2025 11:38:54 UTC] Media saved in DB: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc14ee7c0d.jpg
+[30-Sep-2025 11:38:55 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 11:38:55 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 11:48:06 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 416
+[30-Sep-2025 11:51:24 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 404
+[30-Sep-2025 11:56:53 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 404
+[30-Sep-2025 11:59:12 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 11:59:12 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => hhhh
+    [insert_handle] => @hhhhhhhhh
+    [insert_text] => jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+)
+
+[30-Sep-2025 11:59:12 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture2.PNG
+                    [2] => Capture.PNG
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture2.PNG
+                    [2] => Capture.PNG
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/png
+                    [2] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpA351.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\phpA45C.tmp
+                    [2] => C:\xampp-php8.2-new\tmp\phpA47C.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                    [2] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 1012074
+                    [2] => 946403
+                )
+
+        )
+
+)
+
+[30-Sep-2025 11:59:12 UTC] Content Type: social_twitter
+[30-Sep-2025 11:59:12 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc61013135.jpg
+[30-Sep-2025 11:59:12 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc610143bb.PNG
+[30-Sep-2025 11:59:12 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc61015ae2.PNG
+[30-Sep-2025 11:59:12 UTC] Creating social post: twitter - hhhh
+[30-Sep-2025 11:59:12 UTC] Media images (3): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc61013135.jpg, http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc610143bb.PNG, http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc61015ae2.PNG
+[30-Sep-2025 11:59:12 UTC] Social post created successfully: 207
+[30-Sep-2025 11:59:12 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc61013135.jpg","http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc610143bb.PNG","http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc61015ae2.PNG"]
+[30-Sep-2025 11:59:12 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 11:59:12 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 11:59:15 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 11:59:15 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => hhhh
+    [insert_handle] => @hhhhhhhhh
+    [insert_text] => jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+)
+
+[30-Sep-2025 11:59:15 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture2.PNG
+                    [2] => Capture.PNG
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture2.PNG
+                    [2] => Capture.PNG
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/png
+                    [2] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpCC1A.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\phpCC2A.tmp
+                    [2] => C:\xampp-php8.2-new\tmp\phpCC3B.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                    [2] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 1012074
+                    [2] => 946403
+                )
+
+        )
+
+)
+
+[30-Sep-2025 11:59:15 UTC] Content Type: social_twitter
+[30-Sep-2025 11:59:15 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc6136aedb.jpg
+[30-Sep-2025 11:59:15 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc6136b52f.PNG
+[30-Sep-2025 11:59:15 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc6136bb4f.PNG
+[30-Sep-2025 11:59:15 UTC] Creating social post: twitter - hhhh
+[30-Sep-2025 11:59:15 UTC] Media images (3): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc6136aedb.jpg, http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc6136b52f.PNG, http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc6136bb4f.PNG
+[30-Sep-2025 11:59:15 UTC] Social post created successfully: 208
+[30-Sep-2025 11:59:15 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc6136aedb.jpg","http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc6136b52f.PNG","http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dbc6136bb4f.PNG"]
+[30-Sep-2025 11:59:15 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 11:59:15 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 12:20:03 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 404
+[30-Sep-2025 13:05:41 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 404
+[30-Sep-2025 13:26:26 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 13:26:45 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 13:26:54 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 13:30:31 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 13:36:09 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 13:38:12 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 13:39:07 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 13:40:02 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 13:41:54 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 13:42:16 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 13:45:55 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 14:16:18 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 14:16:25 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 14:16:30 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 14:19:44 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 14:23:26 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 14:40:37 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 14:40:50 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 14:52:29 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 14:55:51 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 15:00:16 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 15:06:42 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 15:06:47 UTC] ⚠️ POST request received but content_type missing or empty
+[30-Sep-2025 15:06:47 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[30-Sep-2025 15:06:47 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 15:06:57 UTC] ⚠️ POST request received but content_type missing or empty
+[30-Sep-2025 15:06:57 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[30-Sep-2025 15:06:57 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 15:07:00 UTC] ⚠️ POST request received but content_type missing or empty
+[30-Sep-2025 15:07:00 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[30-Sep-2025 15:07:00 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 15:10:55 UTC] ⚠️ POST request received but content_type missing or empty
+[30-Sep-2025 15:10:55 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[30-Sep-2025 15:10:55 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 15:15:23 UTC] ⚠️ POST request received but content_type missing or empty
+[30-Sep-2025 15:15:23 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[30-Sep-2025 15:15:23 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 15:29:37 UTC] ⚠️ POST request received but content_type missing or empty
+[30-Sep-2025 15:29:37 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[30-Sep-2025 15:29:37 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 15:30:27 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 15:30:27 UTC] POST Data: Array
+(
+    [insert_content_nonce] => ce9930552c
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => wefwef
+    [insert_handle] => @fu
+    [insert_text] => ggggggggf
+)
+
+[30-Sep-2025 15:30:27 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[30-Sep-2025 15:30:27 UTC] Content Type: social_twitter
+[30-Sep-2025 15:30:27 UTC] Edit Mode: NO
+[30-Sep-2025 15:30:27 UTC] Creating social post: twitter - wefwef
+[30-Sep-2025 15:30:27 UTC] Social post created successfully: 209
+[30-Sep-2025 15:30:27 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 15:30:27 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 15:34:24 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:08:42 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:09:04 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:09:23 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:25:20 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:29:30 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:36:35 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:37:28 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:37:28 UTC] POST Data: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => WTF
+    [insert_handle] => TGTG
+    [insert_text] => FDFDFD
+)
+
+[30-Sep-2025 16:37:28 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php8140.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:37:28 UTC] Nonce verification failed!
+[30-Sep-2025 16:37:28 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:40:04 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:40:04 UTC] POST Data: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggggggggfffffff
+    [insert_handle] => gggggggggfffffff
+    [insert_text] => gggggggggfffff
+)
+
+[30-Sep-2025 16:40:04 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:40:04 UTC] Nonce verification failed!
+[30-Sep-2025 16:40:04 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:42:50 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:42:50 UTC] POST Data: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggggggggfffffff
+    [insert_handle] => gggggggggfffffff
+    [insert_text] => gggggggggfffff
+)
+
+[30-Sep-2025 16:42:50 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:42:50 UTC] Nonce verification failed!
+[30-Sep-2025 16:42:50 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:43:01 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:43:01 UTC] POST Data: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggggggggfffffff
+    [insert_handle] => gggggggggfffffff
+    [insert_text] => gggggggggfffff
+)
+
+[30-Sep-2025 16:43:01 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:43:01 UTC] Nonce verification failed!
+[30-Sep-2025 16:43:01 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:43:15 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:43:15 UTC] POST Data: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggggggggfffffff
+    [insert_handle] => gggggggggfffffff
+    [insert_text] => gggggggggfffff
+)
+
+[30-Sep-2025 16:43:15 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:43:15 UTC] Nonce verification failed!
+[30-Sep-2025 16:43:16 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:45:24 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:45:24 UTC] POST Data: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggggggggfffffff
+    [insert_handle] => gggggggggfffffff
+    [insert_text] => gggggggggfffff
+)
+
+[30-Sep-2025 16:45:24 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:45:24 UTC] Nonce verification failed!
+[30-Sep-2025 16:45:24 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:45:48 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:45:48 UTC] POST Data: Array
+(
+    [insert_content_nonce] => ce9930552c
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => rrrrrgg
+    [insert_handle] => @fffffffffff
+    [insert_text] => fffffffffffffff
+)
+
+[30-Sep-2025 16:45:48 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php2A31.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:45:48 UTC] Content Type: social_twitter
+[30-Sep-2025 16:45:48 UTC] Edit Mode: NO
+[30-Sep-2025 16:45:48 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dc093cddb59.jpg
+[30-Sep-2025 16:45:48 UTC] Creating social post: twitter - rrrrrgg
+[30-Sep-2025 16:45:48 UTC] Media images (1): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dc093cddb59.jpg
+[30-Sep-2025 16:45:48 UTC] Social post created successfully: 210
+[30-Sep-2025 16:45:48 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dc093cddb59.jpg"]
+[30-Sep-2025 16:45:48 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 16:45:48 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 16:46:12 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:46:12 UTC] POST Data: Array
+(
+    [newsroom_nonce] => 27117115fd
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gg2
+    [insert_handle] => ggg2
+    [insert_text] => fff4
+)
+
+[30-Sep-2025 16:46:12 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:46:12 UTC] Nonce verification failed!
+[30-Sep-2025 16:46:12 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:50:43 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:50:43 UTC] POST Data: Array
+(
+    [newsroom_nonce] => 27117115fd
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gg2
+    [insert_handle] => ggg2
+    [insert_text] => fff4
+)
+
+[30-Sep-2025 16:50:43 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:50:43 UTC] Nonce verification failed!
+[30-Sep-2025 16:50:44 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:50:56 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:50:56 UTC] POST Data: Array
+(
+    [insert_content_nonce] => ce9930552c
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => rrrrrrrrryy
+    [insert_handle] => yyyyyyyyy
+    [insert_text] => yyyyyyyyyy
+)
+
+[30-Sep-2025 16:50:56 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:50:56 UTC] Content Type: social_facebook
+[30-Sep-2025 16:50:56 UTC] Edit Mode: NO
+[30-Sep-2025 16:50:56 UTC] Creating social post: facebook - rrrrrrrrryy
+[30-Sep-2025 16:50:56 UTC] Social post created successfully: 211
+[30-Sep-2025 16:50:56 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 16:50:56 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 16:51:14 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 16:51:14 UTC] POST Data: Array
+(
+    [insert_content_nonce] => ce9930552c
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [edit_post_id] => 
+    [insert_display_name] => yyyy2
+    [insert_handle] => yyyyy2
+    [insert_text] => yyyy2
+)
+
+[30-Sep-2025 16:51:14 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[30-Sep-2025 16:51:14 UTC] Content Type: social_facebook
+[30-Sep-2025 16:51:14 UTC] Edit Mode: NO
+[30-Sep-2025 16:51:14 UTC] Creating social post: facebook - yyyy2
+[30-Sep-2025 16:51:14 UTC] Social post created successfully: 212
+[30-Sep-2025 16:51:14 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 16:51:14 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[30-Sep-2025 16:55:08 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 16:58:03 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 17:01:11 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 17:01:11 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 17:01:25 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 17:02:24 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 17:03:37 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[30-Sep-2025 17:04:12 UTC] === FORM SUBMITTED ===
+[30-Sep-2025 17:04:12 UTC] POST Data: Array
+(
+    [insert_content_nonce] => ce9930552c
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [edit_post_id] => 
+    [insert_display_name] => yyyf
+    [insert_handle] => ffffy
+    [insert_text] => gtrgrgrtgrg
+)
+
+[30-Sep-2025 17:04:12 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => Capture.PNG
+                )
+
+            [full_path] => Array
+                (
+                    [0] => Capture.PNG
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpFE4D.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 946403
+                )
+
+        )
+
+)
+
+[30-Sep-2025 17:04:12 UTC] Content Type: social_facebook
+[30-Sep-2025 17:04:12 UTC] Edit Mode: NO
+[30-Sep-2025 17:04:12 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dc0d8cd2e77.PNG
+[30-Sep-2025 17:04:12 UTC] Creating social post: facebook - yyyf
+[30-Sep-2025 17:04:12 UTC] Media images (1): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dc0d8cd2e77.PNG
+[30-Sep-2025 17:04:12 UTC] Social post created successfully: 213
+[30-Sep-2025 17:04:12 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dc0d8cd2e77.PNG"]
+[30-Sep-2025 17:04:12 UTC] ✅ Post created successfully! Redirecting...
+[30-Sep-2025 17:04:12 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[01-Oct-2025 06:28:12 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[01-Oct-2025 06:31:41 UTC] === FORM SUBMITTED ===
+[01-Oct-2025 06:31:41 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 27de755ef3
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_instagram
+    [insert_display_name] => majd
+    [insert_handle] => @majd
+    [insert_text] => Hi Im Majd
+)
+
+[01-Oct-2025 06:31:41 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => code2.png
+                )
+
+            [full_path] => Array
+                (
+                    [0] => code2.png
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php4223.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 75403
+                )
+
+        )
+
+)
+
+[01-Oct-2025 06:31:41 UTC] Content Type: social_instagram
+[01-Oct-2025 06:31:41 UTC] Edit Mode: NO
+[01-Oct-2025 06:31:41 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dccacde4b6f.png
+[01-Oct-2025 06:31:41 UTC] Creating social post: instagram - majd
+[01-Oct-2025 06:31:41 UTC] Media images (1): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dccacde4b6f.png
+[01-Oct-2025 06:31:41 UTC] Social post created successfully: 214
+[01-Oct-2025 06:31:41 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dccacde4b6f.png"]
+[01-Oct-2025 06:31:41 UTC] ✅ Post created successfully! Redirecting...
+[01-Oct-2025 06:31:41 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[01-Oct-2025 06:37:22 UTC] === FORM SUBMITTED ===
+[01-Oct-2025 06:37:22 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 27de755ef3
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_instagram
+    [insert_display_name] => majd
+    [insert_handle] => @majdderawi
+    [insert_text] => Hi, I\'m Majd
+)
+
+[01-Oct-2025 06:37:22 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => me.jpeg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => me.jpeg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php738C.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 217840
+                )
+
+        )
+
+)
+
+[01-Oct-2025 06:37:22 UTC] Content Type: social_instagram
+[01-Oct-2025 06:37:22 UTC] Edit Mode: NO
+[01-Oct-2025 06:37:22 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dccc2223319.jpeg
+[01-Oct-2025 06:37:22 UTC] Creating social post: instagram - majd
+[01-Oct-2025 06:37:22 UTC] Media images (1): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dccc2223319.jpeg
+[01-Oct-2025 06:37:22 UTC] Social post created successfully: 215
+[01-Oct-2025 06:37:22 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68dccc2223319.jpeg"]
+[01-Oct-2025 06:37:22 UTC] ✅ Post created successfully! Redirecting...
+[01-Oct-2025 06:37:22 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[01-Oct-2025 06:38:39 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[02-Oct-2025 22:23:47 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[02-Oct-2025 22:29:53 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[02-Oct-2025 22:29:55 UTC] ⚠️ POST request received but content_type missing or empty
+[02-Oct-2025 22:29:55 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[02-Oct-2025 22:29:55 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[02-Oct-2025 22:30:01 UTC] ⚠️ POST request received but content_type missing or empty
+[02-Oct-2025 22:30:01 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[02-Oct-2025 22:30:01 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[02-Oct-2025 22:30:10 UTC] ⚠️ POST request received but content_type missing or empty
+[02-Oct-2025 22:30:10 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[02-Oct-2025 22:30:10 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[02-Oct-2025 22:30:50 UTC] === FORM SUBMITTED ===
+[02-Oct-2025 22:30:50 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7deb3b6528
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => gggg
+    [insert_handle] => @gegrgeg
+    [insert_text] => ththtrhtr
+)
+
+[02-Oct-2025 22:30:50 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => me.jpeg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => me.jpeg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpBEED.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 217840
+                )
+
+        )
+
+)
+
+[02-Oct-2025 22:30:50 UTC] Content Type: social_twitter
+[02-Oct-2025 22:30:50 UTC] Edit Mode: NO
+[02-Oct-2025 22:30:50 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defd1a8ba76.jpeg
+[02-Oct-2025 22:30:50 UTC] Creating social post: twitter - gggg
+[02-Oct-2025 22:30:50 UTC] Media images (1): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defd1a8ba76.jpeg
+[02-Oct-2025 22:30:50 UTC] Social post created successfully: 216
+[02-Oct-2025 22:30:50 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defd1a8ba76.jpeg"]
+[02-Oct-2025 22:30:50 UTC] ✅ Post created successfully! Redirecting...
+[02-Oct-2025 22:30:50 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[02-Oct-2025 22:35:14 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[02-Oct-2025 22:36:05 UTC] === FORM SUBMITTED ===
+[02-Oct-2025 22:36:05 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7deb3b6528
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => rfrfgrg
+    [insert_handle] => rgrtgt
+    [insert_text] => tgtgtgtg
+)
+
+[02-Oct-2025 22:36:05 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture.PNG
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture.PNG
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php8F1C.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\php8F2C.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 946403
+                )
+
+        )
+
+)
+
+[02-Oct-2025 22:36:05 UTC] Content Type: social_facebook
+[02-Oct-2025 22:36:05 UTC] Edit Mode: NO
+[02-Oct-2025 22:36:05 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe55c8fe4.jpg
+[02-Oct-2025 22:36:05 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe55c94cd.PNG
+[02-Oct-2025 22:36:05 UTC] Creating social post: facebook - rfrfgrg
+[02-Oct-2025 22:36:05 UTC] Media images (2): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe55c8fe4.jpg, http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe55c94cd.PNG
+[02-Oct-2025 22:36:05 UTC] Social post created successfully: 217
+[02-Oct-2025 22:36:05 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe55c8fe4.jpg","http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe55c94cd.PNG"]
+[02-Oct-2025 22:36:05 UTC] ✅ Post created successfully! Redirecting...
+[02-Oct-2025 22:36:05 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[02-Oct-2025 22:36:45 UTC] === FORM SUBMITTED ===
+[02-Oct-2025 22:36:45 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7deb3b6528
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => 3f34f4
+    [insert_handle] => @ferfgref
+    [insert_text] => rgegerg
+)
+
+[02-Oct-2025 22:36:45 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => les.PNG
+                    [2] => H.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => les.PNG
+                    [2] => H.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/png
+                    [2] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php1286.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\php1297.tmp
+                    [2] => C:\xampp-php8.2-new\tmp\php12A7.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                    [2] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 30329
+                    [2] => 131400
+                )
+
+        )
+
+)
+
+[02-Oct-2025 22:36:45 UTC] Content Type: social_twitter
+[02-Oct-2025 22:36:45 UTC] Edit Mode: NO
+[02-Oct-2025 22:36:45 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe7ddedd7.jpg
+[02-Oct-2025 22:36:45 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe7ddf7b8.PNG
+[02-Oct-2025 22:36:45 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe7de0088.jpg
+[02-Oct-2025 22:36:45 UTC] Creating social post: twitter - 3f34f4
+[02-Oct-2025 22:36:45 UTC] Media images (3): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe7ddedd7.jpg, http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe7ddf7b8.PNG, http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe7de0088.jpg
+[02-Oct-2025 22:36:46 UTC] Social post created successfully: 218
+[02-Oct-2025 22:36:46 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe7ddedd7.jpg","http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe7ddf7b8.PNG","http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defe7de0088.jpg"]
+[02-Oct-2025 22:36:46 UTC] ✅ Post created successfully! Redirecting...
+[02-Oct-2025 22:36:46 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[02-Oct-2025 22:37:29 UTC] === FORM SUBMITTED ===
+[02-Oct-2025 22:37:29 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 7deb3b6528
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggg
+    [insert_handle] => gggg
+    [insert_text] => gggggggggg
+)
+
+[02-Oct-2025 22:37:29 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpD1F1.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+[02-Oct-2025 22:37:29 UTC] Content Type: social_twitter
+[02-Oct-2025 22:37:29 UTC] Edit Mode: NO
+[02-Oct-2025 22:37:29 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defea975af1.jpg
+[02-Oct-2025 22:37:29 UTC] Creating social post: twitter - gggg
+[02-Oct-2025 22:37:29 UTC] Media images (1): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defea975af1.jpg
+[02-Oct-2025 22:37:29 UTC] Social post created successfully: 219
+[02-Oct-2025 22:37:29 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68defea975af1.jpg"]
+[02-Oct-2025 22:37:29 UTC] ✅ Post created successfully! Redirecting...
+[02-Oct-2025 22:37:29 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[02-Oct-2025 22:37:40 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[03-Oct-2025 07:49:37 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[03-Oct-2025 09:38:57 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[03-Oct-2025 09:40:13 UTC] === FORM SUBMITTED ===
+[03-Oct-2025 09:40:13 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 3b945c4eaa
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => majd s
+    [insert_handle] => majd_s
+    [insert_text] => s
+)
+
+[03-Oct-2025 09:40:13 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => palestine.jpeg
+                    [2] => Capture.PNG
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => palestine.jpeg
+                    [2] => Capture.PNG
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/jpeg
+                    [2] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php8D8E.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\php8D9F.tmp
+                    [2] => C:\xampp-php8.2-new\tmp\php8DA0.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                    [2] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 4527
+                    [2] => 946403
+                )
+
+        )
+
+)
+
+[03-Oct-2025 09:40:13 UTC] Content Type: social_facebook
+[03-Oct-2025 09:40:13 UTC] Edit Mode: NO
+[03-Oct-2025 09:40:13 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df99fdb2e0c.jpg
+[03-Oct-2025 09:40:13 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df99fdb37fe.jpeg
+[03-Oct-2025 09:40:13 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df99fdb3cec.PNG
+[03-Oct-2025 09:40:13 UTC] Creating social post: facebook - majd s
+[03-Oct-2025 09:40:13 UTC] Media images (3): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df99fdb2e0c.jpg, http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df99fdb37fe.jpeg, http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df99fdb3cec.PNG
+[03-Oct-2025 09:40:13 UTC] Social post created successfully: 220
+[03-Oct-2025 09:40:13 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df99fdb2e0c.jpg","http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df99fdb37fe.jpeg","http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df99fdb3cec.PNG"]
+[03-Oct-2025 09:40:13 UTC] ✅ Post created successfully! Redirecting...
+[03-Oct-2025 09:40:13 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[03-Oct-2025 09:41:26 UTC] === FORM SUBMITTED ===
+[03-Oct-2025 09:41:26 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 3b945c4eaa
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [edit_post_id] => 
+    [insert_display_name] => majd ss
+    [insert_handle] => efwefew
+    [insert_text] => fwefwefwef
+)
+
+[03-Oct-2025 09:41:26 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => code4.png
+                )
+
+            [full_path] => Array
+                (
+                    [0] => code4.png
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpA78C.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 101665
+                )
+
+        )
+
+)
+
+[03-Oct-2025 09:41:26 UTC] Content Type: social_facebook
+[03-Oct-2025 09:41:26 UTC] Edit Mode: NO
+[03-Oct-2025 09:41:26 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df9a468293b.png
+[03-Oct-2025 09:41:26 UTC] Creating social post: facebook - majd ss
+[03-Oct-2025 09:41:26 UTC] Media images (1): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df9a468293b.png
+[03-Oct-2025 09:41:26 UTC] Social post created successfully: 221
+[03-Oct-2025 09:41:26 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68df9a468293b.png"]
+[03-Oct-2025 09:41:26 UTC] ✅ Post created successfully! Redirecting...
+[03-Oct-2025 09:41:26 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[03-Oct-2025 09:55:09 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[03-Oct-2025 09:59:58 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[03-Oct-2025 10:00:01 UTC] ⚠️ POST request received but content_type missing or empty
+[03-Oct-2025 10:00:01 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[03-Oct-2025 10:00:01 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[03-Oct-2025 10:00:10 UTC] ⚠️ POST request received but content_type missing or empty
+[03-Oct-2025 10:00:10 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[03-Oct-2025 10:00:10 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[03-Oct-2025 10:00:15 UTC] ⚠️ POST request received but content_type missing or empty
+[03-Oct-2025 10:00:15 UTC] POST keys: bulk_delete_nonce, _wp_http_referer
+[03-Oct-2025 10:00:15 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[03-Oct-2025 10:07:12 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 10:07:12 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 10:07:12 UTC] Request Method: GET
+[03-Oct-2025 10:07:12 UTC] POST data: Array
+(
+)
+
+[03-Oct-2025 10:07:12 UTC] ❌ Not a POST request - exiting
+[03-Oct-2025 11:02:37 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 11:02:37 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 11:02:37 UTC] Request Method: GET
+[03-Oct-2025 11:02:37 UTC] POST data: Array
+(
+)
+
+[03-Oct-2025 11:02:37 UTC] ❌ Not a POST request - exiting
+[03-Oct-2025 11:03:45 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 11:03:45 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 11:03:45 UTC] Request Method: GET
+[03-Oct-2025 11:03:45 UTC] POST data: Array
+(
+)
+
+[03-Oct-2025 11:03:45 UTC] ❌ Not a POST request - exiting
+[03-Oct-2025 11:15:08 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 11:15:08 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 11:15:08 UTC] Request Method: GET
+[03-Oct-2025 11:15:08 UTC] POST data: Array
+(
+)
+
+[03-Oct-2025 11:15:08 UTC] ❌ Not a POST request - exiting
+[03-Oct-2025 11:22:18 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 11:22:18 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 11:22:18 UTC] Request Method: GET
+[03-Oct-2025 11:22:18 UTC] POST data: Array
+(
+)
+
+[03-Oct-2025 11:22:18 UTC] ❌ Not a POST request - exiting
+[03-Oct-2025 11:22:21 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 11:22:21 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 11:22:21 UTC] Request Method: POST
+[03-Oct-2025 11:22:21 UTC] POST data: Array
+(
+    [bulk_delete_nonce] => 239c895bab
+    [_wp_http_referer] => /Upwork/David/newsroomsim/social_post/
+)
+
+[03-Oct-2025 11:22:21 UTC] ❌ delete_ids is empty - exiting
+[03-Oct-2025 11:22:28 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 11:22:28 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 11:22:28 UTC] Request Method: POST
+[03-Oct-2025 11:22:28 UTC] POST data: Array
+(
+    [bulk_delete_nonce] => 239c895bab
+    [_wp_http_referer] => /Upwork/David/newsroomsim/social_post/
+)
+
+[03-Oct-2025 11:22:28 UTC] ❌ delete_ids is empty - exiting
+[03-Oct-2025 11:28:30 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 11:28:30 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 11:28:30 UTC] Request Method: POST
+[03-Oct-2025 11:28:30 UTC] POST data: Array
+(
+    [bulk_delete_nonce] => 239c895bab
+    [_wp_http_referer] => /Upwork/David/newsroomsim/social_post/
+)
+
+[03-Oct-2025 11:28:30 UTC] ❌ delete_ids is empty - exiting
+[03-Oct-2025 11:28:51 UTC] ═══════════════════════════════════════════════════
+[03-Oct-2025 11:28:51 UTC] 🔍 DELETE HANDLER CALLED
+[03-Oct-2025 11:28:51 UTC] Request Method: POST
+[03-Oct-2025 11:28:51 UTC] POST data: Array
+(
+    [bulk_delete_nonce] => 239c895bab
+    [_wp_http_referer] => /Upwork/David/newsroomsim/social_post/
+)
+
+[03-Oct-2025 11:28:51 UTC] ❌ delete_ids is empty - exiting

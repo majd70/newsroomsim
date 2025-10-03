@@ -1,0 +1,1474 @@
+2025-09-30 10:48:29 - Form submitted
+Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [insert_title] => 
+    [insert_author] => 
+    [insert_text] => 
+    [insert_category] => 
+    [insert_featured_image] => 
+    [insert_video_url] => 
+    [content_type] => social_twitter
+    [insert_display_name] => 
+    [insert_handle] => 
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+
+2025-09-30 10:50:26 - Form submitted
+Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [insert_title] => 
+    [insert_author] => 
+    [insert_text] => 
+    [insert_category] => 
+    [insert_featured_image] => 
+    [insert_video_url] => 
+    [content_type] => social_twitter
+    [insert_display_name] => 
+    [insert_handle] => 
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+
+2025-09-30 10:57:52 - Form submitted
+Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [insert_title] => 
+    [insert_author] => 
+    [insert_text] => 
+    [insert_category] => 
+    [insert_featured_image] => 
+    [insert_video_url] => 
+    [content_type] => social_twitter
+    [insert_display_name] => 
+    [insert_handle] => 
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+
+2025-09-30 10:58:13 - Form submitted
+Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => rgerg
+    [insert_handle] => @rtgtg
+    [insert_text] => tgtgtg
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+
+2025-09-30 10:59:45 - Form submitted
+Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [insert_title] => test s
+    [insert_author] => test s
+    [insert_text] => sssssssss
+    [insert_category] => Business
+    [insert_featured_image] => 
+    [insert_video_url] => https://www.youtube.com/watch?v=tbal-HMuACo&list=RDtbal-HMuACo&start_radio=1
+)
+
+
+2025-09-30 11:16:55 - Form submitted
+Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => so
+    [insert_handle] => so
+    [insert_text] => regergrg
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+
+2025-09-30 11:27:47 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => mdf
+    [insert_handle] => mdf
+    [insert_text] => msdfrffref
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+FILES: Array
+(
+    [insert_avatar_file] => Array
+        (
+            [name] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [full_path] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp-php8.2-new\tmp\phpFD32.tmp
+            [error] => 0
+            [size] => 41299
+        )
+
+    [insert_media_file] => Array
+        (
+            [name] => 
+            [full_path] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+)
+
+
+2025-09-30 11:29:19 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => 4r34r
+    [insert_handle] => 34r34r
+    [insert_text] => r34r34r
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+FILES: Array
+(
+    [insert_avatar_file] => Array
+        (
+            [name] => 
+            [full_path] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [insert_media_file] => Array
+        (
+            [name] => 
+            [full_path] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+)
+
+
+2025-09-30 11:32:12 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => fweef
+    [insert_handle] => @weff
+    [insert_text] => fwefwef
+    [insert_avatar] => 
+    [insert_media_url] => 
+)
+
+FILES: Array
+(
+    [insert_avatar_file] => Array
+        (
+            [name] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [full_path] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp-php8.2-new\tmp\php80D.tmp
+            [error] => 0
+            [size] => 41299
+        )
+
+    [insert_media_file] => Array
+        (
+            [name] => 
+            [full_path] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+)
+
+
+2025-09-30 11:32:58 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [insert_title] => fwefwef
+    [insert_author] => efwefef
+    [insert_text] => wefwefeffe
+    [insert_category] => Politics
+    [insert_featured_image] => 
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_featured_image_file] => Array
+        (
+            [name] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [full_path] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp-php8.2-new\tmp\phpBF29.tmp
+            [error] => 0
+            [size] => 41299
+        )
+
+)
+
+
+2025-09-30 11:38:54 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => ko
+    [insert_handle] => @ko
+    [insert_text] => gergrgrgr
+    [insert_media_url] => 
+)
+
+FILES: Array
+(
+    [insert_media_file] => Array
+        (
+            [name] => itachi-uchiha-naruto-amoled-black-background-minimal-art-3840x2160-6478.jpg
+            [full_path] => itachi-uchiha-naruto-amoled-black-background-minimal-art-3840x2160-6478.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp-php8.2-new\tmp\php2FAE.tmp
+            [error] => 0
+            [size] => 790565
+        )
+
+)
+
+
+2025-09-30 11:59:12 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => hhhh
+    [insert_handle] => @hhhhhhhhh
+    [insert_text] => jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture2.PNG
+                    [2] => Capture.PNG
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture2.PNG
+                    [2] => Capture.PNG
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/png
+                    [2] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpA351.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\phpA45C.tmp
+                    [2] => C:\xampp-php8.2-new\tmp\phpA47C.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                    [2] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 1012074
+                    [2] => 946403
+                )
+
+        )
+
+)
+
+
+2025-09-30 11:59:15 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7f58ef8551
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => hhhh
+    [insert_handle] => @hhhhhhhhh
+    [insert_text] => jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture2.PNG
+                    [2] => Capture.PNG
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture2.PNG
+                    [2] => Capture.PNG
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/png
+                    [2] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpCC1A.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\phpCC2A.tmp
+                    [2] => C:\xampp-php8.2-new\tmp\phpCC3B.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                    [2] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 1012074
+                    [2] => 946403
+                )
+
+        )
+
+)
+
+
+2025-09-30 15:30:27 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => ce9930552c
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => wefwef
+    [insert_handle] => @fu
+    [insert_text] => ggggggggf
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:37:28 - Form submitted
+POST: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => WTF
+    [insert_handle] => TGTG
+    [insert_text] => FDFDFD
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php8140.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:40:04 - Form submitted
+POST: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggggggggfffffff
+    [insert_handle] => gggggggggfffffff
+    [insert_text] => gggggggggfffff
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:42:50 - Form submitted
+POST: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggggggggfffffff
+    [insert_handle] => gggggggggfffffff
+    [insert_text] => gggggggggfffff
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:43:01 - Form submitted
+POST: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggggggggfffffff
+    [insert_handle] => gggggggggfffffff
+    [insert_text] => gggggggggfffff
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:43:15 - Form submitted
+POST: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggggggggfffffff
+    [insert_handle] => gggggggggfffffff
+    [insert_text] => gggggggggfffff
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:45:24 - Form submitted
+POST: Array
+(
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggggggggfffffff
+    [insert_handle] => gggggggggfffffff
+    [insert_text] => gggggggggfffff
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:45:48 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => ce9930552c
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => rrrrrgg
+    [insert_handle] => @fffffffffff
+    [insert_text] => fffffffffffffff
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php2A31.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:46:12 - Form submitted
+POST: Array
+(
+    [newsroom_nonce] => 27117115fd
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gg2
+    [insert_handle] => ggg2
+    [insert_text] => fff4
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:50:43 - Form submitted
+POST: Array
+(
+    [newsroom_nonce] => 27117115fd
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gg2
+    [insert_handle] => ggg2
+    [insert_text] => fff4
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:50:56 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => ce9930552c
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => rrrrrrrrryy
+    [insert_handle] => yyyyyyyyy
+    [insert_text] => yyyyyyyyyy
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-09-30 16:51:14 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => ce9930552c
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [edit_post_id] => 
+    [insert_display_name] => yyyy2
+    [insert_handle] => yyyyy2
+    [insert_text] => yyyy2
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-09-30 17:04:12 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => ce9930552c
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [edit_post_id] => 
+    [insert_display_name] => yyyf
+    [insert_handle] => ffffy
+    [insert_text] => gtrgrgrtgrg
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => Capture.PNG
+                )
+
+            [full_path] => Array
+                (
+                    [0] => Capture.PNG
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpFE4D.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 946403
+                )
+
+        )
+
+)
+
+
+2025-10-01 06:31:41 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 27de755ef3
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_instagram
+    [insert_display_name] => majd
+    [insert_handle] => @majd
+    [insert_text] => Hi Im Majd
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => code2.png
+                )
+
+            [full_path] => Array
+                (
+                    [0] => code2.png
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php4223.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 75403
+                )
+
+        )
+
+)
+
+
+2025-10-01 06:37:22 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 27de755ef3
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_instagram
+    [insert_display_name] => majd
+    [insert_handle] => @majdderawi
+    [insert_text] => Hi, I\'m Majd
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => me.jpeg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => me.jpeg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php738C.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 217840
+                )
+
+        )
+
+)
+
+
+2025-10-02 22:30:50 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7deb3b6528
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => gggg
+    [insert_handle] => @gegrgeg
+    [insert_text] => ththtrhtr
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => me.jpeg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => me.jpeg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpBEED.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 217840
+                )
+
+        )
+
+)
+
+
+2025-10-02 22:36:05 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7deb3b6528
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => rfrfgrg
+    [insert_handle] => rgrtgt
+    [insert_text] => tgtgtgtg
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture.PNG
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => Capture.PNG
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php8F1C.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\php8F2C.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 946403
+                )
+
+        )
+
+)
+
+
+2025-10-02 22:36:45 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7deb3b6528
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => 3f34f4
+    [insert_handle] => @ferfgref
+    [insert_text] => rgegerg
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => les.PNG
+                    [2] => H.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => les.PNG
+                    [2] => H.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/png
+                    [2] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php1286.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\php1297.tmp
+                    [2] => C:\xampp-php8.2-new\tmp\php12A7.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                    [2] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 30329
+                    [2] => 131400
+                )
+
+        )
+
+)
+
+
+2025-10-02 22:37:29 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 7deb3b6528
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [edit_post_id] => 
+    [insert_display_name] => gggg
+    [insert_handle] => gggg
+    [insert_text] => gggggggggg
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpD1F1.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+
+2025-10-03 09:40:13 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 3b945c4eaa
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => majd s
+    [insert_handle] => majd_s
+    [insert_text] => s
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => palestine.jpeg
+                    [2] => Capture.PNG
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                    [1] => palestine.jpeg
+                    [2] => Capture.PNG
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                    [1] => image/jpeg
+                    [2] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php8D8E.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\php8D9F.tmp
+                    [2] => C:\xampp-php8.2-new\tmp\php8DA0.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                    [2] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                    [1] => 4527
+                    [2] => 946403
+                )
+
+        )
+
+)
+
+
+2025-10-03 09:41:26 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 3b945c4eaa
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [edit_post_id] => 
+    [insert_display_name] => majd ss
+    [insert_handle] => efwefew
+    [insert_text] => fwefwefwef
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => code4.png
+                )
+
+            [full_path] => Array
+                (
+                    [0] => code4.png
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpA78C.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 101665
+                )
+
+        )
+
+)
+
+

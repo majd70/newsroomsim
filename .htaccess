@@ -1,7 +1,7 @@
 # Block the include-only files.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /newsroomsim/
+RewriteBase /Upwork/David/newsroomsim/
 RewriteRule ^wp-admin/includes/ - [F,L]
 RewriteRule !^wp-includes/ - [S=3]
 RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
@@ -25,11 +25,11 @@ require all denied
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /newsroomsim/
+RewriteBase /Upwork/David/newsroomsim/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /newsroomsim/index.php [L]
+RewriteRule . /Upwork/David/newsroomsim/index.php [L]
 </IfModule>
 
 # END WordPress

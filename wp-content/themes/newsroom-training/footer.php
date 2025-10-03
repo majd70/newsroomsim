@@ -44,7 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function toggleDeleteBtn() {
         const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
-        deleteBtn.style.display = anyChecked ? 'inline-block' : 'none';
+        if (deleteBtn) {
+            deleteBtn.style.display = anyChecked ? 'inline-block' : 'none';
+        }
     }
 
     checkboxes.forEach(cb => {
@@ -52,6 +54,64 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// AJAX Delete Handler
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle single post delete via AJAX
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.delete-single-post-ajax')) {
+            e.preventDefault();
+
+            const button = e.target.closest('.delete-single-post-ajax');
+            const postId = button.getAttribute('data-post-id');
+            const nonce = button.getAttribute('data-nonce');
+
+            if (!confirm('Are you sure you want to delete this post?')) {
+                return;
+            }
+
+            // Disable button during deletion
+            button.disabled = true;
+            button.style.opacity = '0.5';
+
+            // Send AJAX request
+            fetch('<?php echo function_exists("admin_url") ? admin_url("admin-ajax.php") : "/wp-admin/admin-ajax.php"; ?>', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    action: 'delete_single_post',
+                    post_id: postId,
+                    nonce: nonce
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Find and remove the post card
+                    const postCard = button.closest('.content-card, .social-card, .news-card');
+                    if (postCard) {
+                        postCard.style.transition = 'opacity 0.3s';
+                        postCard.style.opacity = '0';
+                        setTimeout(() => {
+                            postCard.remove();
+                        }, 300);
+                    }
+                } else {
+                    alert('Error: ' + (data.data || 'Failed to delete post'));
+                    button.disabled = false;
+                    button.style.opacity = '1';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while deleting the post');
+                button.disabled = false;
+                button.style.opacity = '1';
+            });
+        }
+    });
+});
 
 </script>
 

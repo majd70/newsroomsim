@@ -1722,6 +1722,32 @@ function sb_headline_fallback(){
 }
 
 
+// AJAX handler for single post deletion
+add_action('wp_ajax_delete_single_post', function() {
+    // Check nonce
+    check_ajax_referer('delete_post_nonce', 'nonce');
+
+    $post_id = intval($_POST['post_id']);
+
+    if (!$post_id) {
+        wp_send_json_error('Invalid post ID');
+    }
+
+    // Check permissions
+    if (!current_user_can('delete_post', $post_id)) {
+        wp_send_json_error('Permission denied');
+    }
+
+    // Delete the post
+    $result = wp_delete_post($post_id, true);
+
+    if ($result) {
+        wp_send_json_success('Post deleted successfully');
+    } else {
+        wp_send_json_error('Failed to delete post');
+    }
+});
+
 add_action('template_redirect', function() {
     if ( isset($_POST['bulk_delete']) && !empty($_POST['delete_ids']) ) {
 
@@ -1747,64 +1773,121 @@ add_action('template_redirect', function() {
 
 
 add_action('template_redirect', function() {
+    // HEAVY DEBUGGING - Log everything
+    error_log('═══════════════════════════════════════════════════');
+    error_log('🔍 DELETE HANDLER CALLED');
+    error_log('Request Method: ' . $_SERVER['REQUEST_METHOD']);
+    error_log('POST data: ' . print_r($_POST, true));
+
     // Only run for POST requests that include delete_ids (and bulk_delete marker)
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') return;
-    if (empty($_POST['delete_ids']) || !is_array($_POST['delete_ids'])) return;
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        error_log('❌ Not a POST request - exiting');
+        return;
+    }
+
+    if (empty($_POST['delete_ids'])) {
+        error_log('❌ delete_ids is empty - exiting');
+        return;
+    }
+
+    if (!is_array($_POST['delete_ids'])) {
+        error_log('❌ delete_ids is not an array - exiting');
+        return;
+    }
+
+    error_log('✅ delete_ids found: ' . print_r($_POST['delete_ids'], true));
+
     // Optional: also check for marker (not required since delete_ids exists), but safe:
     if (!empty($_POST['bulk_delete']) || !empty($_POST['delete_ids'])) {
+        error_log('✅ bulk_delete marker found or delete_ids exists');
 
         // Nonce check (if wp_verify_nonce exists)
         if (function_exists('wp_verify_nonce')) {
+            error_log('🔐 Checking nonce...');
+            error_log('Nonce value: ' . (isset($_POST['bulk_delete_nonce']) ? $_POST['bulk_delete_nonce'] : 'NOT SET'));
+
             if (!isset($_POST['bulk_delete_nonce']) || !wp_verify_nonce($_POST['bulk_delete_nonce'], 'bulk_delete_action')) {
-                error_log('BULK DELETE: nonce check failed');
+                error_log('❌ BULK DELETE: nonce check FAILED!');
                 return;
             }
+            error_log('✅ Nonce check passed');
         }
 
         // Debug: log request (remove or comment out later)
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log('BULK DELETE POST payload: ' . print_r($_POST, true));
-            error_log('BULK DELETE current_user: ' . get_current_user_id());
-        }
+        error_log('✅ BULK DELETE POST payload: ' . print_r($_POST, true));
+        error_log('Current user ID: ' . get_current_user_id());
 
+        error_log('🔄 Starting to process delete_ids...');
         foreach ($_POST['delete_ids'] as $raw_id) {
+            error_log('Processing ID: ' . $raw_id);
             $id = intval($raw_id);
+
             if (!$id) {
-                error_log("BULK DELETE: invalid id '{$raw_id}'");
+                error_log("❌ BULK DELETE: invalid id '{$raw_id}'");
                 continue;
             }
+
+            error_log("✅ Valid ID: {$id}");
 
             // If WP function exists, use it
             if (function_exists('get_post')) {
                 $post = get_post($id);
-                if (!$post) { error_log("BULK DELETE: post not found id={$id}"); continue; }
+                error_log('Post object: ' . print_r($post, true));
+
+                if (!$post) {
+                    error_log("❌ BULK DELETE: post not found id={$id}");
+                    continue;
+                }
 
                 // permission: admin can delete all; others can delete their own
-                $can_delete = current_user_can('administrator') || get_current_user_id() == absint($post->post_author);
+                $current_user_id = get_current_user_id();
+                $is_admin = current_user_can('administrator');
+                $is_author = $current_user_id == absint($post->post_author);
+                $can_delete = $is_admin || $is_author;
+
+                error_log("👤 Current user ID: {$current_user_id}");
+                error_log("👤 Post author ID: {$post->post_author}");
+                error_log("🔑 Is admin: " . ($is_admin ? 'YES' : 'NO'));
+                error_log("✍️ Is author: " . ($is_author ? 'YES' : 'NO'));
+                error_log("✅ Can delete: " . ($can_delete ? 'YES' : 'NO'));
 
                 if ($can_delete) {
+                    error_log("🗑️ Attempting to delete post {$id}...");
                     $res = wp_delete_post($id, true); // true = force delete
-                    error_log("BULK DELETE: wp_delete_post({$id}) => " . var_export($res, true));
+                    error_log("🗑️ BULK DELETE: wp_delete_post({$id}) => " . var_export($res, true));
+
+                    if ($res) {
+                        error_log("✅✅✅ POST {$id} DELETED SUCCESSFULLY!");
+                    } else {
+                        error_log("❌❌❌ POST {$id} DELETE FAILED!");
+                    }
                 } else {
-                    error_log("BULK DELETE: permission denied for id={$id} user=" . get_current_user_id());
+                    error_log("❌ BULK DELETE: permission denied for id={$id} user=" . get_current_user_id());
                 }
             } else {
                 // Standalone remove function (if exists)
+                error_log("⚠️ get_post function not found, trying standalone delete");
                 if (function_exists('newsroom_delete_content')) {
                     error_log("BULK DELETE standalone: deleting id={$id}");
                     newsroom_delete_content($id);
                 } else {
-                    error_log("BULK DELETE standalone: no delete function for id={$id}");
+                    error_log("❌ BULK DELETE standalone: no delete function for id={$id}");
                 }
             }
         }
 
+        error_log('🔄 Finished processing all delete_ids');
+        error_log('🔀 Redirecting to avoid re-submission...');
+
         // Redirect to avoid re-submission
         if (function_exists('wp_safe_redirect')) {
+            error_log('Using wp_safe_redirect');
             wp_safe_redirect( esc_url_raw( $_SERVER['REQUEST_URI'] ) );
         } else {
+            error_log('Using header redirect');
             header('Location: ' . $_SERVER['REQUEST_URI']);
         }
+        error_log('═══════════════════════════════════════════════════');
         exit;
     }
 });
