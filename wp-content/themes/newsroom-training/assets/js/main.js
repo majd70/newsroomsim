@@ -789,6 +789,121 @@ function getCommentsNonce() {
 
 
 /**
+ * Toggle comments for news articles (simple version)
+ */
+function toggleComments(postId) {
+    console.log('🔍 Toggling comments for post:', postId);
+    const commentsContainer = document.getElementById(`comments-${postId}`);
+
+    if (!commentsContainer) {
+        console.error('❌ Comments container not found for post:', postId);
+        return;
+    }
+
+    if (commentsContainer.style.display === 'none' || commentsContainer.style.display === '') {
+        commentsContainer.style.display = 'block';
+        console.log('✅ Comments shown for post:', postId);
+    } else {
+        commentsContainer.style.display = 'none';
+        console.log('✅ Comments hidden for post:', postId);
+    }
+}
+
+// Make it globally available
+window.toggleComments = toggleComments;
+
+/**
+ * Handle comment form submission for news articles
+ */
+document.addEventListener('submit', function(event) {
+    if (event.target.classList.contains('add-comment-form')) {
+        event.preventDefault();
+        const form = event.target;
+        const postId = form.getAttribute('data-post-id');
+        const formData = new FormData(form);
+
+        // Add WordPress AJAX action
+        formData.append('action', 'add_comment_to_post');
+        formData.append('post_id', postId);
+
+        // Get AJAX URL
+        const ajaxUrl = (typeof newsroom_ajax !== 'undefined' && newsroom_ajax.ajax_url)
+            ? newsroom_ajax.ajax_url
+            : '/wp-admin/admin-ajax.php';
+
+        // Submit comment
+        fetch(ajaxUrl, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Reload the page to show the new comment
+                location.reload();
+            } else {
+                alert('Error adding comment: ' + (data.data || 'Unknown error'));
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error adding comment');
+        });
+    }
+});
+
+/**
+ * Handle comment deletion
+ */
+document.addEventListener('click', function(event) {
+    if (event.target.closest('.delete-comment-btn')) {
+        event.preventDefault();
+        const button = event.target.closest('.delete-comment-btn');
+        const commentId = button.getAttribute('data-comment-id');
+        const nonce = button.getAttribute('data-nonce');
+
+        if (!confirm('Are you sure you want to delete this comment?')) {
+            return;
+        }
+
+        // Prepare form data
+        const formData = new FormData();
+        formData.append('action', 'delete_comment');
+        formData.append('comment_id', commentId);
+        formData.append('nonce', nonce);
+
+        // Get AJAX URL
+        const ajaxUrl = (typeof newsroom_ajax !== 'undefined' && newsroom_ajax.ajax_url)
+            ? newsroom_ajax.ajax_url
+            : '/wp-admin/admin-ajax.php';
+
+        // Submit deletion request
+        fetch(ajaxUrl, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Remove the comment from DOM
+                const commentElement = document.getElementById(`comment-${commentId}`);
+                if (commentElement) {
+                    commentElement.remove();
+                }
+                // Optionally show success message
+                console.log('Comment deleted successfully');
+            } else {
+                alert('Error deleting comment: ' + (data.data || 'Unknown error'));
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error deleting comment');
+        });
+    }
+});
+
+/**
  * Debug function to check DOM structure
  */
 window.debugInlineComments = function() {

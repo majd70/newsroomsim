@@ -1738,3 +1738,159 @@ FILES: Array
 )
 
 
+2025-10-04 20:59:37 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 6331f0deba
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => اهلاغهللاغعللاغع
+    [insert_author] => عالاعهلاعه
+    [insert_text] => غهلارغعرغعرغع
+    [insert_category] => Breaking News
+    [insert_video_url] => https://www.youtube.com/watch?v=ORIY9FohByg&list=RDlHcTrjrPTaw&index=7
+)
+
+FILES: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpEA27.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+
+2025-10-04 21:00:42 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 6331f0deba
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => هخاهخاخع
+    [insert_author] => غعرغعرغع
+    [insert_text] => لاغعللارغه
+    [insert_category] => Breaking News
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpEB2D.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+
+2025-10-04 21:16:50 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 6331f0deba
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_instagram
+    [insert_display_name] => اااا
+    [insert_handle] => ااا
+    [insert_text] => ااا
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpABEA.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+

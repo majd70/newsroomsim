@@ -94,69 +94,71 @@ if ( current_user_can('delete_others_posts') ):
     <?php endif; ?> -->
 
 
+    <?php if ($video_embed || !empty($all_images)): ?>
       <div class="media-wrapper">
-    <div class="media-inner">
-        <?php if ($video_embed): ?>
-            <?php
-            // Check if it's a YouTube link
-            if (strpos($video_embed, 'youtube.com/watch') !== false || strpos($video_embed, 'youtu.be') !== false) {
-                $video_id = '';
-                if (preg_match('/v=([a-zA-Z0-9_-]+)/', $video_embed, $matches)) {
-                    $video_id = $matches[1];
-                } elseif (preg_match('/youtu\.be\/([a-zA-Z0-9_-]+)/', $video_embed, $matches)) {
-                    $video_id = $matches[1];
-                }
+        <div class="media-inner">
+            <?php if ($video_embed): ?>
+                <?php
+                // Check if it's a YouTube link
+                if (strpos($video_embed, 'youtube.com/watch') !== false || strpos($video_embed, 'youtu.be') !== false) {
+                    $video_id = '';
+                    if (preg_match('/v=([a-zA-Z0-9_-]+)/', $video_embed, $matches)) {
+                        $video_id = $matches[1];
+                    } elseif (preg_match('/youtu\.be\/([a-zA-Z0-9_-]+)/', $video_embed, $matches)) {
+                        $video_id = $matches[1];
+                    }
 
-                if ($video_id) {
-                    echo '<iframe class="media-content" src="https://www.youtube.com/embed/' . esc_attr($video_id) . '" frameborder="0" allowfullscreen></iframe>';
+                    if ($video_id) {
+                        echo '<iframe class="media-content" src="https://www.youtube.com/embed/' . esc_attr($video_id) . '" frameborder="0" allowfullscreen></iframe>';
+                    }
+                } else {
+                    // If already iframe embed, wrap it inside
+                    echo '<div class="media-content">' . $video_embed . '</div>';
                 }
-            } else {
-                // If already iframe embed, wrap it inside
-                echo '<div class="media-content">' . $video_embed . '</div>';
-            }
-            ?>
-        <?php elseif (!empty($all_images)): ?>
-            <?php if (count($all_images) === 1): ?>
-                <!-- Single image -->
-                <img src="<?php echo esc_url($all_images[0]); ?>"
-                     alt="<?php echo esc_attr($headline); ?>"
-                     class="media-content">
-            <?php else: ?>
-                <!-- Multiple images grid -->
-                <div class="row g-2 p-2">
-                    <?php foreach ($all_images as $index => $image_url): ?>
-                        <div class="col-<?php echo count($all_images) === 2 ? '6' : (count($all_images) === 3 ? '4' : '6'); ?>">
-                            <img src="<?php echo esc_url($image_url); ?>"
-                                 alt="<?php echo esc_attr($headline); ?> - Image <?php echo $index + 1; ?>"
-                                 class="img-fluid rounded"
-                                 style="width: 100%; height: 250px; object-fit: cover;">
-                        </div>
-                        <?php if (count($all_images) > 4 && $index === 3): break; endif; ?>
-                    <?php endforeach; ?>
-                    <?php if (count($all_images) > 4): ?>
-                        <div class="col-6 position-relative">
-                            <img src="<?php echo esc_url($all_images[3]); ?>"
-                                 alt="<?php echo esc_attr($headline); ?>"
-                                 class="img-fluid rounded"
-                                 style="width: 100%; height: 250px; object-fit: cover; filter: brightness(0.5);">
-                            <div class="position-absolute top-50 start-50 translate-middle text-white fs-3 fw-bold">
-                                +<?php echo count($all_images) - 4; ?>
+                ?>
+            <?php elseif (!empty($all_images)): ?>
+                <?php if (count($all_images) === 1): ?>
+                    <!-- Single image -->
+                    <img src="<?php echo esc_url($all_images[0]); ?>"
+                         alt="<?php echo esc_attr($headline); ?>"
+                         class="media-content">
+                <?php else: ?>
+                    <!-- Multiple images grid -->
+                    <div class="row g-2 p-2">
+                        <?php foreach ($all_images as $index => $image_url): ?>
+                            <div class="col-<?php echo count($all_images) === 2 ? '6' : (count($all_images) === 3 ? '4' : '6'); ?>">
+                                <img src="<?php echo esc_url($image_url); ?>"
+                                     alt="<?php echo esc_attr($headline); ?> - Image <?php echo $index + 1; ?>"
+                                     class="img-fluid rounded"
+                                     style="width: 100%; height: 250px; object-fit: cover;">
                             </div>
-                        </div>
-                    <?php endif; ?>
-                </div>
+                            <?php if (count($all_images) > 4 && $index === 3): break; endif; ?>
+                        <?php endforeach; ?>
+                        <?php if (count($all_images) > 4): ?>
+                            <div class="col-6 position-relative">
+                                <img src="<?php echo esc_url($all_images[3]); ?>"
+                                     alt="<?php echo esc_attr($headline); ?>"
+                                     class="img-fluid rounded"
+                                     style="width: 100%; height: 250px; object-fit: cover; filter: brightness(0.5);">
+                                <div class="position-absolute top-50 start-50 translate-middle text-white fs-3 fw-bold">
+                                    +<?php echo count($all_images) - 4; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
-        <?php endif; ?>
-    </div>
+        </div>
 
-    <!-- Checkbox overlay - Only for Newsroom Operator and Administrator -->
-    <?php if ( current_user_can('delete_others_posts') ): ?>
-        <input type="checkbox"
-               name="delete_ids[]"
-               value="<?php echo esc_attr(get_the_ID()); ?>"
-               class="delete-checkbox">
+        <!-- Checkbox overlay - Only for Newsroom Operator and Administrator -->
+        <?php if ( current_user_can('delete_others_posts') ): ?>
+            <input type="checkbox"
+                   name="delete_ids[]"
+                   value="<?php echo esc_attr(get_the_ID()); ?>"
+                   class="delete-checkbox">
+        <?php endif; ?>
+      </div>
     <?php endif; ?>
-</div>
             
     <div class="card-content">
         <div class="card-meta">
@@ -237,5 +239,87 @@ if ( current_user_can('delete_others_posts') ):
                 <i class="fas fa-thumbtack me-1"></i>Pinned
             </div>
         <?php endif; ?>
+    </div>
+
+    <!-- Comments Section - Always Visible like Social Media Posts -->
+    <div class="inline-comments-section" id="comments-section-<?php echo function_exists('get_the_ID') ? get_the_ID() : ($item['id'] ?? 0); ?>">
+        <div class="comments-container">
+            <?php
+            $post_id = function_exists('get_the_ID') ? get_the_ID() : ($item['id'] ?? 0);
+            // Get existing comments for this post
+            $post_comments = get_comments(array(
+                'post_id' => $post_id,
+                'status' => 'approve',
+                'order' => 'ASC'
+            ));
+            $comments_count = count($post_comments);
+            ?>
+
+            <div class="comments-header">
+                <h5 class="mb-3"><i class="fas fa-comments me-2"></i>Comments (<?php echo $comments_count; ?>)</h5>
+            </div>
+
+            <?php if ($post_comments): ?>
+                <div class="comments-list mb-4" id="comments-list-<?php echo $post_id; ?>">
+                    <?php foreach ($post_comments as $comment):
+                        $comment_author = get_userdata($comment->user_id);
+                        // Trainee can delete their own comments, Newsroom Operator and Admin can delete any comment
+                        $can_delete = (get_current_user_id() == $comment->user_id && current_user_can('delete_own_reply'))
+                                   || current_user_can('moderate_comments')
+                                   || current_user_can('delete_others_posts');
+                    ?>
+                        <div class="comment-item border-bottom pb-3 mb-3 bg-white p-3 rounded" id="comment-<?php echo $comment->comment_ID; ?>">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="flex-grow-1">
+                                    <strong><?php echo esc_html($comment_author ? $comment_author->display_name : $comment->comment_author); ?></strong>
+                                    <small class="text-muted ms-2"><?php echo human_time_diff(strtotime($comment->comment_date), current_time('timestamp')) . ' ago'; ?></small>
+                                    <p class="mb-0 mt-1"><?php echo esc_html($comment->comment_content); ?></p>
+                                </div>
+                                <?php if ($can_delete): ?>
+                                    <button type="button"
+                                            class="btn btn-sm btn-danger delete-comment-btn"
+                                            data-comment-id="<?php echo $comment->comment_ID; ?>"
+                                            data-nonce="<?php echo wp_create_nonce('delete_comment_' . $comment->comment_ID); ?>">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php else: ?>
+                <div class="comments-list mb-4" id="comments-list-<?php echo $post_id; ?>">
+                    <p class="text-muted">No comments yet. Be the first to comment!</p>
+                </div>
+            <?php endif; ?>
+
+            <?php
+            // Only Trainee and above can add comments (not Viewer)
+            if (is_user_logged_in() && (current_user_can('add_reply') || current_user_can('edit_posts'))):
+            ?>
+                <div class="add-comment-form bg-white p-3 rounded">
+                    <h6 class="mb-2">Add a Comment</h6>
+                    <form method="post">
+                        <?php wp_nonce_field('add_comment_action', 'add_comment_nonce'); ?>
+                        <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
+                        <input type="hidden" name="redirect_to" value="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>">
+                        <div class="mb-3">
+                            <textarea name="comment_content"
+                                      class="form-control"
+                                      rows="3"
+                                      placeholder="Write your comment here..."
+                                      required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-1"></i> Post Comment
+                        </button>
+                    </form>
+                </div>
+            <?php elseif (!is_user_logged_in()): ?>
+                <p class="text-muted">Please <a href="<?php echo wp_login_url(get_permalink()); ?>">login</a> to comment.</p>
+            <?php else: ?>
+                <p class="text-muted">You don't have permission to add comments.</p>
+            <?php endif; ?>
+        </div>
     </div>
 </article>

@@ -2025,6 +2025,70 @@ add_action('wp_ajax_nopriv_get_post_comments', function() {
     ));
 });
 
+// AJAX handler for adding comments to posts (simple form)
+add_action('wp_ajax_add_comment_to_post', function() {
+    $post_id = intval($_POST['post_id']);
+    $author = sanitize_text_field($_POST['author']);
+    $comment_content = sanitize_textarea_field($_POST['comment']);
+
+    if (!$post_id || empty($comment_content) || empty($author)) {
+        wp_send_json_error('Invalid data provided');
+        return;
+    }
+
+    // Add the comment
+    $comment_data = array(
+        'comment_post_ID' => $post_id,
+        'comment_content' => $comment_content,
+        'comment_author' => $author,
+        'comment_author_email' => '', // Optional for guest comments
+        'comment_approved' => 1,
+    );
+
+    $comment_id = wp_insert_comment($comment_data);
+
+    if ($comment_id) {
+        wp_send_json_success(array(
+            'comment_id' => $comment_id,
+            'message' => 'Comment added successfully'
+        ));
+    } else {
+        wp_send_json_error('Failed to add comment');
+    }
+});
+
+// AJAX handler for adding comments to posts (simple form) - non-logged in users
+add_action('wp_ajax_nopriv_add_comment_to_post', function() {
+    $post_id = intval($_POST['post_id']);
+    $author = sanitize_text_field($_POST['author']);
+    $comment_content = sanitize_textarea_field($_POST['comment']);
+
+    if (!$post_id || empty($comment_content) || empty($author)) {
+        wp_send_json_error('Invalid data provided');
+        return;
+    }
+
+    // Add the comment
+    $comment_data = array(
+        'comment_post_ID' => $post_id,
+        'comment_content' => $comment_content,
+        'comment_author' => $author,
+        'comment_author_email' => '', // Optional for guest comments
+        'comment_approved' => 1,
+    );
+
+    $comment_id = wp_insert_comment($comment_data);
+
+    if ($comment_id) {
+        wp_send_json_success(array(
+            'comment_id' => $comment_id,
+            'message' => 'Comment added successfully'
+        ));
+    } else {
+        wp_send_json_error('Failed to add comment');
+    }
+});
+
 // Handle comment submission (non-AJAX) - Keep for backward compatibility
 add_action('template_redirect', function() {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_comment_nonce'])) {
