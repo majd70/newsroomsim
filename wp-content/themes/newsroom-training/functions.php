@@ -52,7 +52,9 @@ function newsroom_enqueue_scripts() {
     // Localize script for AJAX
     wp_localize_script('newsroom-main', 'newsroom_ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('newsroom_nonce')
+        'nonce' => wp_create_nonce('newsroom_nonce'),
+        'add_comment_nonce' => wp_create_nonce('add_comment_inline_nonce'),
+        'get_comments_nonce' => wp_create_nonce('get_comments_nonce')
     ));
 }
 add_action('wp_enqueue_scripts', 'newsroom_enqueue_scripts');
@@ -1831,7 +1833,199 @@ add_action('wp_ajax_delete_comment', function() {
     }
 });
 
-// Handle comment submission (non-AJAX)
+// AJAX handler for adding comments inline (logged in users)
+add_action('wp_ajax_add_comment_inline', function() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'add_comment_inline_nonce')) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    // Check if user is logged in
+    if (!is_user_logged_in()) {
+        wp_send_json_error('You must be logged in to comment');
+        return;
+    }
+
+    // Check permissions
+    if (!current_user_can('add_reply') && !current_user_can('edit_posts')) {
+        wp_send_json_error('You do not have permission to add comments');
+        return;
+    }
+
+    $post_id = intval($_POST['post_id']);
+    $comment_content = sanitize_textarea_field($_POST['comment_content']);
+
+    if (!$post_id || empty($comment_content)) {
+        wp_send_json_error('Invalid post ID or empty comment');
+        return;
+    }
+
+    // Add the comment
+    $comment_data = array(
+        'comment_post_ID' => $post_id,
+        'comment_content' => $comment_content,
+        'comment_author' => wp_get_current_user()->display_name,
+        'comment_author_email' => wp_get_current_user()->user_email,
+        'user_id' => get_current_user_id(),
+        'comment_approved' => 1,
+    );
+
+    $comment_id = wp_insert_comment($comment_data);
+
+    if ($comment_id) {
+        $comment = get_comment($comment_id);
+        $comment_author = get_userdata($comment->user_id);
+
+        // Check if user can delete this comment
+        $can_delete = (get_current_user_id() == $comment->user_id && current_user_can('delete_own_reply'))
+                   || current_user_can('moderate_comments')
+                   || current_user_can('delete_others_posts');
+
+        // Return the new comment HTML
+        ob_start();
+        ?>
+        <div class="comment-item border-bottom pb-3 mb-3 bg-white p-3 rounded" id="comment-<?php echo $comment->comment_ID; ?>">
+            <div class="d-flex justify-content-between align-items-start">
+                <div class="flex-grow-1">
+                    <strong><?php echo esc_html($comment_author ? $comment_author->display_name : $comment->comment_author); ?></strong>
+                    <small class="text-muted ms-2">just now</small>
+                    <p class="mb-0 mt-1"><?php echo esc_html($comment->comment_content); ?></p>
+                </div>
+                <?php if ($can_delete): ?>
+                    <button type="button"
+                            class="btn btn-sm btn-danger delete-comment-btn"
+                            data-comment-id="<?php echo $comment->comment_ID; ?>"
+                            data-nonce="<?php echo wp_create_nonce('delete_comment_' . $comment->comment_ID); ?>">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                <?php endif; ?>
+            </div>
+        </div>
+        <?php
+        $comment_html = ob_get_clean();
+
+        wp_send_json_success(array(
+            'comment_id' => $comment_id,
+            'comment_html' => $comment_html,
+            'message' => 'Comment added successfully'
+        ));
+    } else {
+        wp_send_json_error('Failed to add comment');
+    }
+});
+
+// AJAX handler for getting comments for a post (logged in users)
+add_action('wp_ajax_get_post_comments', function() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'get_comments_nonce')) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $post_id = intval($_POST['post_id']);
+
+    if (!$post_id) {
+        wp_send_json_error('Invalid post ID');
+        return;
+    }
+
+    $post_comments = get_comments(array(
+        'post_id' => $post_id,
+        'status' => 'approve',
+        'order' => 'ASC'
+    ));
+
+    $comments_html = '';
+    $comments_count = count($post_comments);
+
+    if ($post_comments) {
+        ob_start();
+        foreach ($post_comments as $comment):
+            $comment_author = get_userdata($comment->user_id);
+            // Check if user can delete this comment
+            $can_delete = (get_current_user_id() == $comment->user_id && current_user_can('delete_own_reply'))
+                       || current_user_can('moderate_comments')
+                       || current_user_can('delete_others_posts');
+        ?>
+            <div class="comment-item border-bottom pb-3 mb-3 bg-white p-3 rounded" id="comment-<?php echo $comment->comment_ID; ?>">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <strong><?php echo esc_html($comment_author ? $comment_author->display_name : $comment->comment_author); ?></strong>
+                        <small class="text-muted ms-2"><?php echo human_time_diff(strtotime($comment->comment_date), current_time('timestamp')) . ' ago'; ?></small>
+                        <p class="mb-0 mt-1"><?php echo esc_html($comment->comment_content); ?></p>
+                    </div>
+                    <?php if ($can_delete): ?>
+                        <button type="button"
+                                class="btn btn-sm btn-danger delete-comment-btn"
+                                data-comment-id="<?php echo $comment->comment_ID; ?>"
+                                data-nonce="<?php echo wp_create_nonce('delete_comment_' . $comment->comment_ID); ?>">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php
+        endforeach;
+        $comments_html = ob_get_clean();
+    }
+
+    wp_send_json_success(array(
+        'comments_count' => $comments_count,
+        'comments_html' => $comments_html
+    ));
+});
+
+// AJAX handler for getting comments for a post (non-logged in users)
+add_action('wp_ajax_nopriv_get_post_comments', function() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'get_comments_nonce')) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $post_id = intval($_POST['post_id']);
+
+    if (!$post_id) {
+        wp_send_json_error('Invalid post ID');
+        return;
+    }
+
+    $post_comments = get_comments(array(
+        'post_id' => $post_id,
+        'status' => 'approve',
+        'order' => 'ASC'
+    ));
+
+    $comments_html = '';
+    $comments_count = count($post_comments);
+
+    if ($post_comments) {
+        ob_start();
+        foreach ($post_comments as $comment):
+            $comment_author = get_userdata($comment->user_id);
+        ?>
+            <div class="comment-item border-bottom pb-3 mb-3 bg-white p-3 rounded" id="comment-<?php echo $comment->comment_ID; ?>">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <strong><?php echo esc_html($comment_author ? $comment_author->display_name : $comment->comment_author); ?></strong>
+                        <small class="text-muted ms-2"><?php echo human_time_diff(strtotime($comment->comment_date), current_time('timestamp')) . ' ago'; ?></small>
+                        <p class="mb-0 mt-1"><?php echo esc_html($comment->comment_content); ?></p>
+                    </div>
+                </div>
+            </div>
+        <?php
+        endforeach;
+        $comments_html = ob_get_clean();
+    }
+
+    wp_send_json_success(array(
+        'comments_count' => $comments_count,
+        'comments_html' => $comments_html
+    ));
+});
+
+// Handle comment submission (non-AJAX) - Keep for backward compatibility
 add_action('template_redirect', function() {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_comment_nonce'])) {
         // Verify nonce
@@ -1864,8 +2058,12 @@ add_action('template_redirect', function() {
         $comment_id = wp_insert_comment($comment_data);
 
         if ($comment_id) {
-            // Redirect back to the post
-            wp_safe_redirect(get_permalink($post_id) . '#comment-' . $comment_id);
+            // Check if redirect_to is provided, otherwise redirect to post
+            $redirect_url = !empty($_POST['redirect_to'])
+                ? esc_url_raw($_POST['redirect_to']) . '#comment-' . $comment_id
+                : get_permalink($post_id) . '#comment-' . $comment_id;
+
+            wp_safe_redirect($redirect_url);
             exit;
         }
     }

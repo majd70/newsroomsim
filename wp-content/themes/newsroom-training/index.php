@@ -1041,6 +1041,184 @@ input[type="file"] {
 .social-card, .news-card {
     overflow: visible !important;
 }
+
+/* Ensure social actions are clickable */
+.social-actions {
+    position: relative;
+    z-index: 100;
+    pointer-events: auto;
+}
+
+.social-actions * {
+    pointer-events: auto;
+}
+
+/* Inline Comments Styling */
+.inline-comments-section {
+    margin-top: 15px;
+    border-top: 1px solid #e9ecef;
+    padding-top: 15px;
+    background-color: #f8f9fa;
+    border-radius: 0 0 8px 8px;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 500px;
+        padding-top: 15px;
+    }
+}
+
+.comments-container {
+    padding: 0 15px 15px;
+}
+
+.comments-header h6 {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.comments-list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.comment-item {
+    background: white !important;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+}
+
+.comment-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+.comment-item:last-child {
+    margin-bottom: 0;
+}
+
+.inline-comment-form {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.inline-comment-form textarea {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.2s ease;
+}
+
+.inline-comment-form textarea:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.social-action-btn {
+    background: none;
+    border: none;
+    color: #6c757d;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.social-action-btn:hover {
+    background-color: #e9ecef;
+    color: #495057;
+    text-decoration: none;
+}
+
+.social-action-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.social-action-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.social-actions {
+    padding: 10px 15px;
+    border-top: 1px solid #e9ecef;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* Loading states */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Comment count styling */
+.comments-count {
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .comments-container {
+        padding: 0 10px 10px;
+    }
+
+    .inline-comment-form {
+        padding: 10px;
+    }
+
+    .social-action-btn {
+        font-size: 13px;
+        padding: 6px 10px;
+        margin-right: 5px;
+    }
+
+    .comments-list {
+        max-height: 300px;
+    }
+}
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

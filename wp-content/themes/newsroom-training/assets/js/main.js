@@ -1,17 +1,85 @@
 // Newsroom Training Platform - Main JavaScript
 
+/**
+ * Global functions for inline onclick handlers - Define immediately
+ * These need to be available before DOMContentLoaded
+ */
+function handleReplyClick(postId) {
+    console.log('🎯 Global reply handler called for post:', postId);
+    if (typeof toggleInlineCommentForm === 'function') {
+        toggleInlineCommentForm(postId);
+    } else {
+        console.error('❌ toggleInlineCommentForm function not found');
+        // Fallback: try to show elements directly
+        showCommentsSection(postId, true);
+    }
+}
+
+function handleCommentsClick(postId) {
+    console.log('🎯 Global comments handler called for post:', postId);
+
+    // Debug: List all elements with this post ID
+    const allElements = document.querySelectorAll(`[id*="${postId}"]`);
+    console.log('🔍 All elements with post ID', postId, ':', allElements);
+
+    if (typeof toggleCommentsSection === 'function') {
+        toggleCommentsSection(postId);
+    } else {
+        console.error('❌ toggleCommentsSection function not found');
+        // Fallback: try to show elements directly
+        showCommentsSection(postId, false);
+    }
+}
+
+/**
+ * Fallback function to show comments section directly
+ */
+function showCommentsSection(postId, showForm) {
+    console.log('🔧 Fallback: Showing comments section for post:', postId);
+
+    const commentsSection = document.getElementById(`comments-section-${postId}`);
+    const commentForm = document.getElementById(`comment-form-${postId}`);
+
+    if (commentsSection) {
+        commentsSection.style.display = 'block';
+        commentsSection.style.visibility = 'visible';
+        commentsSection.style.opacity = '1';
+        console.log('✅ Comments section shown');
+    }
+
+    if (showForm && commentForm) {
+        commentForm.style.display = 'block';
+        commentForm.style.visibility = 'visible';
+        commentForm.style.opacity = '1';
+        console.log('✅ Comment form shown');
+
+        const textarea = commentForm.querySelector('textarea');
+        if (textarea) {
+            setTimeout(() => textarea.focus(), 100);
+        }
+    }
+}
+
+// Also assign to window for extra safety
+window.handleReplyClick = handleReplyClick;
+window.handleCommentsClick = handleCommentsClick;
+window.showCommentsSection = showCommentsSection;
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize content type tabs for create content page
     initContentTypeTabs();
-    
+
     // Initialize form handling
     initFormHandling();
-    
+
     // Initialize auto-refresh for admin panel
     initAutoRefresh();
-    
+
     // Initialize responsive behaviors
     initResponsiveBehaviors();
+
+    // Initialize inline commenting
+    initInlineCommenting();
 });
 
 /**
@@ -317,3 +385,431 @@ function initPerformanceMonitoring() {
 
 // Initialize performance monitoring
 initPerformanceMonitoring();
+
+/**
+ * Initialize inline commenting functionality
+ */
+function initInlineCommenting() {
+    console.log('🔧 Initializing inline commenting...');
+
+    // Check if newsroom_ajax is available
+    if (typeof newsroom_ajax === 'undefined') {
+        console.error('❌ newsroom_ajax object not found! Scripts may not be loaded properly.');
+        return;
+    }
+
+    console.log('✅ newsroom_ajax object found:', newsroom_ajax);
+
+    // Handle reply button clicks
+    document.addEventListener('click', function(event) {
+        console.log('👆 Click detected on:', event.target);
+
+        if (event.target.closest('.inline-reply-btn')) {
+            console.log('✅ Reply button clicked!');
+            event.preventDefault();
+            const button = event.target.closest('.inline-reply-btn');
+            const postId = button.getAttribute('data-post-id');
+            console.log('📝 Post ID:', postId);
+            toggleInlineCommentForm(postId);
+        }
+
+        // Handle view comments button clicks
+        if (event.target.closest('.view-comments-btn')) {
+            console.log('✅ Comments button clicked!');
+            event.preventDefault();
+            const button = event.target.closest('.view-comments-btn');
+            const postId = button.getAttribute('data-post-id');
+            console.log('📝 Post ID:', postId);
+            toggleCommentsSection(postId);
+        }
+
+        // Handle cancel comment button clicks
+        if (event.target.closest('.cancel-comment-btn')) {
+            console.log('✅ Cancel button clicked!');
+            event.preventDefault();
+            const button = event.target.closest('.cancel-comment-btn');
+            const form = button.closest('.inline-comment-form');
+            hideCommentForm(form);
+        }
+    });
+
+    // Handle comment form submissions (AJAX only for specific forms)
+    document.addEventListener('submit', function(event) {
+        if (event.target.classList.contains('add-comment-form-inline')) {
+            event.preventDefault();
+            submitInlineComment(event.target);
+        }
+    });
+
+    // Load initial comment counts
+    loadCommentCounts();
+
+    // Debug: Check if buttons exist
+    setTimeout(() => {
+        const replyButtons = document.querySelectorAll('.inline-reply-btn');
+        const commentButtons = document.querySelectorAll('.view-comments-btn');
+        console.log('🔍 Found reply buttons:', replyButtons.length);
+        console.log('🔍 Found comment buttons:', commentButtons.length);
+
+        // Add direct event listeners as backup
+        replyButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                console.log('🎯 Direct reply button click!');
+                e.preventDefault();
+                const postId = this.getAttribute('data-post-id');
+                toggleInlineCommentForm(postId);
+            });
+        });
+
+        commentButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                console.log('🎯 Direct comment button click!');
+                e.preventDefault();
+                const postId = this.getAttribute('data-post-id');
+                toggleCommentsSection(postId);
+            });
+        });
+    }, 1000);
+}
+
+/**
+ * Toggle inline comment form visibility
+ */
+function toggleInlineCommentForm(postId) {
+    console.log('🔍 Looking for elements for post:', postId);
+    const commentsSection = document.getElementById(`comments-section-${postId}`);
+    const commentForm = document.getElementById(`comment-form-${postId}`);
+
+    console.log('📦 Comments section:', commentsSection);
+    console.log('📝 Comment form:', commentForm);
+
+    if (!commentsSection) {
+        console.error('❌ Comments section not found for post:', postId);
+        return;
+    }
+
+    if (!commentForm) {
+        console.error('❌ Comment form not found for post:', postId);
+        return;
+    }
+
+    // Show comments section if hidden
+    console.log('📊 Comments section current display:', commentsSection.style.display);
+    if (commentsSection.style.display === 'none' || commentsSection.style.display === '') {
+        console.log('👁️ Showing comments section');
+        commentsSection.style.display = 'block';
+        commentsSection.style.visibility = 'visible';
+        commentsSection.style.opacity = '1';
+        loadPostComments(postId);
+    }
+
+    // Toggle comment form
+    console.log('📊 Comment form current display:', commentForm.style.display);
+    if (commentForm.style.display === 'none' || commentForm.style.display === '') {
+        console.log('📝 Showing comment form');
+        commentForm.style.display = 'block';
+        commentForm.style.visibility = 'visible';
+        commentForm.style.opacity = '1';
+
+        // Force a reflow
+        commentForm.offsetHeight;
+
+        const textarea = commentForm.querySelector('textarea');
+        if (textarea) {
+            console.log('🎯 Focusing on textarea');
+            setTimeout(() => textarea.focus(), 100);
+        }
+    } else {
+        console.log('🙈 Hiding comment form');
+        commentForm.style.display = 'none';
+    }
+}
+
+/**
+ * Toggle comments section visibility
+ */
+function toggleCommentsSection(postId) {
+    console.log('🔍 Looking for comments section:', `comments-section-${postId}`);
+    const commentsSection = document.getElementById(`comments-section-${postId}`);
+
+    if (!commentsSection) {
+        console.error('❌ Comments section not found for post:', postId);
+        return;
+    }
+
+    console.log('✅ Comments section found:', commentsSection);
+    console.log('📊 Current display style:', commentsSection.style.display);
+
+    if (commentsSection.style.display === 'none' || commentsSection.style.display === '') {
+        console.log('👁️ Showing comments section');
+        commentsSection.style.display = 'block';
+        commentsSection.style.visibility = 'visible';
+        commentsSection.style.opacity = '1';
+
+        // Force a reflow
+        commentsSection.offsetHeight;
+
+        loadPostComments(postId);
+    } else {
+        console.log('🙈 Hiding comments section');
+        commentsSection.style.display = 'none';
+    }
+}
+
+/**
+ * Hide comment form
+ */
+function hideCommentForm(form) {
+    form.style.display = 'none';
+    const textarea = form.querySelector('textarea');
+    if (textarea) {
+        textarea.value = '';
+    }
+}
+
+/**
+ * Submit inline comment via AJAX
+ */
+function submitInlineComment(form) {
+    const postId = form.getAttribute('data-post-id');
+    const textarea = form.querySelector('textarea[name="comment_content"]');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const commentContent = textarea.value.trim();
+
+    if (!commentContent) {
+        showToast('Please enter a comment', 'warning');
+        return;
+    }
+
+    // Disable submit button and show loading state
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Posting...';
+
+    // Prepare form data
+    const formData = new FormData();
+    formData.append('action', 'add_comment_inline');
+    formData.append('post_id', postId);
+    formData.append('comment_content', commentContent);
+    formData.append('nonce', getInlineCommentNonce());
+
+    // Submit via AJAX
+    const ajaxUrl = (typeof newsroom_ajax !== 'undefined' && newsroom_ajax.ajax_url)
+        ? newsroom_ajax.ajax_url
+        : '/wp-admin/admin-ajax.php';
+
+    fetch(ajaxUrl, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Add new comment to the list
+            const commentsList = document.getElementById(`comments-list-${postId}`);
+            if (commentsList) {
+                // Check if there's a "No comments yet" message and remove it
+                const noCommentsMsg = commentsList.querySelector('p.text-muted');
+                if (noCommentsMsg && noCommentsMsg.textContent.includes('No comments yet')) {
+                    noCommentsMsg.remove();
+                }
+                commentsList.insertAdjacentHTML('beforeend', data.data.comment_html);
+            }
+
+            // Update comment count
+            updateCommentCount(postId, 1);
+
+            // Clear form
+            textarea.value = '';
+
+            // Show success message
+            showToast('Comment added successfully!', 'success');
+
+            // Scroll to new comment
+            const newComment = document.getElementById(`comment-${data.data.comment_id}`);
+            if (newComment) {
+                newComment.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                newComment.style.backgroundColor = '#e8f5e8';
+                setTimeout(() => {
+                    newComment.style.backgroundColor = '';
+                }, 2000);
+            }
+        } else {
+            showToast(data.data || 'Failed to add comment', 'error');
+        }
+    })
+    .catch(error => {
+        console.error('Error adding comment:', error);
+        showToast('Error adding comment', 'error');
+    })
+    .finally(() => {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+    });
+}
+
+/**
+ * Load comments for a specific post
+ */
+function loadPostComments(postId) {
+    const commentsList = document.getElementById(`comments-list-${postId}`);
+    const commentsCountElement = document.querySelector(`#comments-section-${postId} .comments-count-number`);
+
+    // Show loading state
+    commentsList.innerHTML = '<div class="text-center py-3"><div class="spinner-border spinner-border-sm"></div> Loading comments...</div>';
+
+    // Prepare form data
+    const formData = new FormData();
+    formData.append('action', 'get_post_comments');
+    formData.append('post_id', postId);
+    formData.append('nonce', getCommentsNonce());
+
+    // Load comments via AJAX
+    const ajaxUrl = (typeof newsroom_ajax !== 'undefined' && newsroom_ajax.ajax_url)
+        ? newsroom_ajax.ajax_url
+        : '/wp-admin/admin-ajax.php';
+
+    fetch(ajaxUrl, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            commentsList.innerHTML = data.data.comments_html || '<p class="text-muted text-center py-3">No comments yet. Be the first to comment!</p>';
+
+            // Update comment count
+            if (commentsCountElement) {
+                commentsCountElement.textContent = data.data.comments_count;
+            }
+            updateCommentCount(postId, 0, data.data.comments_count);
+        } else {
+            commentsList.innerHTML = '<p class="text-danger text-center py-3">Failed to load comments</p>';
+        }
+    })
+    .catch(error => {
+        console.error('Error loading comments:', error);
+        commentsList.innerHTML = '<p class="text-danger text-center py-3">Error loading comments</p>';
+    });
+}
+
+/**
+ * Update comment count display
+ */
+function updateCommentCount(postId, increment = 0, absoluteCount = null) {
+    const countElements = document.querySelectorAll(`[data-post-id="${postId}"] .comments-count`);
+    const numberElements = document.querySelectorAll(`#comments-section-${postId} .comments-count-number`);
+
+    countElements.forEach(element => {
+        if (absoluteCount !== null) {
+            element.textContent = absoluteCount > 0 ? `Comments (${absoluteCount})` : 'Comments';
+        } else if (increment !== 0) {
+            const currentText = element.textContent;
+            const currentCount = parseInt(currentText.match(/\d+/)?.[0] || '0');
+            const newCount = Math.max(0, currentCount + increment);
+            element.textContent = newCount > 0 ? `Comments (${newCount})` : 'Comments';
+        }
+    });
+
+    numberElements.forEach(element => {
+        if (absoluteCount !== null) {
+            element.textContent = absoluteCount;
+        } else if (increment !== 0) {
+            const currentCount = parseInt(element.textContent || '0');
+            element.textContent = Math.max(0, currentCount + increment);
+        }
+    });
+}
+
+/**
+ * Load initial comment counts for all posts
+ */
+function loadCommentCounts() {
+    const commentButtons = document.querySelectorAll('.view-comments-btn');
+
+    commentButtons.forEach(button => {
+        const postId = button.getAttribute('data-post-id');
+        if (postId) {
+            loadCommentCountForPost(postId);
+        }
+    });
+}
+
+/**
+ * Load comment count for a specific post
+ */
+function loadCommentCountForPost(postId) {
+    const formData = new FormData();
+    formData.append('action', 'get_post_comments');
+    formData.append('post_id', postId);
+    formData.append('nonce', getCommentsNonce());
+
+    const ajaxUrl = (typeof newsroom_ajax !== 'undefined' && newsroom_ajax.ajax_url)
+        ? newsroom_ajax.ajax_url
+        : '/wp-admin/admin-ajax.php';
+
+    fetch(ajaxUrl, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            updateCommentCount(postId, 0, data.data.comments_count);
+        }
+    })
+    .catch(error => {
+        console.error('Error loading comment count for post', postId, ':', error);
+    });
+}
+
+/**
+ * Get nonce for inline comments
+ */
+function getInlineCommentNonce() {
+    if (typeof newsroom_ajax !== 'undefined' && newsroom_ajax.add_comment_nonce) {
+        return newsroom_ajax.add_comment_nonce;
+    }
+    console.warn('⚠️ Add comment nonce not found');
+    return '';
+}
+
+/**
+ * Get nonce for getting comments
+ */
+function getCommentsNonce() {
+    if (typeof newsroom_ajax !== 'undefined' && newsroom_ajax.get_comments_nonce) {
+        return newsroom_ajax.get_comments_nonce;
+    }
+    console.warn('⚠️ Get comments nonce not found');
+    return '';
+}
+
+
+
+/**
+ * Debug function to check DOM structure
+ */
+window.debugInlineComments = function() {
+    console.log('🔍 DEBUG: Checking inline comments structure...');
+
+    const commentsSections = document.querySelectorAll('.inline-comments-section');
+    const commentForms = document.querySelectorAll('.inline-comment-form');
+    const replyButtons = document.querySelectorAll('.inline-reply-btn');
+    const commentButtons = document.querySelectorAll('.view-comments-btn');
+
+    console.log('📊 Found elements:');
+    console.log('  - Comments sections:', commentsSections.length);
+    console.log('  - Comment forms:', commentForms.length);
+    console.log('  - Reply buttons:', replyButtons.length);
+    console.log('  - Comment buttons:', commentButtons.length);
+
+    commentsSections.forEach((section, index) => {
+        console.log(`  Section ${index}:`, section.id, 'Display:', section.style.display);
+    });
+
+    commentForms.forEach((form, index) => {
+        console.log(`  Form ${index}:`, form.id, 'Display:', form.style.display);
+    });
+};

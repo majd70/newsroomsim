@@ -157,6 +157,7 @@ while (have_posts()) : the_post();
                             <form id="commentForm" method="post">
                                 <?php wp_nonce_field('add_comment_action', 'add_comment_nonce'); ?>
                                 <input type="hidden" name="post_id" value="<?php echo get_the_ID(); ?>">
+                                <input type="hidden" name="redirect_to" value="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>">
                                 <div class="mb-3">
                                     <textarea name="comment_content"
                                               class="form-control"

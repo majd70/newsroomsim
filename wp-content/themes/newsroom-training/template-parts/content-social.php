@@ -175,10 +175,102 @@ if (function_exists('get_post_meta')) {
             </div>
         <?php endif; ?>
     </div>
-    <div class="social-actions">
-        <a href="<?php echo get_permalink(); ?>" class="social-action-btn">
-            <i class="fas fa-reply me-1"></i> Reply
-        </a>
+    <div class="social-actions" style="position: relative; z-index: 100;">
+        <button type="button" class="social-action-btn">
+            <i class="fas fa-comments me-1"></i>
+            <span class="comments-count"><?php echo $comments_count; ?></span> Comments
+        </button>
+
+        <button type="button" class="social-action-btn">
+            <i class="fas fa-retweet me-1"></i>
+            <span><?php echo $retweets; ?></span> Retweets
+        </button>
+
+        <button type="button" class="social-action-btn">
+            <i class="far fa-heart me-1"></i>
+            <span><?php echo $likes; ?></span> Likes
+        </button>
+    </div>
+
+    <!-- Inline Comments Section - Always Visible -->
+    <div class="inline-comments-section" id="comments-section-<?php echo get_the_ID(); ?>">
+        <div class="comments-container">
+            <?php
+            // Get existing comments for this post
+            $post_comments = get_comments(array(
+                'post_id' => get_the_ID(),
+                'status' => 'approve',
+                'order' => 'ASC'
+            ));
+            $comments_count = count($post_comments);
+            ?>
+
+            <div class="comments-header">
+                <h5 class="mb-3"><i class="fas fa-comments me-2"></i>Comments (<?php echo $comments_count; ?>)</h5>
+            </div>
+
+            <?php if ($post_comments): ?>
+                <div class="comments-list mb-4" id="comments-list-<?php echo get_the_ID(); ?>">
+                    <?php foreach ($post_comments as $comment):
+                        $comment_author = get_userdata($comment->user_id);
+                        // Trainee can delete their own comments, Newsroom Operator and Admin can delete any comment
+                        $can_delete = (get_current_user_id() == $comment->user_id && current_user_can('delete_own_reply'))
+                                   || current_user_can('moderate_comments')
+                                   || current_user_can('delete_others_posts');
+                    ?>
+                        <div class="comment-item border-bottom pb-3 mb-3 bg-white p-3 rounded" id="comment-<?php echo $comment->comment_ID; ?>">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="flex-grow-1">
+                                    <strong><?php echo esc_html($comment_author ? $comment_author->display_name : $comment->comment_author); ?></strong>
+                                    <small class="text-muted ms-2"><?php echo human_time_diff(strtotime($comment->comment_date), current_time('timestamp')) . ' ago'; ?></small>
+                                    <p class="mb-0 mt-1"><?php echo esc_html($comment->comment_content); ?></p>
+                                </div>
+                                <?php if ($can_delete): ?>
+                                    <button type="button"
+                                            class="btn btn-sm btn-danger delete-comment-btn"
+                                            data-comment-id="<?php echo $comment->comment_ID; ?>"
+                                            data-nonce="<?php echo wp_create_nonce('delete_comment_' . $comment->comment_ID); ?>">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php else: ?>
+                <div class="comments-list mb-4" id="comments-list-<?php echo get_the_ID(); ?>">
+                    <p class="text-muted">No comments yet. Be the first to comment!</p>
+                </div>
+            <?php endif; ?>
+
+            <?php
+            // Only Trainee and above can add comments (not Viewer)
+            if (is_user_logged_in() && (current_user_can('add_reply') || current_user_can('edit_posts'))):
+            ?>
+                <div class="add-comment-form bg-white p-3 rounded">
+                    <h6 class="mb-2">Add a Comment</h6>
+                    <form method="post">
+                        <?php wp_nonce_field('add_comment_action', 'add_comment_nonce'); ?>
+                        <input type="hidden" name="post_id" value="<?php echo get_the_ID(); ?>">
+                        <input type="hidden" name="redirect_to" value="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>">
+                        <div class="mb-3">
+                            <textarea name="comment_content"
+                                      class="form-control"
+                                      rows="3"
+                                      placeholder="Write your comment here..."
+                                      required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-1"></i> Post Comment
+                        </button>
+                    </form>
+                </div>
+            <?php elseif (!is_user_logged_in()): ?>
+                <p class="text-muted">Please <a href="<?php echo wp_login_url(get_permalink()); ?>">login</a> to comment.</p>
+            <?php else: ?>
+                <p class="text-muted">You don't have permission to add comments.</p>
+            <?php endif; ?>
+        </div>
     </div>
     
     <?php if ($pinned): ?>
