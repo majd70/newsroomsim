@@ -175,22 +175,6 @@ if (function_exists('get_post_meta')) {
             </div>
         <?php endif; ?>
     </div>
-    <div class="social-actions" style="position: relative; z-index: 100;">
-        <button type="button" class="social-action-btn">
-            <i class="fas fa-comments me-1"></i>
-            <span class="comments-count"><?php echo $comments_count; ?></span> Comments
-        </button>
-
-        <button type="button" class="social-action-btn">
-            <i class="fas fa-retweet me-1"></i>
-            <span><?php echo $retweets; ?></span> Retweets
-        </button>
-
-        <button type="button" class="social-action-btn">
-            <i class="far fa-heart me-1"></i>
-            <span><?php echo $likes; ?></span> Likes
-        </button>
-    </div>
 
     <!-- Inline Comments Section - Always Visible -->
     <div class="inline-comments-section" id="comments-section-<?php echo get_the_ID(); ?>">

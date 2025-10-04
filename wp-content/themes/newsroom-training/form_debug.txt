@@ -1685,3 +1685,56 @@ FILES: Array
 )
 
 
+2025-10-04 20:28:26 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 6331f0deba
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => feferf
+    [insert_author] => erferfrf
+    [insert_text] => rferfref
+    [insert_category] => Breaking News
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+

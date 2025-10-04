@@ -3673,3 +3673,122 @@
 [04-Oct-2025 19:45:27 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
 [04-Oct-2025 19:45:27 UTC] PHP Warning:  Undefined variable $comments_count in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\template-parts\content-social.php on line 181
 [04-Oct-2025 19:45:27 UTC] PHP Warning:  Undefined variable $comments_count in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\template-parts\content-social.php on line 181
+[04-Oct-2025 20:19:19 UTC] ═══════════════════════════════════════════════════
+[04-Oct-2025 20:19:19 UTC] 🔍 DELETE HANDLER CALLED
+[04-Oct-2025 20:19:19 UTC] Request Method: POST
+[04-Oct-2025 20:19:19 UTC] POST data: Array
+(
+    [bulk_delete_nonce] => edf26010ae
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [comment_content] => ززز
+)
+
+[04-Oct-2025 20:19:19 UTC] ❌ delete_ids is empty - exiting
+[04-Oct-2025 20:19:19 UTC] ⚠️ POST request received but content_type missing or empty
+[04-Oct-2025 20:19:19 UTC] POST keys: bulk_delete_nonce, _wp_http_referer, comment_content
+[04-Oct-2025 20:19:20 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[04-Oct-2025 20:19:20 UTC] PHP Warning:  Undefined variable $comments_count in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\template-parts\content-social.php on line 181
+[04-Oct-2025 20:19:20 UTC] PHP Warning:  Undefined variable $comments_count in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\template-parts\content-social.php on line 181
+[04-Oct-2025 20:19:29 UTC] ═══════════════════════════════════════════════════
+[04-Oct-2025 20:19:29 UTC] 🔍 DELETE HANDLER CALLED
+[04-Oct-2025 20:19:29 UTC] Request Method: GET
+[04-Oct-2025 20:19:29 UTC] POST data: Array
+(
+)
+
+[04-Oct-2025 20:19:29 UTC] ❌ Not a POST request - exiting
+[04-Oct-2025 20:19:29 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[04-Oct-2025 20:19:29 UTC] PHP Warning:  Undefined variable $comments_count in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\template-parts\content-social.php on line 181
+[04-Oct-2025 20:19:29 UTC] PHP Warning:  Undefined variable $comments_count in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\template-parts\content-social.php on line 181
+[04-Oct-2025 20:27:14 UTC] ═══════════════════════════════════════════════════
+[04-Oct-2025 20:27:14 UTC] 🔍 DELETE HANDLER CALLED
+[04-Oct-2025 20:27:14 UTC] Request Method: GET
+[04-Oct-2025 20:27:14 UTC] POST data: Array
+(
+)
+
+[04-Oct-2025 20:27:14 UTC] ❌ Not a POST request - exiting
+[04-Oct-2025 20:27:15 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[04-Oct-2025 20:28:26 UTC] ═══════════════════════════════════════════════════
+[04-Oct-2025 20:28:26 UTC] 🔍 DELETE HANDLER CALLED
+[04-Oct-2025 20:28:26 UTC] Request Method: POST
+[04-Oct-2025 20:28:26 UTC] POST data: Array
+(
+    [insert_content_nonce] => 6331f0deba
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => feferf
+    [insert_author] => erferfrf
+    [insert_text] => rferfref
+    [insert_category] => Breaking News
+    [insert_video_url] => 
+)
+
+[04-Oct-2025 20:28:26 UTC] ❌ delete_ids is empty - exiting
+[04-Oct-2025 20:28:26 UTC] === FORM SUBMITTED ===
+[04-Oct-2025 20:28:26 UTC] POST Data: Array
+(
+    [insert_content_nonce] => 6331f0deba
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => feferf
+    [insert_author] => erferfrf
+    [insert_text] => rferfref
+    [insert_category] => Breaking News
+    [insert_video_url] => 
+)
+
+[04-Oct-2025 20:28:26 UTC] FILES Data: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[04-Oct-2025 20:28:26 UTC] Content Type: news_article
+[04-Oct-2025 20:28:26 UTC] Edit Mode: NO
+[04-Oct-2025 20:28:26 UTC] Creating news article: feferf
+[04-Oct-2025 20:28:26 UTC] News article created successfully: 227
+[04-Oct-2025 20:28:26 UTC] ✅ Post created successfully! Redirecting...
+[04-Oct-2025 20:28:26 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[04-Oct-2025 20:28:27 UTC] ═══════════════════════════════════════════════════
+[04-Oct-2025 20:28:27 UTC] 🔍 DELETE HANDLER CALLED
+[04-Oct-2025 20:28:27 UTC] Request Method: GET
+[04-Oct-2025 20:28:27 UTC] POST data: Array
+(
+)
+
+[04-Oct-2025 20:28:27 UTC] ❌ Not a POST request - exiting

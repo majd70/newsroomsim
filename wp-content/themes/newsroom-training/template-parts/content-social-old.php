@@ -82,21 +82,6 @@ if (function_exists('get_post_meta')) {
             </div>
         <?php endif; ?>
     </div>
-    <div class="social-actions">
-        <?php if ($platform === 'twitter'): ?>
-            <span class="social-action"><i class="fas fa-comment"></i> <?php echo $comments; ?></span>
-            <span class="social-action"><i class="fas fa-retweet"></i> <?php echo $retweets; ?></span>
-            <span class="social-action"><i class="fas fa-heart"></i> <?php echo $likes; ?></span>
-        <?php elseif ($platform === 'facebook'): ?>
-            <span class="social-action"><i class="fas fa-thumbs-up"></i> <?php echo $likes; ?> Likes</span>
-            <span class="social-action"><i class="fas fa-comment"></i> <?php echo $comments; ?> Comments</span>
-            <span class="social-action"><i class="fas fa-share"></i> <?php echo $retweets; ?> Shares</span>
-        <?php elseif ($platform === 'instagram'): ?>
-            <span class="social-action"><i class="fas fa-heart"></i> <?php echo $likes; ?></span>
-            <span class="social-action"><i class="fas fa-comment"></i> <?php echo $comments; ?></span>
-            <span class="social-action"><i class="fas fa-paper-plane"></i></span>
-        <?php endif; ?>
-    </div>
     
     <?php if ($pinned): ?>
         <div class="pinned-badge">

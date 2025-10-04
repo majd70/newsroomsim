@@ -24,9 +24,5 @@ $shares = (int) get_post_meta(get_the_ID(), '_sb_shares', true );
   <?php if ($media): ?>
   <div class="sb-social-media"><img src="<?php echo $media; ?>" alt=""></div>
   <?php endif; ?>
-  <div class="sb-social-actions">
-    <span>❤ <?php echo $likes; ?></span>
-    <span>💬 <?php echo $comments; ?></span>
-    <span>🔁 <?php echo $shares; ?></span>
-  </div>
+
 </article>
