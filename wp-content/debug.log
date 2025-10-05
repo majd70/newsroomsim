@@ -4300,3 +4300,12 @@
 
 [04-Oct-2025 21:47:31 UTC] ❌ Not a POST request - exiting
 [04-Oct-2025 21:47:31 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[05-Oct-2025 10:58:11 UTC] ═══════════════════════════════════════════════════
+[05-Oct-2025 10:58:11 UTC] 🔍 DELETE HANDLER CALLED
+[05-Oct-2025 10:58:11 UTC] Request Method: GET
+[05-Oct-2025 10:58:11 UTC] POST data: Array
+(
+)
+
+[05-Oct-2025 10:58:11 UTC] ❌ Not a POST request - exiting
+[05-Oct-2025 10:58:11 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463

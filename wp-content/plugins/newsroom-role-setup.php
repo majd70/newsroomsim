@@ -22,8 +22,9 @@ function newsroom_role_setup_menu() {
 
 // Admin page content
 function newsroom_role_setup_page() {
-    if (!current_user_can('manage_options')) {
-        wp_die('You do not have permission to access this page.');
+    // Allow any logged in user to access this page for setup
+    if (!is_user_logged_in()) {
+        wp_die('You must be logged in to access this page.');
     }
 
     // Handle form submission
