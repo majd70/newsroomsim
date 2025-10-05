@@ -519,7 +519,7 @@ if (function_exists('get_header')) {
                   <button class="nav-link active" id="news-tab" data-bs-toggle="tab" data-bs-target="#news-content" type="button" role="tab" aria-controls="news-content" aria-selected="true">News Article</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="twitter-tab" data-bs-toggle="tab" data-bs-target="#twitter-content" type="button" role="tab" aria-controls="twitter-content" aria-selected="false">X (Twitter)</button>
+                  <button class="nav-link" id="twitter-tab" data-bs-toggle="tab" data-bs-target="#twitter-content" type="button" role="tab" aria-controls="twitter-content" aria-selected="false">X</button>
                 </li>
                 <li class="nav-item" role="presentation">
                   <button class="nav-link" id="facebook-tab" data-bs-toggle="tab" data-bs-target="#facebook-content" type="button" role="tab" aria-controls="facebook-content" aria-selected="false">Facebook</button>
@@ -676,7 +676,7 @@ if (function_exists('get_header')) {
           <form id="editTwitterForm" method="post" enctype="multipart/form-data">
             <?php wp_nonce_field('insert_content_action', 'insert_content_nonce'); ?>
             <div class="modal-header">
-              <h5 class="modal-title" id="editTwitterModalLabel">Edit X (Twitter) Post</h5>
+              <h5 class="modal-title" id="editTwitterModalLabel">Edit X Post</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -1797,7 +1797,7 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
                       <button class="nav-link active" id="news-tab-sa" data-bs-toggle="tab" data-bs-target="#news-content-sa" type="button" role="tab" aria-controls="news-content-sa" aria-selected="true">News Article</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="twitter-tab-sa" data-bs-toggle="tab" data-bs-target="#twitter-content-sa" type="button" role="tab" aria-controls="twitter-content-sa" aria-selected="false">X (Twitter)</button>
+                      <button class="nav-link" id="twitter-tab-sa" data-bs-toggle="tab" data-bs-target="#twitter-content-sa" type="button" role="tab" aria-controls="twitter-content-sa" aria-selected="false">X</button>
                     </li>
                     <li class="nav-item" role="presentation">
                       <button class="nav-link" id="facebook-tab-sa" data-bs-toggle="tab" data-bs-target="#facebook-content-sa" type="button" role="tab" aria-controls="facebook-content-sa" aria-selected="false">Facebook</button>

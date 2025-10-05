@@ -1047,7 +1047,7 @@ function newsroom_admin_create_content_page() {
         <!-- Content Type Tabs -->
         <h2 class="nav-tab-wrapper">
             <a href="#news-tab" class="nav-tab nav-tab-active" id="news-tab-btn"><?php _e('News Article', 'newsroom-training'); ?></a>
-            <a href="#twitter-tab" class="nav-tab" id="twitter-tab-btn"><?php _e('X (Twitter)', 'newsroom-training'); ?></a>
+            <a href="#twitter-tab" class="nav-tab" id="twitter-tab-btn"><?php _e('X', 'newsroom-training'); ?></a>
             <a href="#facebook-tab" class="nav-tab" id="facebook-tab-btn"><?php _e('Facebook', 'newsroom-training'); ?></a>
             <a href="#instagram-tab" class="nav-tab" id="instagram-tab-btn"><?php _e('Instagram', 'newsroom-training'); ?></a>
         </h2>

@@ -853,55 +853,52 @@ document.addEventListener('submit', function(event) {
 });
 
 /**
- * Handle comment deletion
+ * Handle comment deletion - DISABLED
+ * Comment deletion is now handled by SweetAlert in footer.php
  */
-document.addEventListener('click', function(event) {
-    if (event.target.closest('.delete-comment-btn')) {
-        event.preventDefault();
-        const button = event.target.closest('.delete-comment-btn');
-        const commentId = button.getAttribute('data-comment-id');
-        const nonce = button.getAttribute('data-nonce');
+// document.addEventListener('click', function(event) {
+//     if (event.target.closest('.delete-comment-btn')) {
+//         event.preventDefault();
+//         const button = event.target.closest('.delete-comment-btn');
+//         const commentId = button.getAttribute('data-comment-id');
+//         const nonce = button.getAttribute('data-nonce');
 
-        if (!confirm('Are you sure you want to delete this comment?')) {
-            return;
-        }
+//         // Prepare form data
+//         const formData = new FormData();
+//         formData.append('action', 'delete_comment');
+//         formData.append('comment_id', commentId);
+//         formData.append('nonce', nonce);
 
-        // Prepare form data
-        const formData = new FormData();
-        formData.append('action', 'delete_comment');
-        formData.append('comment_id', commentId);
-        formData.append('nonce', nonce);
+//         // Get AJAX URL
+//         const ajaxUrl = (typeof newsroom_ajax !== 'undefined' && newsroom_ajax.ajax_url)
+//             ? newsroom_ajax.ajax_url
+//             : '/wp-admin/admin-ajax.php';
 
-        // Get AJAX URL
-        const ajaxUrl = (typeof newsroom_ajax !== 'undefined' && newsroom_ajax.ajax_url)
-            ? newsroom_ajax.ajax_url
-            : '/wp-admin/admin-ajax.php';
-
-        // Submit deletion request
-        fetch(ajaxUrl, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // Remove the comment from DOM
-                const commentElement = document.getElementById(`comment-${commentId}`);
-                if (commentElement) {
-                    commentElement.remove();
-                }
-                // Optionally show success message
-                console.log('Comment deleted successfully');
-            } else {
-                alert('Error deleting comment: ' + (data.data || 'Unknown error'));
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Error deleting comment');
-        });
-    }
-});
+//         // Submit deletion request
+//         fetch(ajaxUrl, {
+//             method: 'POST',
+//             body: formData
+//         })
+//         .then(response => response.json())
+//         .then(data => {
+//             if (data.success) {
+//                 // Remove the comment from DOM
+//                 const commentElement = document.getElementById(`comment-${commentId}`);
+//                 if (commentElement) {
+//                     commentElement.remove();
+//                 }
+//                 // Optionally show success message
+//                 console.log('Comment deleted successfully');
+//             } else {
+//                 alert('Error deleting comment: ' + (data.data || 'Unknown error'));
+//             }
+//         })
+//         .catch(error => {
+//             console.error('Error:', error);
+//             alert('Error deleting comment');
+//         });
+//     }
+// });
 
 /**
  * Debug function to check DOM structure

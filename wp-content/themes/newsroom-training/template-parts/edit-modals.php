@@ -1,11 +1,11 @@
-<!-- Edit X (Twitter) Modal -->
+<!-- Edit X Modal -->
 <div class="modal fade" id="editTwitterModal" tabindex="-1" aria-labelledby="editTwitterModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <form id="editTwitterForm" method="post" enctype="multipart/form-data">
         <?php wp_nonce_field('insert_content_action', 'insert_content_nonce'); ?>
         <div class="modal-header">
-          <h5 class="modal-title" id="editTwitterModalLabel">Edit X (Twitter) Post</h5>
+          <h5 class="modal-title" id="editTwitterModalLabel">Edit X Post</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
