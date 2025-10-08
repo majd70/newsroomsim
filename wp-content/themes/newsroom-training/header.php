@@ -82,15 +82,6 @@
                     $can_create_content = in_array($GLOBALS['user']['role'], ['administrator', 'newsroom_operator']);
                 }
 
-                // Show "Create Content" for Administrator and Newsroom Operator only
-                if ($can_create_content):
-                ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo function_exists('admin_url') ? admin_url('admin.php?page=newsroom-create-content') : 'create-content.php'; ?>">Create Content</a>
-                </li>
-                <?php endif; ?>
-
-                <?php
                 // Show "Admin" for Administrator only
                 if ($is_admin):
                 ?>
@@ -99,9 +90,7 @@
                 </li>
                 <?php endif; ?>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo function_exists('home_url') ? home_url() : '/'; ?>">Blog</a>
-                </li>
+
             </ul>
             <ul class="navbar-nav">
                 <?php 

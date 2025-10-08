@@ -479,20 +479,20 @@ if (function_exists('get_header')) {
     <!-- Action Buttons -->
     <div class="d-flex justify-content-end gap-2 mb-3">
         <?php
+        // Only Newsroom Operator and Administrator can publish posts
+        if (current_user_can('publish_posts')):
+        ?>
+        <button type="button" class="btn btn-publish-post" data-bs-toggle="modal" data-bs-target="#insertModal">
+            <i class="fas fa-plus-circle me-2"></i>Create post
+        </button>
+        <?php endif; ?>
+
+        <?php
         // Only Newsroom Operator and Administrator can delete all posts
         if (current_user_can('delete_others_posts')):
         ?>
         <button type="button" class="btn btn-danger" id="deleteAllPostsBtn" data-nonce="<?php echo wp_create_nonce('delete_all_posts_nonce'); ?>">
             <i class="fas fa-trash-alt me-2"></i>Delete All Posts
-        </button>
-        <?php endif; ?>
-
-        <?php
-        // Only Newsroom Operator and Administrator can publish posts
-        if (current_user_can('publish_posts')):
-        ?>
-        <button type="button" class="btn btn-publish-post" data-bs-toggle="modal" data-bs-target="#insertModal">
-            <i class="fas fa-plus-circle me-2"></i>Publish Post
         </button>
         <?php endif; ?>
     </div>
@@ -519,7 +519,7 @@ if (function_exists('get_header')) {
                   <button class="nav-link active" id="news-tab" data-bs-toggle="tab" data-bs-target="#news-content" type="button" role="tab" aria-controls="news-content" aria-selected="true">News Article</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="twitter-tab" data-bs-toggle="tab" data-bs-target="#twitter-content" type="button" role="tab" aria-controls="twitter-content" aria-selected="false">X</button>
+                  <button class="nav-link" id="twitter-tab" data-bs-toggle="tab" data-bs-target="#twitter-content" type="button" role="tab" aria-controls="twitter-content" aria-selected="false">X (Twitter)</button>
                 </li>
                 <li class="nav-item" role="presentation">
                   <button class="nav-link" id="facebook-tab" data-bs-toggle="tab" data-bs-target="#facebook-content" type="button" role="tab" aria-controls="facebook-content" aria-selected="false">Facebook</button>
@@ -662,7 +662,7 @@ if (function_exists('get_header')) {
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-primary" name="submit_insert" value="1">Publish Post</button>
+              <button type="submit" class="btn btn-primary" name="submit_insert" value="1">Create post</button>
             </div>
           </form>
         </div>
@@ -676,7 +676,7 @@ if (function_exists('get_header')) {
           <form id="editTwitterForm" method="post" enctype="multipart/form-data">
             <?php wp_nonce_field('insert_content_action', 'insert_content_nonce'); ?>
             <div class="modal-header">
-              <h5 class="modal-title" id="editTwitterModalLabel">Edit X Post</h5>
+              <h5 class="modal-title" id="editTwitterModalLabel">Edit X (Twitter) Post</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -908,7 +908,7 @@ if (function_exists('get_header')) {
 </div>
 
 <style>
-/* Fancy Publish Post Button */
+/* Fancy Create Post Button */
 .btn-publish-post {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -1468,7 +1468,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 let submitBtnReset = insertForm.querySelector('button[type="submit"]');
                 if (submitBtnReset) {
                     submitBtnReset.disabled = false;
-                    submitBtnReset.innerHTML = 'Publish Post';
+                    submitBtnReset.innerHTML = 'Create post';
                 }
 
                 // Clear image previews and selected files
@@ -1486,7 +1486,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('edit_post_id_field').value = '';
                 let submitBtnModal = insertForm.querySelector('button[type="submit"]');
                 if (submitBtnModal) {
-                    submitBtnModal.textContent = 'Publish Post';
+                    submitBtnModal.textContent = 'Create post';
                 }
             });
         }
@@ -1775,10 +1775,10 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
     get_header(); ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <div class="container mt-4">
-        <!-- Publish Post Button -->
+        <!-- Create Post Button -->
         <div class="d-flex justify-content-end mb-3">
             <button type="button" class="btn btn-publish-post" data-bs-toggle="modal" data-bs-target="#insertModal">
-                <i class="fas fa-plus-circle me-2"></i>Publish Post
+                <i class="fas fa-plus-circle me-2"></i>Create post
             </button>
         </div>
         <!-- Insert Modal (Same as WordPress mode) -->
@@ -1797,7 +1797,7 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
                       <button class="nav-link active" id="news-tab-sa" data-bs-toggle="tab" data-bs-target="#news-content-sa" type="button" role="tab" aria-controls="news-content-sa" aria-selected="true">News Article</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="twitter-tab-sa" data-bs-toggle="tab" data-bs-target="#twitter-content-sa" type="button" role="tab" aria-controls="twitter-content-sa" aria-selected="false">X</button>
+                      <button class="nav-link" id="twitter-tab-sa" data-bs-toggle="tab" data-bs-target="#twitter-content-sa" type="button" role="tab" aria-controls="twitter-content-sa" aria-selected="false">X (Twitter)</button>
                     </li>
                     <li class="nav-item" role="presentation">
                       <button class="nav-link" id="facebook-tab-sa" data-bs-toggle="tab" data-bs-target="#facebook-content-sa" type="button" role="tab" aria-controls="facebook-content-sa" aria-selected="false">Facebook</button>
@@ -1925,7 +1925,7 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                  <button type="submit" class="btn btn-primary" name="submit_insert" value="1">Publish Post</button>
+                  <button type="submit" class="btn btn-primary" name="submit_insert" value="1">Create post</button>
                 </div>
               </form>
             </div>
@@ -1976,7 +1976,7 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
     </div>
 
     <style>
-    /* Fancy Publish Post Button */
+    /* Fancy Create Post Button */
     .btn-publish-post {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;

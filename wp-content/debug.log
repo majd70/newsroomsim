@@ -4667,3 +4667,62 @@
 )
 
 [05-Oct-2025 12:45:02 UTC] ❌ Not a POST request - exiting
+[06-Oct-2025 16:41:04 UTC] ═══════════════════════════════════════════════════
+[06-Oct-2025 16:41:04 UTC] 🔍 DELETE HANDLER CALLED
+[06-Oct-2025 16:41:04 UTC] Request Method: GET
+[06-Oct-2025 16:41:04 UTC] POST data: Array
+(
+)
+
+[06-Oct-2025 16:41:04 UTC] ❌ Not a POST request - exiting
+[06-Oct-2025 16:41:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\header.php on line 87
+[06-Oct-2025 16:42:46 UTC] ═══════════════════════════════════════════════════
+[06-Oct-2025 16:42:46 UTC] 🔍 DELETE HANDLER CALLED
+[06-Oct-2025 16:42:46 UTC] Request Method: GET
+[06-Oct-2025 16:42:46 UTC] POST data: Array
+(
+)
+
+[06-Oct-2025 16:42:46 UTC] ❌ Not a POST request - exiting
+[06-Oct-2025 16:42:46 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\header.php on line 87
+[06-Oct-2025 16:44:12 UTC] ═══════════════════════════════════════════════════
+[06-Oct-2025 16:44:12 UTC] 🔍 DELETE HANDLER CALLED
+[06-Oct-2025 16:44:12 UTC] Request Method: GET
+[06-Oct-2025 16:44:12 UTC] POST data: Array
+(
+)
+
+[06-Oct-2025 16:44:12 UTC] ❌ Not a POST request - exiting
+[06-Oct-2025 16:44:12 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[06-Oct-2025 16:47:14 UTC] ═══════════════════════════════════════════════════
+[06-Oct-2025 16:47:14 UTC] 🔍 DELETE HANDLER CALLED
+[06-Oct-2025 16:47:14 UTC] Request Method: GET
+[06-Oct-2025 16:47:14 UTC] POST data: Array
+(
+)
+
+[06-Oct-2025 16:47:14 UTC] ❌ Not a POST request - exiting
+[06-Oct-2025 16:47:14 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[06-Oct-2025 16:47:24 UTC] ═══════════════════════════════════════════════════
+[06-Oct-2025 16:47:24 UTC] 🔍 DELETE HANDLER CALLED
+[06-Oct-2025 16:47:24 UTC] Request Method: GET
+[06-Oct-2025 16:47:24 UTC] POST data: Array
+(
+)
+
+[06-Oct-2025 16:47:24 UTC] ❌ Not a POST request - exiting
+[06-Oct-2025 16:47:24 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[06-Oct-2025 18:46:15 UTC] ═══════════════════════════════════════════════════
+[06-Oct-2025 18:46:15 UTC] 🔍 DELETE HANDLER CALLED
+[06-Oct-2025 18:46:15 UTC] Request Method: GET
+[06-Oct-2025 18:46:15 UTC] POST data: Array
+(
+)
+
+[06-Oct-2025 18:46:15 UTC] ❌ Not a POST request - exiting
+[06-Oct-2025 18:46:15 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[06-Oct-2025 18:46:18 UTC] Trainee notifier: wp_mail_failed: Array
+(
+    [0] => Could not instantiate mail function.
+)
+
