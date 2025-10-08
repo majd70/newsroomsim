@@ -192,7 +192,6 @@ if ( current_user_can('delete_others_posts') ):
                             data-headline="<?php echo esc_attr($headline); ?>"
                             data-author="<?php echo esc_attr($author_name); ?>"
                             data-body="<?php echo esc_attr($clean_body); ?>"
-                            data-category="<?php echo esc_attr($category_name); ?>"
                             data-breaking="<?php echo $breaking ? '1' : '0'; ?>"
                             data-video="<?php echo esc_attr($video_embed); ?>"
                             title="Edit Post">

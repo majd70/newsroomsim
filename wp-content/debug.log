@@ -4726,3 +4726,271 @@
     [0] => Could not instantiate mail function.
 )
 
+[08-Oct-2025 17:46:56 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 17:46:56 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 17:46:56 UTC] Request Method: GET
+[08-Oct-2025 17:46:56 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 17:46:56 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 17:46:56 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 17:57:44 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 17:57:44 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 17:57:44 UTC] Request Method: GET
+[08-Oct-2025 17:57:44 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 17:57:44 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 17:57:44 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 17:58:29 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 17:58:29 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 17:58:29 UTC] Request Method: POST
+[08-Oct-2025 17:58:29 UTC] POST data: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => tt
+    [insert_author] => ttt
+    [insert_text] => tttt
+    [insert_video_url] => 
+)
+
+[08-Oct-2025 17:58:29 UTC] ❌ delete_ids is empty - exiting
+[08-Oct-2025 17:58:29 UTC] === FORM SUBMITTED ===
+[08-Oct-2025 17:58:29 UTC] POST Data: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => tt
+    [insert_author] => ttt
+    [insert_text] => tttt
+    [insert_video_url] => 
+)
+
+[08-Oct-2025 17:58:29 UTC] FILES Data: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[08-Oct-2025 17:58:29 UTC] Content Type: news_article
+[08-Oct-2025 17:58:29 UTC] Edit Mode: NO
+[08-Oct-2025 17:58:29 UTC] Creating news article: tt
+[08-Oct-2025 17:58:29 UTC] News article created successfully: 234
+[08-Oct-2025 17:58:29 UTC] ✅ Post created successfully! Redirecting...
+[08-Oct-2025 17:58:29 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[08-Oct-2025 17:58:30 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 17:58:30 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 17:58:30 UTC] Request Method: GET
+[08-Oct-2025 17:58:30 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 17:58:30 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:01:27 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:01:27 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:01:27 UTC] Request Method: GET
+[08-Oct-2025 18:01:27 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:01:27 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:01:27 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 18:02:09 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:02:09 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:02:09 UTC] Request Method: GET
+[08-Oct-2025 18:02:09 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:02:09 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:02:09 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 18:06:38 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:06:38 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:06:38 UTC] Request Method: GET
+[08-Oct-2025 18:06:38 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:06:38 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:06:38 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 18:08:02 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:08:02 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:08:02 UTC] Request Method: GET
+[08-Oct-2025 18:08:02 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:08:02 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:08:02 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 18:09:03 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:09:03 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:09:03 UTC] Request Method: GET
+[08-Oct-2025 18:09:03 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:09:03 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:09:03 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 18:09:10 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:09:10 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:09:10 UTC] Request Method: GET
+[08-Oct-2025 18:09:10 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:09:10 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:09:10 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 18:09:18 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:09:18 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:09:18 UTC] Request Method: GET
+[08-Oct-2025 18:09:18 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:09:18 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:09:22 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:09:22 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:09:22 UTC] Request Method: GET
+[08-Oct-2025 18:09:22 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:09:22 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:09:22 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 18:09:32 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:09:32 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:09:32 UTC] Request Method: GET
+[08-Oct-2025 18:09:32 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:09:32 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:09:32 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 18:10:03 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:10:03 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:10:03 UTC] Request Method: GET
+[08-Oct-2025 18:10:03 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:10:03 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 18:10:03 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 18:10:24 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:10:24 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:10:24 UTC] Request Method: POST
+[08-Oct-2025 18:10:24 UTC] POST data: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => x
+    [insert_handle] => x
+    [insert_text] => x
+)
+
+[08-Oct-2025 18:10:24 UTC] ❌ delete_ids is empty - exiting
+[08-Oct-2025 18:10:24 UTC] === FORM SUBMITTED ===
+[08-Oct-2025 18:10:24 UTC] POST Data: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => x
+    [insert_handle] => x
+    [insert_text] => x
+)
+
+[08-Oct-2025 18:10:24 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => client_search.png
+                )
+
+            [full_path] => Array
+                (
+                    [0] => client_search.png
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php69A4.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 43437
+                )
+
+        )
+
+)
+
+[08-Oct-2025 18:10:24 UTC] Content Type: social_twitter
+[08-Oct-2025 18:10:24 UTC] Edit Mode: NO
+[08-Oct-2025 18:10:24 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68e6a910262f1.png
+[08-Oct-2025 18:10:24 UTC] Creating social post: twitter - x
+[08-Oct-2025 18:10:24 UTC] Media images (1): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68e6a910262f1.png
+[08-Oct-2025 18:10:24 UTC] Social post created successfully: 235
+[08-Oct-2025 18:10:24 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68e6a910262f1.png"]
+[08-Oct-2025 18:10:24 UTC] ✅ Post created successfully! Redirecting...
+[08-Oct-2025 18:10:24 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[08-Oct-2025 18:10:24 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 18:10:24 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 18:10:24 UTC] Request Method: GET
+[08-Oct-2025 18:10:24 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 18:10:24 UTC] ❌ Not a POST request - exiting

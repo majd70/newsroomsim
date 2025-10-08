@@ -123,7 +123,6 @@ while (have_posts()) : the_post();
                                         data-headline="<?php echo esc_attr(get_the_title()); ?>"
                                         data-author="<?php echo esc_attr($author_name); ?>"
                                         data-body="<?php echo esc_attr($clean_body); ?>"
-                                        data-category="<?php echo esc_attr($category_name); ?>"
                                         data-breaking="<?php echo $breaking ? '1' : '0'; ?>"
                                         data-video="<?php echo esc_attr($video_embed); ?>"
                                         title="Edit Post">

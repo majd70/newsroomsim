@@ -551,17 +551,7 @@ if (function_exists('get_header')) {
                     <textarea class="form-control" id="insertText" name="insert_text" rows="5" required></textarea>
                     <div class="invalid-feedback">Please enter article body.</div>
                   </div>
-                  <div class="mb-3">
-                    <label for="insertCategory" class="form-label">Category</label>
-                    <select class="form-select" id="insertCategory" name="insert_category">
-                      <option value="">Select Category</option>
-                      <option value="Breaking News">Breaking News</option>
-                      <option value="Politics">Politics</option>
-                      <option value="Business">Business</option>
-                      <option value="Technology">Technology</option>
-                      <option value="Sports">Sports</option>
-                    </select>
-                  </div>
+
                   <div class="mb-3">
                     <label for="insertFeaturedImage" class="form-label">Article Images (you can select multiple)</label>
                     <input class="form-control" type="file" id="insertFeaturedImage" name="insert_featured_image_files[]" accept="image/*" multiple>
@@ -821,20 +811,7 @@ if (function_exists('get_header')) {
                 <label for="editNewsBody" class="form-label">Article Body *</label>
                 <textarea class="form-control" id="editNewsBody" name="insert_body" rows="6" required></textarea>
               </div>
-              <div class="mb-3">
-                <label for="editNewsCategory" class="form-label">Category</label>
-                <select class="form-select" id="editNewsCategory" name="insert_category">
-                  <option value="">Select Category</option>
-                  <option value="Politics">Politics</option>
-                  <option value="Business">Business</option>
-                  <option value="Technology">Technology</option>
-                  <option value="Sports">Sports</option>
-                  <option value="Entertainment">Entertainment</option>
-                  <option value="Health">Health</option>
-                  <option value="Science">Science</option>
-                  <option value="World">World</option>
-                </select>
-              </div>
+
               <div class="mb-3">
                 <label for="editNewsVideoUrl" class="form-label">Video URL (optional)</label>
                 <input class="form-control" type="url" id="editNewsVideoUrl" name="insert_video_url">
@@ -858,6 +835,11 @@ if (function_exists('get_header')) {
         </div>
       </div>
     </div>
+
+    <?php
+    // Include social media edit modals
+    get_template_part('template-parts/edit-modals');
+    ?>
 
     <!-- Content Feed -->
     <div class="row">
@@ -1294,6 +1276,171 @@ console.log('✅ confirmDelete function defined globally');
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing...');
     console.log('Bootstrap version:', typeof bootstrap !== 'undefined' ? 'Loaded' : 'NOT LOADED');
+
+    // ===== EDIT MODAL SETUP - MOVED TO TOP FOR PRIORITY =====
+    console.log('🚀 Setting up edit modals...');
+
+    // Edit News Article - Populate modal with current data
+    const editNewsModal = document.getElementById('editNewsModal');
+    console.log('🔍 Edit News Modal element found:', editNewsModal);
+
+    // Test if modal exists and add a simple test
+    if (editNewsModal) {
+        console.log('✅ News modal exists, adding event listener');
+
+        editNewsModal.addEventListener('show.bs.modal', function(event) {
+            console.log('🔥🔥🔥 NEWS MODAL EVENT FIRED 🔥🔥🔥');
+            console.log('Event object:', event);
+
+            // Get the button that triggered the modal - might be the icon inside
+            let button = event.relatedTarget;
+            console.log('Initial button:', button);
+
+            // If the clicked element is the icon, get the parent button
+            if (button && button.tagName === 'I') {
+                button = button.closest('button');
+                console.log('📌 Clicked on icon, found parent button:', button);
+            }
+
+            console.log('✅ Edit News Modal Opened');
+            console.log('📊 Button element:', button);
+            console.log('📊 Button dataset:', button ? button.dataset : 'NO BUTTON');
+
+            if (!button) {
+                console.error('❌ No button found for News modal');
+                alert('ERROR: No button found for News modal!');
+                return;
+            }
+
+            // Log all attributes for debugging
+            console.log('📊 Button HTML:', button.outerHTML.substring(0, 500));
+
+            // Get all data-* attributes
+            const allAttrs = {};
+            for (let i = 0; i < button.attributes.length; i++) {
+                const attr = button.attributes[i];
+                if (attr.name.startsWith('data-')) {
+                    allAttrs[attr.name] = attr.value;
+                }
+            }
+            console.log('📊 All data attributes:', allAttrs);
+
+            // Populate form fields - use getAttribute for kebab-case attributes
+            const postId = button.getAttribute('data-post-id');
+            const headline = button.getAttribute('data-headline');
+            const author = button.getAttribute('data-author');
+            const body = button.getAttribute('data-body');
+            const video = button.getAttribute('data-video');
+            const breaking = button.getAttribute('data-breaking');
+
+            console.log('📝 Values extracted:', {
+                postId,
+                headline,
+                author,
+                bodyLength: body ? body.length : 0,
+                video,
+                breaking
+            });
+
+            // Set form fields
+            const postIdField = document.getElementById('editNewsPostId');
+            const titleField = document.getElementById('editNewsTitle');
+            const authorField = document.getElementById('editNewsAuthor');
+            const bodyField = document.getElementById('editNewsBody');
+            const videoField = document.getElementById('editNewsVideoUrl');
+            const breakingField = document.getElementById('editNewsBreaking');
+
+            console.log('📋 Form fields found:', {
+                postIdField: !!postIdField,
+                titleField: !!titleField,
+                authorField: !!authorField,
+                bodyField: !!bodyField,
+                videoField: !!videoField,
+                breakingField: !!breakingField
+            });
+
+            if (postIdField) {
+                postIdField.value = postId || '';
+                console.log('✅ Set post ID:', postId);
+            } else {
+                console.error('❌ Post ID field not found');
+            }
+            if (titleField) {
+                titleField.value = headline || '';
+                console.log('✅ Set headline:', headline);
+            } else {
+                console.error('❌ Title field not found');
+            }
+            if (authorField) {
+                authorField.value = author || '';
+                console.log('✅ Set author:', author);
+            } else {
+                console.error('❌ Author field not found');
+            }
+            if (bodyField) {
+                bodyField.value = body || '';
+                console.log('✅ Set body (length):', body ? body.length : 0);
+            } else {
+                console.error('❌ Body field not found');
+            }
+            if (videoField) {
+                videoField.value = video || '';
+                console.log('✅ Set video:', video);
+            } else {
+                console.error('❌ Video field not found');
+            }
+            if (breakingField) {
+                breakingField.checked = breaking === '1';
+                console.log('✅ Set breaking:', breaking === '1');
+            } else {
+                console.error('❌ Breaking field not found');
+            }
+
+            // Clear image preview and file input
+            const imagesInput = document.getElementById('editNewsImages');
+            const imagesPreview = document.getElementById('editNewsImagesPreview');
+            if (imagesInput) {
+                imagesInput.value = '';
+                // Only clear selectedFilesMap if it exists
+                if (typeof selectedFilesMap !== 'undefined') {
+                    selectedFilesMap.set('editNewsImages', []);
+                }
+            }
+            if (imagesPreview) {
+                imagesPreview.innerHTML = '';
+            }
+
+            console.log('✅ News form populated:', {
+                postId,
+                headline,
+                author,
+                bodyLength: body ? body.length : 0,
+                breaking
+            });
+        });
+
+        console.log('✅ News modal event listener attached successfully');
+    } else {
+        console.error('❌ News modal NOT found in DOM!');
+    }
+
+    // Debug: Check if edit buttons exist
+    setTimeout(() => {
+        const editButtons = document.querySelectorAll('button[data-bs-target="#editNewsModal"]');
+        console.log('🔍 Found edit news buttons:', editButtons.length);
+        editButtons.forEach((btn, index) => {
+            console.log(`Button ${index}:`, {
+                postId: btn.getAttribute('data-post-id'),
+                headline: btn.getAttribute('data-headline'),
+                author: btn.getAttribute('data-author'),
+                hasBody: !!btn.getAttribute('data-body'),
+                bodyLength: btn.getAttribute('data-body') ? btn.getAttribute('data-body').length : 0
+            });
+        });
+    }, 1000);
+
+    console.log('🚀 Edit modal setup complete');
+    // ===== END EDIT MODAL SETUP =====
 
     // Handle tab switching and update content_type field
     const tabs = document.querySelectorAll('#contentTypeTabs button[data-bs-toggle="tab"]');
@@ -2320,76 +2467,7 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
             });
         }
 
-        // Edit News Article - Populate modal with current data
-        const editNewsModal = document.getElementById('editNewsModal');
-        if (editNewsModal) {
-            editNewsModal.addEventListener('show.bs.modal', function(event) {
-                // Get the button that triggered the modal - might be the icon inside
-                let button = event.relatedTarget;
 
-                // If the clicked element is the icon, get the parent button
-                if (button && button.tagName === 'I') {
-                    button = button.closest('button');
-                    console.log('📌 Clicked on icon, found parent button');
-                }
-
-                console.log('✅ Edit News Modal Opened');
-                console.log('📊 Button dataset:', button ? button.dataset : 'NO BUTTON');
-
-                if (!button) {
-                    console.error('❌ No button found for News modal');
-                    return;
-                }
-
-                console.log('📊 All attributes:', {
-                    postId: button.getAttribute('data-post-id'),
-                    headline: button.getAttribute('data-headline'),
-                    author: button.getAttribute('data-author'),
-                    category: button.getAttribute('data-category'),
-                    breaking: button.getAttribute('data-breaking')
-                });
-
-                // Populate form fields - use getAttribute for kebab-case attributes
-                const postId = button.getAttribute('data-post-id');
-                const headline = button.getAttribute('data-headline');
-                const author = button.getAttribute('data-author');
-                const body = button.getAttribute('data-body');
-                const category = button.getAttribute('data-category');
-                const video = button.getAttribute('data-video');
-                const breaking = button.getAttribute('data-breaking');
-
-                document.getElementById('editNewsPostId').value = postId || '';
-                document.getElementById('editNewsTitle').value = headline || '';
-                document.getElementById('editNewsAuthor').value = author || '';
-                document.getElementById('editNewsBody').value = body || '';
-                document.getElementById('editNewsCategory').value = category || '';
-                document.getElementById('editNewsVideoUrl').value = video || '';
-                document.getElementById('editNewsBreaking').checked = breaking === '1';
-
-                // Clear image preview and file input
-                const imagesInput = document.getElementById('editNewsImages');
-                const imagesPreview = document.getElementById('editNewsImagesPreview');
-                if (imagesInput) {
-                    imagesInput.value = '';
-                    selectedFilesMap.set('editNewsImages', []);
-                }
-                if (imagesPreview) {
-                    imagesPreview.innerHTML = '';
-                }
-
-                console.log('✅ News form populated:', {
-                    postId,
-                    headline,
-                    author,
-                    bodyLength: body ? body.length : 0,
-                    category,
-                    breaking
-                });
-            });
-        }
-
-        // Insert modal - No special logic needed, just for creating new posts
-        console.log('✅ Insert modal ready for creating new posts');
 
         // Note: confirmDelete function is now defined globally at the top of the script
     });

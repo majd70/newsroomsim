@@ -2049,3 +2049,105 @@ FILES: Array
 )
 
 
+2025-10-08 17:58:29 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => tt
+    [insert_author] => ttt
+    [insert_text] => tttt
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-08 18:10:24 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_twitter
+    [insert_display_name] => x
+    [insert_handle] => x
+    [insert_text] => x
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => client_search.png
+                )
+
+            [full_path] => Array
+                (
+                    [0] => client_search.png
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php69A4.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 43437
+                )
+
+        )
+
+)
+
+
