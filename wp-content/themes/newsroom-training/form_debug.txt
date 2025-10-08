@@ -2151,3 +2151,117 @@ FILES: Array
 )
 
 
+2025-10-08 21:48:59 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => ttttt
+    [insert_author] => ttt
+    [insert_text] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-08 21:50:01 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_instagram
+    [insert_display_name] => ttt
+    [insert_handle] => ttttttt
+    [insert_text] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+

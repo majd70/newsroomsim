@@ -210,20 +210,16 @@ if ( current_user_can('delete_others_posts') ):
         </div>
         
         <h2 class="card-title">
-            <?php if (function_exists('the_permalink')): ?>
-                <a href="<?php the_permalink(); ?>"><?php echo esc_html($headline); ?></a>
-            <?php else: ?>
-                <?php echo esc_html($headline); ?>
-            <?php endif; ?>
+            <?php echo esc_html($headline); ?>
         </h2>
         
-        <div class="card-excerpt">
-            <?php 
-            if (function_exists('get_the_excerpt')) {
-                $excerpt = get_the_excerpt();
-                echo $excerpt ? $excerpt : wp_trim_words($body, 25);
+        <div class="card-content">
+            <?php
+            // Show full content instead of excerpt
+            if (function_exists('get_the_content')) {
+                echo apply_filters('the_content', get_the_content());
             } else {
-                echo esc_html(substr($body, 0, 200)) . '...';
+                echo wp_kses_post($body);
             }
             ?>
         </div>

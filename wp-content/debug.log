@@ -4994,3 +4994,229 @@
 )
 
 [08-Oct-2025 18:10:24 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 21:48:49 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 21:48:49 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 21:48:49 UTC] Request Method: GET
+[08-Oct-2025 21:48:49 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 21:48:49 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 21:48:49 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 21:48:59 UTC] PHP Warning:  wp_version_check(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-includes\functions.php on line 6121
+[08-Oct-2025 21:48:59 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 21:48:59 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 21:48:59 UTC] Request Method: POST
+[08-Oct-2025 21:48:59 UTC] POST data: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => ttttt
+    [insert_author] => ttt
+    [insert_text] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+[08-Oct-2025 21:48:59 UTC] ❌ delete_ids is empty - exiting
+[08-Oct-2025 21:48:59 UTC] === FORM SUBMITTED ===
+[08-Oct-2025 21:48:59 UTC] POST Data: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => ttttt
+    [insert_author] => ttt
+    [insert_text] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+[08-Oct-2025 21:48:59 UTC] FILES Data: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[08-Oct-2025 21:48:59 UTC] Content Type: news_article
+[08-Oct-2025 21:48:59 UTC] Edit Mode: NO
+[08-Oct-2025 21:48:59 UTC] Creating news article: ttttt
+[08-Oct-2025 21:49:00 UTC] News article created successfully: 236
+[08-Oct-2025 21:49:00 UTC] ✅ Post created successfully! Redirecting...
+[08-Oct-2025 21:49:00 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[08-Oct-2025 21:49:00 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 21:49:00 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 21:49:00 UTC] Request Method: GET
+[08-Oct-2025 21:49:00 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 21:49:00 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 21:49:08 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 21:49:08 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 21:49:08 UTC] Request Method: GET
+[08-Oct-2025 21:49:08 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 21:49:08 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 21:49:29 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 21:49:29 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 21:49:29 UTC] Request Method: GET
+[08-Oct-2025 21:49:29 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 21:49:29 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 21:49:29 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 21:50:01 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 21:50:01 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 21:50:01 UTC] Request Method: POST
+[08-Oct-2025 21:50:01 UTC] POST data: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_instagram
+    [insert_display_name] => ttt
+    [insert_handle] => ttttttt
+    [insert_text] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+)
+
+[08-Oct-2025 21:50:01 UTC] ❌ delete_ids is empty - exiting
+[08-Oct-2025 21:50:01 UTC] === FORM SUBMITTED ===
+[08-Oct-2025 21:50:01 UTC] POST Data: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_instagram
+    [insert_display_name] => ttt
+    [insert_handle] => ttttttt
+    [insert_text] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+)
+
+[08-Oct-2025 21:50:01 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[08-Oct-2025 21:50:01 UTC] Content Type: social_instagram
+[08-Oct-2025 21:50:01 UTC] Edit Mode: NO
+[08-Oct-2025 21:50:01 UTC] Creating social post: instagram - ttt
+[08-Oct-2025 21:50:01 UTC] Social post created successfully: 237
+[08-Oct-2025 21:50:01 UTC] ✅ Post created successfully! Redirecting...
+[08-Oct-2025 21:50:01 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[08-Oct-2025 21:50:01 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 21:50:01 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 21:50:01 UTC] Request Method: GET
+[08-Oct-2025 21:50:01 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 21:50:01 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 21:55:48 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 21:55:48 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 21:55:48 UTC] Request Method: GET
+[08-Oct-2025 21:55:48 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 21:55:48 UTC] ❌ Not a POST request - exiting
+[08-Oct-2025 21:55:48 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 463
+[08-Oct-2025 21:56:15 UTC] ═══════════════════════════════════════════════════
+[08-Oct-2025 21:56:15 UTC] 🔍 DELETE HANDLER CALLED
+[08-Oct-2025 21:56:15 UTC] Request Method: GET
+[08-Oct-2025 21:56:15 UTC] POST data: Array
+(
+)
+
+[08-Oct-2025 21:56:15 UTC] ❌ Not a POST request - exiting
