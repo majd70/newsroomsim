@@ -249,7 +249,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content_type']) && !e
             } else {
                 $insert_error = implode(', ', $validation_errors);
             }
-        } elseif (in_array($post_type, array('social_twitter', 'social_facebook', 'social_instagram'))) {
+        } elseif (in_array($post_type, array('social_twitter', 'social_facebook', 'social_instagram', 'social_truth'))) {
             // Validate Social Media Post
             $platform = str_replace('social_', '', $post_type);
             // Support both insert_display_name and display_name field names
@@ -527,6 +527,9 @@ if (function_exists('get_header')) {
                 <li class="nav-item" role="presentation">
                   <button class="nav-link" id="instagram-tab" data-bs-toggle="tab" data-bs-target="#instagram-content" type="button" role="tab" aria-controls="instagram-content" aria-selected="false">Instagram</button>
                 </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="truth-social-tab" data-bs-toggle="tab" data-bs-target="#truth-social-content" type="button" role="tab" aria-controls="truth-social-content" aria-selected="false">Truth Social Platform</button>
+                </li>
               </ul>
 
               <!-- Tab Content -->
@@ -579,7 +582,10 @@ if (function_exists('get_header')) {
                   </div>
                   <div class="mb-3">
                     <label for="twitterHandle" class="form-label">Handle/Username *</label>
-                    <input class="form-control" type="text" id="twitterHandle" name="insert_handle" placeholder="@username" data-required-for="social_twitter">
+                    <div class="input-group">
+                      <span class="input-group-text">@</span>
+                      <input class="form-control" type="text" id="twitterHandle" name="insert_handle" placeholder="username" data-required-for="social_twitter">
+                    </div>
                     <div class="invalid-feedback">Please enter a handle/username.</div>
                   </div>
                   <div class="mb-3">
@@ -606,7 +612,10 @@ if (function_exists('get_header')) {
                   </div>
                   <div class="mb-3">
                     <label for="facebookHandle" class="form-label">Handle/Username *</label>
-                    <input class="form-control" type="text" id="facebookHandle" name="insert_handle" data-required-for="social_facebook">
+                    <div class="input-group">
+                      <span class="input-group-text">@</span>
+                      <input class="form-control" type="text" id="facebookHandle" name="insert_handle" placeholder="username" data-required-for="social_facebook">
+                    </div>
                     <div class="invalid-feedback">Please enter a handle/username.</div>
                   </div>
                   <div class="mb-3">
@@ -633,7 +642,10 @@ if (function_exists('get_header')) {
                   </div>
                   <div class="mb-3">
                     <label for="instagramHandle" class="form-label">Handle/Username *</label>
-                    <input class="form-control" type="text" id="instagramHandle" name="insert_handle" placeholder="@username" data-required-for="social_instagram">
+                    <div class="input-group">
+                      <span class="input-group-text">@</span>
+                      <input class="form-control" type="text" id="instagramHandle" name="insert_handle" placeholder="username" data-required-for="social_instagram">
+                    </div>
                     <div class="invalid-feedback">Please enter a handle/username.</div>
                   </div>
                   <div class="mb-3">
@@ -648,6 +660,33 @@ if (function_exists('get_header')) {
                     <div id="instagramMediaPreview" class="mt-2 d-flex flex-wrap gap-2"></div>
                   </div>
                 </div>
+
+                <!-- Truth Social Platform Form -->
+                <div class="tab-pane fade" id="truth-social-content" role="tabpanel">
+                  <input type="hidden" name="content_type" value="social_truth" id="content_type_field_truth">
+
+                  <div class="mb-3">
+                    <label for="truthDisplayName" class="form-label">Display Name *</label>
+                    <input class="form-control" type="text" id="truthDisplayName" name="insert_display_name" data-required-for="social_truth">
+                  </div>
+                  <div class="mb-3">
+                    <label for="truthHandle" class="form-label">Handle/Username *</label>
+                    <div class="input-group">
+                      <span class="input-group-text">@</span>
+                      <input class="form-control" type="text" id="truthHandle" name="insert_handle" placeholder="username" data-required-for="social_truth">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="truthText" class="form-label">Post Text *</label>
+                    <textarea class="form-control" id="truthText" name="insert_text" rows="4" data-required-for="social_truth"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="truthMedia" class="form-label">Post Images (you can select multiple)</label>
+                    <input class="form-control" type="file" id="truthMedia" name="insert_media[]" multiple accept="image/*">
+                    <div class="form-text">Select one or more images</div>
+                    <div id="truthMediaPreview" class="mt-2 d-flex flex-wrap gap-2"></div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="modal-footer">
@@ -659,131 +698,13 @@ if (function_exists('get_header')) {
       </div>
     </div>
 
-    <!-- Edit Twitter Modal -->
-    <div class="modal fade" id="editTwitterModal" tabindex="-1" aria-labelledby="editTwitterModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <form id="editTwitterForm" method="post" enctype="multipart/form-data">
-            <?php wp_nonce_field('insert_content_action', 'insert_content_nonce'); ?>
-            <div class="modal-header">
-              <h5 class="modal-title" id="editTwitterModalLabel">Edit X (Twitter) Post</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <input type="hidden" name="content_type" value="social_twitter">
-              <input type="hidden" name="edit_post_id" id="editTwitterPostId">
 
-              <div class="mb-3">
-                <label for="editTwitterDisplayName" class="form-label">Display Name *</label>
-                <input class="form-control" type="text" id="editTwitterDisplayName" name="insert_display_name" required>
-              </div>
-              <div class="mb-3">
-                <label for="editTwitterHandle" class="form-label">Handle *</label>
-                <input class="form-control" type="text" id="editTwitterHandle" name="insert_handle" required>
-              </div>
-              <div class="mb-3">
-                <label for="editTwitterText" class="form-label">Tweet Text *</label>
-                <textarea class="form-control" id="editTwitterText" name="insert_text" rows="4" required></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="editTwitterMedia" class="form-label">Post Images (you can select multiple)</label>
-                <input class="form-control" type="file" id="editTwitterMedia" name="insert_media_files[]" accept="image/*" multiple>
-                <div class="form-text">Select one or more images</div>
-                <div id="editTwitterMediaPreview" class="mt-2 d-flex flex-wrap gap-2"></div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-primary" name="submit_insert" value="1">Update Post</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
 
-    <!-- Edit Facebook Modal -->
-    <div class="modal fade" id="editFacebookModal" tabindex="-1" aria-labelledby="editFacebookModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <form id="editFacebookForm" method="post" enctype="multipart/form-data">
-            <?php wp_nonce_field('insert_content_action', 'insert_content_nonce'); ?>
-            <div class="modal-header">
-              <h5 class="modal-title" id="editFacebookModalLabel">Edit Facebook Post</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <input type="hidden" name="content_type" value="social_facebook">
-              <input type="hidden" name="edit_post_id" id="editFacebookPostId">
 
-              <div class="mb-3">
-                <label for="editFacebookDisplayName" class="form-label">Display Name *</label>
-                <input class="form-control" type="text" id="editFacebookDisplayName" name="insert_display_name" required>
-              </div>
-              <div class="mb-3">
-                <label for="editFacebookHandle" class="form-label">Handle *</label>
-                <input class="form-control" type="text" id="editFacebookHandle" name="insert_handle" required>
-              </div>
-              <div class="mb-3">
-                <label for="editFacebookText" class="form-label">Post Text *</label>
-                <textarea class="form-control" id="editFacebookText" name="insert_text" rows="4" required></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="editFacebookMedia" class="form-label">Post Images (you can select multiple)</label>
-                <input class="form-control" type="file" id="editFacebookMedia" name="insert_media_files[]" accept="image/*" multiple>
-                <div class="form-text">Select one or more images</div>
-                <div id="editFacebookMediaPreview" class="mt-2 d-flex flex-wrap gap-2"></div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-primary" name="submit_insert" value="1">Update Post</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
 
-    <!-- Edit Instagram Modal -->
-    <div class="modal fade" id="editInstagramModal" tabindex="-1" aria-labelledby="editInstagramModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <form id="editInstagramForm" method="post" enctype="multipart/form-data">
-            <?php wp_nonce_field('insert_content_action', 'insert_content_nonce'); ?>
-            <div class="modal-header">
-              <h5 class="modal-title" id="editInstagramModalLabel">Edit Instagram Post</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <input type="hidden" name="content_type" value="social_instagram">
-              <input type="hidden" name="edit_post_id" id="editInstagramPostId">
 
-              <div class="mb-3">
-                <label for="editInstagramDisplayName" class="form-label">Display Name *</label>
-                <input class="form-control" type="text" id="editInstagramDisplayName" name="insert_display_name" required>
-              </div>
-              <div class="mb-3">
-                <label for="editInstagramHandle" class="form-label">Handle *</label>
-                <input class="form-control" type="text" id="editInstagramHandle" name="insert_handle" required>
-              </div>
-              <div class="mb-3">
-                <label for="editInstagramText" class="form-label">Caption *</label>
-                <textarea class="form-control" id="editInstagramText" name="insert_text" rows="4" required></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="editInstagramMedia" class="form-label">Post Images (you can select multiple)</label>
-                <input class="form-control" type="file" id="editInstagramMedia" name="insert_media_files[]" accept="image/*" multiple>
-                <div class="form-text">Select one or more images</div>
-                <div id="editInstagramMediaPreview" class="mt-2 d-flex flex-wrap gap-2"></div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-primary" name="submit_insert" value="1">Update Post</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+
+
 
     <!-- Edit News Modal -->
     <div class="modal fade" id="editNewsModal" tabindex="-1" aria-labelledby="editNewsModalLabel" aria-hidden="true">
@@ -809,7 +730,7 @@ if (function_exists('get_header')) {
               </div>
               <div class="mb-3">
                 <label for="editNewsBody" class="form-label">Article Body *</label>
-                <textarea class="form-control" id="editNewsBody" name="insert_body" rows="6" required></textarea>
+                <textarea class="form-control" id="editNewsBody" name="insert_text" rows="6" required></textarea>
               </div>
 
               <div class="mb-3">
@@ -822,7 +743,7 @@ if (function_exists('get_header')) {
               </div>
               <div class="mb-3">
                 <label for="editNewsImages" class="form-label">Article Images (you can select multiple)</label>
-                <input class="form-control" type="file" id="editNewsImages" name="insert_image_files[]" accept="image/*" multiple>
+                <input class="form-control" type="file" id="editNewsImages" name="insert_featured_image_files[]" accept="image/*" multiple>
                 <div class="form-text">Select one or more images</div>
                 <div id="editNewsImagesPreview" class="mt-2 d-flex flex-wrap gap-2"></div>
               </div>
@@ -1644,9 +1565,11 @@ document.addEventListener('DOMContentLoaded', function() {
             { input: 'twitterMedia', preview: 'twitterMediaPreview' },
             { input: 'facebookMedia', preview: 'facebookMediaPreview' },
             { input: 'instagramMedia', preview: 'instagramMediaPreview' },
+            { input: 'truthMedia', preview: 'truthMediaPreview' },
             { input: 'editTwitterMedia', preview: 'editTwitterMediaPreview' },
             { input: 'editFacebookMedia', preview: 'editFacebookMediaPreview' },
             { input: 'editInstagramMedia', preview: 'editInstagramMediaPreview' },
+            { input: 'editTruthMedia', preview: 'editTruthMediaPreview' },
             { input: 'editNewsImages', preview: 'editNewsImagesPreview' }
         ];
 
@@ -1758,7 +1681,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Determine current tab type
             if (targetId === '#news-content') {
                 currentTabType = 'news';
-            } else if (targetId === '#twitter-content' || targetId === '#facebook-content' || targetId === '#instagram-content') {
+            } else if (targetId === '#twitter-content' || targetId === '#facebook-content' || targetId === '#instagram-content' || targetId === '#truth-social-content') {
                 currentTabType = 'social';
             }
 
@@ -1952,6 +1875,9 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
                     <li class="nav-item" role="presentation">
                       <button class="nav-link" id="instagram-tab-sa" data-bs-toggle="tab" data-bs-target="#instagram-content-sa" type="button" role="tab" aria-controls="instagram-content-sa" aria-selected="false">Instagram</button>
                     </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="truth-social-tab-sa" data-bs-toggle="tab" data-bs-target="#truth-social-content-sa" type="button" role="tab" aria-controls="truth-social-content-sa" aria-selected="false">Truth Social Platform</button>
+                    </li>
                   </ul>
 
                   <!-- Tab Content -->
@@ -2005,7 +1931,10 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
                       </div>
                       <div class="mb-3">
                         <label for="twitterHandleSa" class="form-label">Handle/Username *</label>
-                        <input class="form-control" type="text" id="twitterHandleSa" name="insert_handle" placeholder="@username">
+                        <div class="input-group">
+                          <span class="input-group-text">@</span>
+                          <input class="form-control" type="text" id="twitterHandleSa" name="insert_handle" placeholder="username">
+                        </div>
                       </div>
                       <div class="mb-3">
                         <label for="twitterTextSa" class="form-label">Post Text *</label>
@@ -2029,7 +1958,10 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
                       </div>
                       <div class="mb-3">
                         <label for="facebookHandleSa" class="form-label">Handle/Username *</label>
-                        <input class="form-control" type="text" id="facebookHandleSa" name="insert_handle">
+                        <div class="input-group">
+                          <span class="input-group-text">@</span>
+                          <input class="form-control" type="text" id="facebookHandleSa" name="insert_handle" placeholder="username">
+                        </div>
                       </div>
                       <div class="mb-3">
                         <label for="facebookTextSa" class="form-label">Post Text *</label>
@@ -2053,7 +1985,10 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
                       </div>
                       <div class="mb-3">
                         <label for="instagramHandleSa" class="form-label">Handle/Username *</label>
-                        <input class="form-control" type="text" id="instagramHandleSa" name="insert_handle" placeholder="@username">
+                        <div class="input-group">
+                          <span class="input-group-text">@</span>
+                          <input class="form-control" type="text" id="instagramHandleSa" name="insert_handle" placeholder="username">
+                        </div>
                       </div>
                       <div class="mb-3">
                         <label for="instagramTextSa" class="form-label">Post Text *</label>
@@ -2066,6 +2001,30 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
                       <div class="mb-3">
                         <label for="instagramMediaSa" class="form-label">Media URL</label>
                         <input class="form-control" type="url" id="instagramMediaSa" name="insert_media_url">
+                      </div>
+                    </div>
+
+                    <!-- Truth Social Platform Form -->
+                    <div class="tab-pane fade" id="truth-social-content-sa" role="tabpanel">
+                      <div class="mb-3">
+                        <label for="truthDisplayNameSa" class="form-label">Display Name *</label>
+                        <input class="form-control" type="text" id="truthDisplayNameSa" name="insert_display_name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="truthHandleSa" class="form-label">Handle/Username *</label>
+                        <input class="form-control" type="text" id="truthHandleSa" name="insert_handle" placeholder="@username">
+                      </div>
+                      <div class="mb-3">
+                        <label for="truthTextSa" class="form-label">Post Text *</label>
+                        <textarea class="form-control" id="truthTextSa" name="insert_text" rows="4"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="truthAvatarSa" class="form-label">Avatar URL</label>
+                        <input class="form-control" type="url" id="truthAvatarSa" name="insert_avatar">
+                      </div>
+                      <div class="mb-3">
+                        <label for="truthMediaSa" class="form-label">Media URL</label>
+                        <input class="form-control" type="url" id="truthMediaSa" name="insert_media_url">
                       </div>
                     </div>
                   </div>
@@ -2186,6 +2145,8 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
                     contentTypeField.value = 'social_facebook';
                 } else if (targetId === '#instagram-content-sa') {
                     contentTypeField.value = 'social_instagram';
+                } else if (targetId === '#truth-social-content-sa') {
+                    contentTypeField.value = 'social_truth';
                 }
 
                 // Clear all form fields when switching tabs
@@ -2467,7 +2428,144 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
             });
         }
 
+        // Edit Truth Social Platform Post - Populate modal with current data
+        const editTruthModal = document.getElementById('editTruthModal');
+        console.log('🔍 Truth modal element found:', editTruthModal);
 
+        // Debug: Check if Truth edit buttons exist
+        const truthEditButtons = document.querySelectorAll('button[data-bs-target="#editTruthModal"]');
+        console.log('🔍 Found Truth edit buttons:', truthEditButtons.length);
+        truthEditButtons.forEach((btn, index) => {
+            console.log(`Truth Button ${index}:`, {
+                postId: btn.getAttribute('data-post-id'),
+                platform: btn.getAttribute('data-platform'),
+                displayName: btn.getAttribute('data-display-name'),
+                handle: btn.getAttribute('data-handle'),
+                hasText: !!btn.getAttribute('data-text'),
+                textLength: btn.getAttribute('data-text') ? btn.getAttribute('data-text').length : 0
+            });
+        });
+
+        if (editTruthModal) {
+            console.log('✅ Truth modal found, attaching event listener...');
+
+            // Debug: Check how many Truth Social posts exist
+            const truthButtons = document.querySelectorAll('button[data-bs-target="#editTruthModal"]');
+            console.log('🔍 Found', truthButtons.length, 'Truth Social edit buttons on page');
+            truthButtons.forEach((btn, index) => {
+                console.log(`Button ${index + 1}:`, btn.outerHTML.substring(0, 200));
+            });
+
+            // Store the clicked button globally
+            let clickedTruthButton = null;
+
+            // Add click listeners to all Truth edit buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('button[data-bs-target="#editTruthModal"]')) {
+                    clickedTruthButton = e.target.closest('button[data-bs-target="#editTruthModal"]');
+                    console.log('🎯 Truth edit button clicked, stored:', clickedTruthButton);
+                }
+            });
+
+            editTruthModal.addEventListener('show.bs.modal', function(event) {
+                console.log('🔥🔥🔥 TRUTH MODAL EVENT FIRED 🔥🔥🔥');
+                console.log('Event details:', event);
+
+                // Get the button that triggered the modal - use stored button
+                let button = clickedTruthButton || event.relatedTarget;
+
+                console.log('🔍 Button sources:');
+                console.log('  - clickedTruthButton:', clickedTruthButton);
+                console.log('  - event.relatedTarget:', event.relatedTarget);
+                console.log('  - Using button:', button);
+
+                // If the clicked element is the icon, get the parent button
+                if (button && button.tagName === 'I') {
+                    console.log('🎯 Original clicked element was icon:', button);
+                    button = button.closest('button');
+                    console.log('📌 Found parent button:', button);
+                }
+
+                console.log('Button element:', button);
+
+                if (!button) {
+                    console.error('❌ NO BUTTON FOUND!');
+                    alert('ERROR: No button found! Check console for details.');
+                    return;
+                }
+
+                console.log('Button HTML:', button.outerHTML.substring(0, 500));
+
+                // Get all data-* attributes
+                const allAttrs = {};
+                for (let i = 0; i < button.attributes.length; i++) {
+                    const attr = button.attributes[i];
+                    if (attr.name.startsWith('data-')) {
+                        allAttrs[attr.name] = attr.value;
+                    }
+                }
+                console.log('📊 All data attributes:', allAttrs);
+
+                // Populate form fields
+                const postId = button.getAttribute('data-post-id');
+                const displayName = button.getAttribute('data-display-name');
+                const handle = button.getAttribute('data-handle');
+                const text = button.getAttribute('data-text');
+
+                console.log('📝 Raw attribute values:');
+                console.log('  - data-post-id:', postId);
+                console.log('  - data-display-name:', displayName);
+                console.log('  - data-handle:', handle);
+                console.log('  - data-text length:', text ? text.length : 'null/undefined');
+
+                // Set form fields
+                const postIdField = document.getElementById('editTruthPostId');
+                const displayNameField = document.getElementById('editTruthDisplayName');
+                const handleField = document.getElementById('editTruthHandle');
+                const textField = document.getElementById('editTruthText');
+
+                if (postIdField) {
+                    postIdField.value = postId || '';
+                    console.log('✅ Set post ID:', postId);
+                } else {
+                    console.error('❌ Post ID field not found');
+                }
+                if (displayNameField) {
+                    displayNameField.value = displayName || '';
+                    console.log('✅ Set display name:', displayName);
+                } else {
+                    console.error('❌ Display name field not found');
+                }
+                if (handleField) {
+                    handleField.value = handle || '';
+                    console.log('✅ Set handle:', handle);
+                } else {
+                    console.error('❌ Handle field not found');
+                }
+                if (textField) {
+                    textField.value = text || '';
+                    console.log('✅ Set text (length):', text ? text.length : 0);
+                } else {
+                    console.error('❌ Text field not found');
+                }
+
+                // Clear image preview and file input
+                const mediaInput = document.getElementById('editTruthMedia');
+                const mediaPreview = document.getElementById('editTruthMediaPreview');
+                if (mediaInput) {
+                    mediaInput.value = '';
+                    selectedFilesMap.set('editTruthMedia', []);
+                }
+                if (mediaPreview) {
+                    mediaPreview.innerHTML = '';
+                }
+
+                console.log('✅✅✅ Truth form populated successfully!');
+            });
+            console.log('✅ Truth modal event listener attached');
+        } else {
+            console.error('❌ Truth modal element NOT found!');
+        }
 
         // Note: confirmDelete function is now defined globally at the top of the script
     });

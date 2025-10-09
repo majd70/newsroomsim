@@ -709,6 +709,23 @@ body {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
 
+.truth-badge {
+    background: transparent; /* No background */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+}
+
+.truth-logo-badge {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    width: 24px;
+    height: 24px;
+}
+
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */

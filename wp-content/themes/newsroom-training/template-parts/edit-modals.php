@@ -124,3 +124,44 @@
   </div>
 </div>
 
+<!-- Edit Truth Social Platform Modal -->
+<div class="modal fade" id="editTruthModal" tabindex="-1" aria-labelledby="editTruthModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form id="editTruthForm" method="post" enctype="multipart/form-data">
+        <?php wp_nonce_field('insert_content_action', 'insert_content_nonce'); ?>
+        <div class="modal-header">
+          <h5 class="modal-title" id="editTruthModalLabel">Edit Truth Social Platform Post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="content_type" value="social_truth">
+          <input type="hidden" name="edit_post_id" id="editTruthPostId">
+
+          <div class="mb-3">
+            <label for="editTruthDisplayName" class="form-label">Display Name *</label>
+            <input class="form-control" type="text" id="editTruthDisplayName" name="insert_display_name" required>
+          </div>
+          <div class="mb-3">
+            <label for="editTruthHandle" class="form-label">Handle *</label>
+            <input class="form-control" type="text" id="editTruthHandle" name="insert_handle" required>
+          </div>
+          <div class="mb-3">
+            <label for="editTruthText" class="form-label">Post Text *</label>
+            <textarea class="form-control" id="editTruthText" name="insert_text" rows="4" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="editTruthMedia" class="form-label">Post Images (you can select multiple)</label>
+            <input class="form-control" type="file" id="editTruthMedia" name="insert_media_files[]" accept="image/*" multiple>
+            <div class="form-text">Select one or more images</div>
+            <div id="editTruthMediaPreview" class="mt-2 d-flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" name="submit_insert" value="1">Update Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -2265,3 +2265,950 @@ FILES: Array
 )
 
 
+2025-10-08 23:44:31 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => ff0e669960
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_truth
+    [insert_display_name] => majd
+    [insert_handle] => majd
+    [insert_text] => hhuhbuigbuibuibv
+)
+
+FILES: Array
+(
+    [insert_media] => Array
+        (
+            [name] => Array
+                (
+                    [0] => Capture.PNG
+                    [1] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => Capture.PNG
+                    [1] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                    [1] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php4B7E.tmp
+                    [1] => C:\xampp-php8.2-new\tmp\php4B8F.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                    [1] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 946403
+                    [1] => 41299
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:06:23 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 236
+    [insert_title] => ttttt
+    [insert_author] => ttttttgg
+    [insert_body] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:06:52 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 236
+    [insert_title] => ttttt
+    [insert_author] => ttttttgg
+    [insert_body] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:14:51 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_instagram
+    [edit_post_id] => 237
+    [insert_display_name] => ttt
+    [insert_handle] => tttttttg
+    [insert_text] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:35:54 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 236
+    [insert_title] => ttttt
+    [insert_author] => ttttt
+    [insert_body] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:48:23 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 236
+    [insert_title] => ttttt
+    [insert_author] => ttttt
+    [insert_body] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:48:34 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 236
+    [insert_title] => ttttt
+    [insert_author] => ttttt
+    [insert_body] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:48:43 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 236
+    [insert_title] => ttttt
+    [insert_author] => ttttt
+    [insert_body] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:48:50 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 236
+    [insert_title] => ttttt
+    [insert_author] => ttttt
+    [insert_body] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:49:22 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 236
+    [insert_title] => ttttt
+    [insert_author] => tttg
+    [insert_text] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:49:46 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 236
+    [insert_title] => tttttg
+    [insert_author] => tttg
+    [insert_text] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 00:50:01 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_instagram
+    [edit_post_id] => 237
+    [insert_display_name] => tttg
+    [insert_handle] => tttttttg
+    [insert_text] => A nor’easter is about to develop off the Southeast coast and this coastal storm could bring some serious threats along with dreary weather for much of the East Coast into early next week.
+
+It all starts with a potent cold front that’s swinging east over the United States this week and delivering crisp, truly autumnal weather in its wake. That front will eventually slow down and stall once it reaches the Southeast at the end of the week.
+
+The nor’easter is expected to develop along that stalled front on Saturday just off the Southeast coast and will likely churn up seas, deliver drenching coastal rain and whip up gusty winds from Florida through the Carolinas, mid-Atlantic and into parts of the Northeast. It could turn out to be a “full-fledged” and “rather significant” nor’easter, the Weather Prediction Center warned.
+
+A nor’easter is just a coastal storm named based on the direction from which its winds slam into the coast: northeast. Nor’easters are notorious snow producers in winter, but they can happen at any time of year, bringing heavy rain instead. They’re most frequent between September and April and usually develop between Georgia and New Jersey. The strongest nor’easters are also being supercharged by planet-warming fossil fuel pollution, a July study found.
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 01:05:34 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_truth
+    [insert_display_name] => fdvfvdv
+    [insert_handle] => fvfdvfv
+    [insert_text] => dfvdfvdfv
+)
+
+FILES: Array
+(
+    [insert_media] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php8073.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+
+2025-10-09 01:08:45 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => 1661134601
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_truth
+    [edit_post_id] => 
+    [insert_display_name] => ggggggggggg
+    [insert_handle] => hhhhhh
+    [insert_text] => hhhhhh
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 20:49:24 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 
+    [insert_title] => ببببببب
+    [insert_author] => ببببببببببب
+    [insert_text] => ببببببببببب
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php58BF.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+
+2025-10-09 20:53:10 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => news_article
+    [edit_post_id] => 241
+    [insert_title] => ببببببب22
+    [insert_author] => ببببببببببب22
+    [insert_text] => ببببببببببب
+    [insert_video_url] => 
+)
+
+FILES: Array
+(
+    [insert_featured_image_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+
+2025-10-09 20:53:39 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_truth
+    [insert_display_name] => majd
+    [insert_handle] => majd
+    [insert_text] => fwefwefwefwef
+)
+
+FILES: Array
+(
+    [insert_media] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 360_F_571998686_7q0qDN2lvCn5wv90SHEepoffd0Pq8NRY.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php3F39.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 41299
+                )
+
+        )
+
+)
+
+

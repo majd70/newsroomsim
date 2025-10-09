@@ -86,11 +86,18 @@ if (function_exists('get_post_meta')) {
         <span class="social-badge instagram-badge">
             <i class="fab fa-instagram"></i>
         </span>
+    <?php elseif ($platform === 'truth'): ?>
+        <!-- Truth Social logo will be shown beside the name instead -->
     <?php endif; ?>
 </div>
 
         <div class="social-info">
-            <div class="social-name"><?php echo esc_html($display_name); ?></div>
+            <div class="social-name">
+                <?php echo esc_html($display_name); ?>
+                <?php if ($platform === 'truth'): ?>
+                    <img src="<?php echo home_url('/Red_Truth.PNG'); ?>" alt="Truth Social" class="truth-logo-badge" style="width: 24px; height: 24px; margin-left: 8px; vertical-align: middle;">
+                <?php endif; ?>
+            </div>
             <div class="social-handle">@<?php echo esc_html($handle); ?></div>
         </div>
         <div class="social-timestamp">
@@ -116,6 +123,26 @@ if (function_exists('get_post_meta')) {
                 // Clean the text content - remove HTML tags and decode entities
                 $clean_text = wp_strip_all_tags($text);
                 $clean_text = html_entity_decode($clean_text, ENT_QUOTES, 'UTF-8');
+
+                // Debug: Log the values for Truth Social posts
+                if ($platform === 'truth') {
+                    error_log('🔍 Truth Social Post Debug - Post ID: ' . get_the_ID());
+                    error_log('  - Platform: ' . $platform);
+                    error_log('  - Display Name: ' . $display_name);
+                    error_log('  - Handle: ' . $handle);
+                    error_log('  - Text Length: ' . strlen($text));
+                    error_log('  - Clean Text Length: ' . strlen($clean_text));
+                    error_log('  - Modal Target: ' . $modalTarget);
+                    error_log('  - Raw post content: ' . get_the_content());
+                    error_log('  - Raw meta _social_display_name: ' . get_post_meta(get_the_ID(), '_social_display_name', true));
+                    error_log('  - Raw meta _social_handle: ' . get_post_meta(get_the_ID(), '_social_handle', true));
+
+                    // Also log what will be in the button attributes
+                    error_log('  - Button data-display-name will be: "' . esc_attr($display_name) . '"');
+                    error_log('  - Button data-handle will be: "' . esc_attr($handle) . '"');
+                    error_log('  - Button data-text will be: "' . esc_attr($clean_text) . '"');
+                }
+
                 ?>
                 <button type="button"
                         class="action-btn action-btn-edit edit-post-btn"
