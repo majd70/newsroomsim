@@ -452,6 +452,35 @@ document.addEventListener('DOMContentLoaded', function() {
             if (mediaPreview) mediaPreview.innerHTML = '';
         });
     }
+
+    // Truth Social Edit Modal
+    const editTruthModal = document.getElementById('editTruthModal');
+    if (editTruthModal) {
+        editTruthModal.addEventListener('show.bs.modal', function(event) {
+            let button = event.relatedTarget;
+            if (button && button.tagName === 'I') {
+                button = button.closest('button');
+            }
+
+            if (!button) return;
+
+            const postId = button.getAttribute('data-post-id');
+            const displayName = button.getAttribute('data-display-name');
+            const handle = button.getAttribute('data-handle');
+            const text = button.getAttribute('data-text');
+
+            document.getElementById('editTruthPostId').value = postId || '';
+            document.getElementById('editTruthDisplayName').value = displayName || '';
+            document.getElementById('editTruthHandle').value = handle || '';
+            document.getElementById('editTruthText').value = text || '';
+
+            // Clear media input
+            const mediaInput = document.getElementById('editTruthMedia');
+            const mediaPreview = document.getElementById('editTruthMediaPreview');
+            if (mediaInput) mediaInput.value = '';
+            if (mediaPreview) mediaPreview.innerHTML = '';
+        });
+    }
 });
 
 </script>

@@ -3212,3 +3212,54 @@ FILES: Array
 )
 
 
+2025-10-09 21:22:00 - Form submitted
+POST: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_truth
+    [edit_post_id] => 242
+    [insert_display_name] => majd
+    [insert_handle] => majd
+    [insert_text] => fwefwefwefwef222
+)
+
+FILES: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => Truth.png
+                )
+
+            [full_path] => Array
+                (
+                    [0] => Truth.png
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php3384.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 1727
+                )
+
+        )
+
+)
+
+
