@@ -92,13 +92,28 @@ if (function_exists('get_post_meta')) {
 </div>
 
         <div class="social-info">
-            <div class="social-name">
-                <?php echo esc_html($display_name); ?>
-                <?php if ($platform === 'truth'): ?>
+            <?php if ($platform === 'facebook'): ?>
+                <!-- Facebook: Name only, no handle -->
+                <div class="social-name"><?php echo esc_html($display_name); ?></div>
+            <?php elseif ($platform === 'instagram'): ?>
+                <!-- Instagram: Handle only, no @ symbol -->
+                <div class="social-handle"><?php echo esc_html($handle); ?></div>
+            <?php elseif ($platform === 'twitter'): ?>
+                <!-- Twitter/X: Name AND handle -->
+                <div class="social-name"><?php echo esc_html($display_name); ?></div>
+                <div class="social-handle">@<?php echo esc_html($handle); ?></div>
+            <?php elseif ($platform === 'truth'): ?>
+                <!-- Truth Social: Name AND handle -->
+                <div class="social-name">
+                    <?php echo esc_html($display_name); ?>
                     <img src="<?php echo home_url('/Red_Truth.PNG'); ?>" alt="Truth Social" class="truth-logo-badge" style="width: 24px; height: 24px; margin-left: 8px; vertical-align: middle;">
-                <?php endif; ?>
-            </div>
-            <div class="social-handle">@<?php echo esc_html($handle); ?></div>
+                </div>
+                <div class="social-handle">@<?php echo esc_html($handle); ?></div>
+            <?php else: ?>
+                <!-- Default fallback -->
+                <div class="social-name"><?php echo esc_html($display_name); ?></div>
+                <div class="social-handle">@<?php echo esc_html($handle); ?></div>
+            <?php endif; ?>
         </div>
         <div class="social-timestamp">
             <i class="fas fa-clock me-1"></i>

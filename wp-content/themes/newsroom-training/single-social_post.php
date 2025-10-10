@@ -41,8 +41,25 @@ while (have_posts()) : the_post();
                     </div>
 
                     <div class="social-info">
-                        <div class="social-name"><?php echo esc_html($display_name); ?></div>
-                        <div class="social-handle">@<?php echo esc_html($handle); ?></div>
+                        <?php if ($platform === 'facebook'): ?>
+                            <!-- Facebook: Name only, no handle -->
+                            <div class="social-name"><?php echo esc_html($display_name); ?></div>
+                        <?php elseif ($platform === 'instagram'): ?>
+                            <!-- Instagram: Handle only, no @ symbol -->
+                            <div class="social-handle"><?php echo esc_html($handle); ?></div>
+                        <?php elseif ($platform === 'twitter'): ?>
+                            <!-- Twitter/X: Name AND handle -->
+                            <div class="social-name"><?php echo esc_html($display_name); ?></div>
+                            <div class="social-handle">@<?php echo esc_html($handle); ?></div>
+                        <?php elseif ($platform === 'truth'): ?>
+                            <!-- Truth Social: Name AND handle -->
+                            <div class="social-name"><?php echo esc_html($display_name); ?></div>
+                            <div class="social-handle">@<?php echo esc_html($handle); ?></div>
+                        <?php else: ?>
+                            <!-- Default fallback -->
+                            <div class="social-name"><?php echo esc_html($display_name); ?></div>
+                            <div class="social-handle">@<?php echo esc_html($handle); ?></div>
+                        <?php endif; ?>
                     </div>
                     <div class="social-timestamp">
                         <i class="fas fa-clock me-1"></i>

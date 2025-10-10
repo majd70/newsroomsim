@@ -260,12 +260,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content_type']) && !e
             $text = isset($_POST['insert_text']) ? trim(sanitize_textarea_field($_POST['insert_text'])) :
                    (isset($_POST['text']) ? trim(sanitize_textarea_field($_POST['text'])) : '');
 
-            if (empty($display_name)) {
-                $validation_errors[] = 'Display name is required';
+            // Platform-specific validation
+            if ($platform === 'facebook') {
+                // Facebook: Name required, handle not required (auto-set)
+                if (empty($display_name)) {
+                    $validation_errors[] = 'Display name is required';
+                }
+                // Auto-set handle for Facebook if empty
+                if (empty($handle)) {
+                    $handle = 'facebook_user';
+                }
+            } elseif ($platform === 'instagram') {
+                // Instagram: Handle required, display name not required (auto-set)
+                if (empty($handle)) {
+                    $validation_errors[] = 'Username is required';
+                }
+                // Auto-set display name for Instagram if empty
+                if (empty($display_name)) {
+                    $display_name = 'Instagram User';
+                }
+            } else {
+                // Twitter and Truth Social: Both name and handle required
+                if (empty($display_name)) {
+                    $validation_errors[] = 'Display name is required';
+                }
+                if (empty($handle)) {
+                    $validation_errors[] = 'Handle/Username is required';
+                }
             }
-            if (empty($handle)) {
-                $validation_errors[] = 'Handle/Username is required';
-            }
+
             if (empty($text)) {
                 $validation_errors[] = 'Post text is required';
             }
@@ -610,13 +633,9 @@ if (function_exists('get_header')) {
                     <input class="form-control" type="text" id="facebookDisplayName" name="insert_display_name" data-required-for="social_facebook">
                     <div class="invalid-feedback">Please enter a display name.</div>
                   </div>
-                  <div class="mb-3">
-                    <label for="facebookHandle" class="form-label">Handle/Username *</label>
-                    <div class="input-group">
-                      <span class="input-group-text">@</span>
-                      <input class="form-control" type="text" id="facebookHandle" name="insert_handle" placeholder="username" data-required-for="social_facebook">
-                    </div>
-                    <div class="invalid-feedback">Please enter a handle/username.</div>
+                  <div class="mb-3" style="display: none;">
+                    <!-- Facebook doesn't use handles - hidden field for compatibility -->
+                    <input type="hidden" id="facebookHandle" name="insert_handle" value="facebook_user">
                   </div>
                   <div class="mb-3">
                     <label for="facebookText" class="form-label">Post Text *</label>
@@ -635,18 +654,15 @@ if (function_exists('get_header')) {
                 <div class="tab-pane fade" id="instagram-content" role="tabpanel">
                   <input type="hidden" name="content_type" value="social_instagram" id="content_type_field_instagram">
 
-                  <div class="mb-3">
-                    <label for="instagramDisplayName" class="form-label">Display Name *</label>
-                    <input class="form-control" type="text" id="instagramDisplayName" name="insert_display_name" data-required-for="social_instagram">
-                    <div class="invalid-feedback">Please enter a display name.</div>
+                  <div class="mb-3" style="display: none;">
+                    <!-- Instagram doesn't show display name - hidden field for compatibility -->
+                    <input type="hidden" id="instagramDisplayName" name="insert_display_name" value="Instagram User">
                   </div>
                   <div class="mb-3">
-                    <label for="instagramHandle" class="form-label">Handle/Username *</label>
-                    <div class="input-group">
-                      <span class="input-group-text">@</span>
-                      <input class="form-control" type="text" id="instagramHandle" name="insert_handle" placeholder="username" data-required-for="social_instagram">
-                    </div>
-                    <div class="invalid-feedback">Please enter a handle/username.</div>
+                    <label for="instagramHandle" class="form-label">Username *</label>
+                    <input class="form-control" type="text" id="instagramHandle" name="insert_handle" placeholder="username" data-required-for="social_instagram">
+                    <div class="form-text">Enter username without @ symbol</div>
+                    <div class="invalid-feedback">Please enter a username.</div>
                   </div>
                   <div class="mb-3">
                     <label for="instagramText" class="form-label">Post Text *</label>
@@ -1956,12 +1972,9 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
                         <label for="facebookDisplayNameSa" class="form-label">Display Name *</label>
                         <input class="form-control" type="text" id="facebookDisplayNameSa" name="insert_display_name">
                       </div>
-                      <div class="mb-3">
-                        <label for="facebookHandleSa" class="form-label">Handle/Username *</label>
-                        <div class="input-group">
-                          <span class="input-group-text">@</span>
-                          <input class="form-control" type="text" id="facebookHandleSa" name="insert_handle" placeholder="username">
-                        </div>
+                      <div class="mb-3" style="display: none;">
+                        <!-- Facebook doesn't use handles - hidden field for compatibility -->
+                        <input type="hidden" id="facebookHandleSa" name="insert_handle" value="facebook_user">
                       </div>
                       <div class="mb-3">
                         <label for="facebookTextSa" class="form-label">Post Text *</label>
@@ -1979,16 +1992,14 @@ console.log('✅ confirmDelete function defined globally (WordPress Mode)');
 
                     <!-- Instagram Form -->
                     <div class="tab-pane fade" id="instagram-content-sa" role="tabpanel">
-                      <div class="mb-3">
-                        <label for="instagramDisplayNameSa" class="form-label">Display Name *</label>
-                        <input class="form-control" type="text" id="instagramDisplayNameSa" name="insert_display_name">
+                      <div class="mb-3" style="display: none;">
+                        <!-- Instagram doesn't show display name - hidden field for compatibility -->
+                        <input type="hidden" id="instagramDisplayNameSa" name="insert_display_name" value="Instagram User">
                       </div>
                       <div class="mb-3">
-                        <label for="instagramHandleSa" class="form-label">Handle/Username *</label>
-                        <div class="input-group">
-                          <span class="input-group-text">@</span>
-                          <input class="form-control" type="text" id="instagramHandleSa" name="insert_handle" placeholder="username">
-                        </div>
+                        <label for="instagramHandleSa" class="form-label">Username *</label>
+                        <input class="form-control" type="text" id="instagramHandleSa" name="insert_handle" placeholder="username">
+                        <div class="form-text">Enter username without @ symbol</div>
                       </div>
                       <div class="mb-3">
                         <label for="instagramTextSa" class="form-label">Post Text *</label>

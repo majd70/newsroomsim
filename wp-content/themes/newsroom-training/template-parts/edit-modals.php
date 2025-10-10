@@ -58,9 +58,9 @@
             <label for="editFacebookDisplayName" class="form-label">Display Name *</label>
             <input class="form-control" type="text" id="editFacebookDisplayName" name="insert_display_name" required>
           </div>
-          <div class="mb-3">
-            <label for="editFacebookHandle" class="form-label">Handle *</label>
-            <input class="form-control" type="text" id="editFacebookHandle" name="insert_handle" required>
+          <div class="mb-3" style="display: none;">
+            <!-- Facebook doesn't use handles - hidden field for compatibility -->
+            <input type="hidden" id="editFacebookHandle" name="insert_handle" value="facebook_user">
           </div>
           <div class="mb-3">
             <label for="editFacebookText" class="form-label">Post Text *</label>
@@ -96,13 +96,14 @@
           <input type="hidden" name="content_type" value="social_instagram">
           <input type="hidden" name="edit_post_id" id="editInstagramPostId">
 
-          <div class="mb-3">
-            <label for="editInstagramDisplayName" class="form-label">Display Name *</label>
-            <input class="form-control" type="text" id="editInstagramDisplayName" name="insert_display_name" required>
+          <div class="mb-3" style="display: none;">
+            <!-- Instagram doesn't show display name - hidden field for compatibility -->
+            <input type="hidden" id="editInstagramDisplayName" name="insert_display_name" value="Instagram User">
           </div>
           <div class="mb-3">
-            <label for="editInstagramHandle" class="form-label">Handle *</label>
+            <label for="editInstagramHandle" class="form-label">Username *</label>
             <input class="form-control" type="text" id="editInstagramHandle" name="insert_handle" required>
+            <div class="form-text">Enter username without @ symbol</div>
           </div>
           <div class="mb-3">
             <label for="editInstagramText" class="form-label">Caption *</label>

@@ -413,7 +413,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             document.getElementById('editFacebookPostId').value = postId || '';
             document.getElementById('editFacebookDisplayName').value = displayName || '';
-            document.getElementById('editFacebookHandle').value = handle || '';
+            // Facebook doesn't use handles - set hidden field to default value
+            document.getElementById('editFacebookHandle').value = 'facebook_user';
             document.getElementById('editFacebookText').value = text || '';
 
             // Clear media input
@@ -441,7 +442,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const text = button.getAttribute('data-text');
 
             document.getElementById('editInstagramPostId').value = postId || '';
-            document.getElementById('editInstagramDisplayName').value = displayName || '';
+            // Instagram doesn't show display name - set hidden field to default value
+            document.getElementById('editInstagramDisplayName').value = 'Instagram User';
             document.getElementById('editInstagramHandle').value = handle || '';
             document.getElementById('editInstagramText').value = text || '';
 

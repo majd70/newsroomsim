@@ -7468,3 +7468,457 @@ A nor’easter is just a coastal storm named based on the direction from which i
 [09-Oct-2025 21:22:01 UTC]   - Button data-display-name will be: "majd"
 [09-Oct-2025 21:22:01 UTC]   - Button data-handle will be: "majd"
 [09-Oct-2025 21:22:01 UTC]   - Button data-text will be: "fwefwefwefwef222"
+[09-Oct-2025 21:40:40 UTC] ═══════════════════════════════════════════════════
+[09-Oct-2025 21:40:40 UTC] 🔍 DELETE HANDLER CALLED
+[09-Oct-2025 21:40:40 UTC] Request Method: GET
+[09-Oct-2025 21:40:40 UTC] POST data: Array
+(
+)
+
+[09-Oct-2025 21:40:40 UTC] ❌ Not a POST request - exiting
+[09-Oct-2025 21:40:41 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 486
+[09-Oct-2025 21:40:41 UTC] 🔍 Truth Social Post Debug - Post ID: 242
+[09-Oct-2025 21:40:41 UTC]   - Platform: truth
+[09-Oct-2025 21:40:41 UTC]   - Display Name: majd
+[09-Oct-2025 21:40:41 UTC]   - Handle: majd
+[09-Oct-2025 21:40:41 UTC]   - Text Length: 16
+[09-Oct-2025 21:40:41 UTC]   - Clean Text Length: 16
+[09-Oct-2025 21:40:41 UTC]   - Modal Target: #editTruthModal
+[09-Oct-2025 21:40:41 UTC]   - Raw post content: fwefwefwefwef222
+[09-Oct-2025 21:40:41 UTC]   - Raw meta _social_display_name: majd
+[09-Oct-2025 21:40:41 UTC]   - Raw meta _social_handle: majd
+[09-Oct-2025 21:40:41 UTC]   - Button data-display-name will be: "majd"
+[09-Oct-2025 21:40:41 UTC]   - Button data-handle will be: "majd"
+[09-Oct-2025 21:40:41 UTC]   - Button data-text will be: "fwefwefwefwef222"
+[09-Oct-2025 21:41:25 UTC] ═══════════════════════════════════════════════════
+[09-Oct-2025 21:41:25 UTC] 🔍 DELETE HANDLER CALLED
+[09-Oct-2025 21:41:25 UTC] Request Method: POST
+[09-Oct-2025 21:41:25 UTC] POST data: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => Majd
+    [insert_handle] => facebook_user
+    [insert_text] => esvevwevwevwe
+)
+
+[09-Oct-2025 21:41:25 UTC] ❌ delete_ids is empty - exiting
+[09-Oct-2025 21:41:25 UTC] === FORM SUBMITTED ===
+[09-Oct-2025 21:41:25 UTC] POST Data: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [insert_display_name] => Majd
+    [insert_handle] => facebook_user
+    [insert_text] => esvevwevwevwe
+)
+
+[09-Oct-2025 21:41:25 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => Truth.png
+                )
+
+            [full_path] => Array
+                (
+                    [0] => Truth.png
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\phpF646.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 1727
+                )
+
+        )
+
+)
+
+[09-Oct-2025 21:41:25 UTC] Content Type: social_facebook
+[09-Oct-2025 21:41:25 UTC] Edit Mode: NO
+[09-Oct-2025 21:41:25 UTC] Image uploaded successfully: http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68e82c0591792.png
+[09-Oct-2025 21:41:25 UTC] Creating social post: facebook - Majd
+[09-Oct-2025 21:41:25 UTC] Media images (1): http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68e82c0591792.png
+[09-Oct-2025 21:41:25 UTC] Social post created successfully: 243
+[09-Oct-2025 21:41:25 UTC] All media saved in DB: ["http://localhost/Upwork/David/newsroomsim/wp-content/themes/newsroom-training/uploads/img_68e82c0591792.png"]
+[09-Oct-2025 21:41:25 UTC] ✅ Post created successfully! Redirecting...
+[09-Oct-2025 21:41:25 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[09-Oct-2025 21:41:26 UTC] ═══════════════════════════════════════════════════
+[09-Oct-2025 21:41:26 UTC] 🔍 DELETE HANDLER CALLED
+[09-Oct-2025 21:41:26 UTC] Request Method: GET
+[09-Oct-2025 21:41:26 UTC] POST data: Array
+(
+)
+
+[09-Oct-2025 21:41:26 UTC] ❌ Not a POST request - exiting
+[09-Oct-2025 21:41:26 UTC] 🔍 Truth Social Post Debug - Post ID: 242
+[09-Oct-2025 21:41:26 UTC]   - Platform: truth
+[09-Oct-2025 21:41:26 UTC]   - Display Name: majd
+[09-Oct-2025 21:41:26 UTC]   - Handle: majd
+[09-Oct-2025 21:41:26 UTC]   - Text Length: 16
+[09-Oct-2025 21:41:26 UTC]   - Clean Text Length: 16
+[09-Oct-2025 21:41:26 UTC]   - Modal Target: #editTruthModal
+[09-Oct-2025 21:41:26 UTC]   - Raw post content: fwefwefwefwef222
+[09-Oct-2025 21:41:26 UTC]   - Raw meta _social_display_name: majd
+[09-Oct-2025 21:41:26 UTC]   - Raw meta _social_handle: majd
+[09-Oct-2025 21:41:26 UTC]   - Button data-display-name will be: "majd"
+[09-Oct-2025 21:41:26 UTC]   - Button data-handle will be: "majd"
+[09-Oct-2025 21:41:26 UTC]   - Button data-text will be: "fwefwefwefwef222"
+[09-Oct-2025 21:41:37 UTC] ═══════════════════════════════════════════════════
+[09-Oct-2025 21:41:37 UTC] 🔍 DELETE HANDLER CALLED
+[09-Oct-2025 21:41:37 UTC] Request Method: POST
+[09-Oct-2025 21:41:37 UTC] POST data: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [edit_post_id] => 243
+    [insert_display_name] => Majd
+    [insert_handle] => facebook_user
+    [insert_text] => esvevwevwevwe22
+)
+
+[09-Oct-2025 21:41:37 UTC] ❌ delete_ids is empty - exiting
+[09-Oct-2025 21:41:37 UTC] === FORM SUBMITTED ===
+[09-Oct-2025 21:41:37 UTC] POST Data: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_facebook
+    [edit_post_id] => 243
+    [insert_display_name] => Majd
+    [insert_handle] => facebook_user
+    [insert_text] => esvevwevwevwe22
+)
+
+[09-Oct-2025 21:41:37 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[09-Oct-2025 21:41:37 UTC] Content Type: social_facebook
+[09-Oct-2025 21:41:37 UTC] Edit Mode: YES
+[09-Oct-2025 21:41:37 UTC] Editing Post ID: 243
+[09-Oct-2025 21:41:37 UTC] Updating social post: facebook - Majd
+[09-Oct-2025 21:41:37 UTC] Social post updated successfully: 243
+[09-Oct-2025 21:41:37 UTC] Social post updated successfully: 243
+[09-Oct-2025 21:41:37 UTC] ✅ Post created successfully! Redirecting...
+[09-Oct-2025 21:41:37 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[09-Oct-2025 21:41:37 UTC] ═══════════════════════════════════════════════════
+[09-Oct-2025 21:41:37 UTC] 🔍 DELETE HANDLER CALLED
+[09-Oct-2025 21:41:37 UTC] Request Method: GET
+[09-Oct-2025 21:41:37 UTC] POST data: Array
+(
+)
+
+[09-Oct-2025 21:41:37 UTC] ❌ Not a POST request - exiting
+[09-Oct-2025 21:41:37 UTC] 🔍 Truth Social Post Debug - Post ID: 242
+[09-Oct-2025 21:41:37 UTC]   - Platform: truth
+[09-Oct-2025 21:41:37 UTC]   - Display Name: majd
+[09-Oct-2025 21:41:37 UTC]   - Handle: majd
+[09-Oct-2025 21:41:37 UTC]   - Text Length: 16
+[09-Oct-2025 21:41:37 UTC]   - Clean Text Length: 16
+[09-Oct-2025 21:41:37 UTC]   - Modal Target: #editTruthModal
+[09-Oct-2025 21:41:37 UTC]   - Raw post content: fwefwefwefwef222
+[09-Oct-2025 21:41:37 UTC]   - Raw meta _social_display_name: majd
+[09-Oct-2025 21:41:37 UTC]   - Raw meta _social_handle: majd
+[09-Oct-2025 21:41:37 UTC]   - Button data-display-name will be: "majd"
+[09-Oct-2025 21:41:37 UTC]   - Button data-handle will be: "majd"
+[09-Oct-2025 21:41:37 UTC]   - Button data-text will be: "fwefwefwefwef222"
+[09-Oct-2025 21:42:02 UTC] ═══════════════════════════════════════════════════
+[09-Oct-2025 21:42:02 UTC] 🔍 DELETE HANDLER CALLED
+[09-Oct-2025 21:42:02 UTC] Request Method: POST
+[09-Oct-2025 21:42:02 UTC] POST data: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_truth
+    [insert_display_name] => Mjad
+    [insert_handle] => majd
+    [insert_text] => wdwefwef
+)
+
+[09-Oct-2025 21:42:02 UTC] ❌ delete_ids is empty - exiting
+[09-Oct-2025 21:42:02 UTC] === FORM SUBMITTED ===
+[09-Oct-2025 21:42:02 UTC] POST Data: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_truth
+    [insert_display_name] => Mjad
+    [insert_handle] => majd
+    [insert_text] => wdwefwef
+)
+
+[09-Oct-2025 21:42:02 UTC] FILES Data: Array
+(
+    [insert_media] => Array
+        (
+            [name] => Array
+                (
+                    [0] => Truth.png
+                )
+
+            [full_path] => Array
+                (
+                    [0] => Truth.png
+                )
+
+            [type] => Array
+                (
+                    [0] => image/png
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => C:\xampp-php8.2-new\tmp\php8920.tmp
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 1727
+                )
+
+        )
+
+)
+
+[09-Oct-2025 21:42:02 UTC] Content Type: social_truth
+[09-Oct-2025 21:42:02 UTC] Edit Mode: NO
+[09-Oct-2025 21:42:02 UTC] Creating social post: truth - Mjad
+[09-Oct-2025 21:42:02 UTC] Social post created successfully: 244
+[09-Oct-2025 21:42:02 UTC] ✅ Post created successfully! Redirecting...
+[09-Oct-2025 21:42:02 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[09-Oct-2025 21:42:02 UTC] ═══════════════════════════════════════════════════
+[09-Oct-2025 21:42:02 UTC] 🔍 DELETE HANDLER CALLED
+[09-Oct-2025 21:42:02 UTC] Request Method: GET
+[09-Oct-2025 21:42:02 UTC] POST data: Array
+(
+)
+
+[09-Oct-2025 21:42:02 UTC] ❌ Not a POST request - exiting
+[09-Oct-2025 21:42:03 UTC] 🔍 Truth Social Post Debug - Post ID: 244
+[09-Oct-2025 21:42:03 UTC]   - Platform: truth
+[09-Oct-2025 21:42:03 UTC]   - Display Name: Mjad
+[09-Oct-2025 21:42:03 UTC]   - Handle: majd
+[09-Oct-2025 21:42:03 UTC]   - Text Length: 8
+[09-Oct-2025 21:42:03 UTC]   - Clean Text Length: 8
+[09-Oct-2025 21:42:03 UTC]   - Modal Target: #editTruthModal
+[09-Oct-2025 21:42:03 UTC]   - Raw post content: wdwefwef
+[09-Oct-2025 21:42:03 UTC]   - Raw meta _social_display_name: Mjad
+[09-Oct-2025 21:42:03 UTC]   - Raw meta _social_handle: majd
+[09-Oct-2025 21:42:03 UTC]   - Button data-display-name will be: "Mjad"
+[09-Oct-2025 21:42:03 UTC]   - Button data-handle will be: "majd"
+[09-Oct-2025 21:42:03 UTC]   - Button data-text will be: "wdwefwef"
+[09-Oct-2025 21:42:03 UTC] 🔍 Truth Social Post Debug - Post ID: 242
+[09-Oct-2025 21:42:03 UTC]   - Platform: truth
+[09-Oct-2025 21:42:03 UTC]   - Display Name: majd
+[09-Oct-2025 21:42:03 UTC]   - Handle: majd
+[09-Oct-2025 21:42:03 UTC]   - Text Length: 16
+[09-Oct-2025 21:42:03 UTC]   - Clean Text Length: 16
+[09-Oct-2025 21:42:03 UTC]   - Modal Target: #editTruthModal
+[09-Oct-2025 21:42:03 UTC]   - Raw post content: fwefwefwefwef222
+[09-Oct-2025 21:42:03 UTC]   - Raw meta _social_display_name: majd
+[09-Oct-2025 21:42:03 UTC]   - Raw meta _social_handle: majd
+[09-Oct-2025 21:42:03 UTC]   - Button data-display-name will be: "majd"
+[09-Oct-2025 21:42:03 UTC]   - Button data-handle will be: "majd"
+[09-Oct-2025 21:42:03 UTC]   - Button data-text will be: "fwefwefwefwef222"
+[09-Oct-2025 21:42:12 UTC] ═══════════════════════════════════════════════════
+[09-Oct-2025 21:42:12 UTC] 🔍 DELETE HANDLER CALLED
+[09-Oct-2025 21:42:12 UTC] Request Method: POST
+[09-Oct-2025 21:42:12 UTC] POST data: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_truth
+    [edit_post_id] => 244
+    [insert_display_name] => Mjad
+    [insert_handle] => majd
+    [insert_text] => wdwefweffff
+)
+
+[09-Oct-2025 21:42:12 UTC] ❌ delete_ids is empty - exiting
+[09-Oct-2025 21:42:12 UTC] === FORM SUBMITTED ===
+[09-Oct-2025 21:42:12 UTC] POST Data: Array
+(
+    [insert_content_nonce] => e93f68365f
+    [_wp_http_referer] => /Upwork/David/newsroomsim/
+    [content_type] => social_truth
+    [edit_post_id] => 244
+    [insert_display_name] => Mjad
+    [insert_handle] => majd
+    [insert_text] => wdwefweffff
+)
+
+[09-Oct-2025 21:42:12 UTC] FILES Data: Array
+(
+    [insert_media_files] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [full_path] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+[09-Oct-2025 21:42:12 UTC] Content Type: social_truth
+[09-Oct-2025 21:42:12 UTC] Edit Mode: YES
+[09-Oct-2025 21:42:12 UTC] Editing Post ID: 244
+[09-Oct-2025 21:42:12 UTC] Updating social post: truth - Mjad
+[09-Oct-2025 21:42:12 UTC] Social post updated successfully: 244
+[09-Oct-2025 21:42:12 UTC] Social post updated successfully: 244
+[09-Oct-2025 21:42:12 UTC] ✅ Post created successfully! Redirecting...
+[09-Oct-2025 21:42:12 UTC] Redirect URL: http://localhost/Upwork/David/newsroomsim
+[09-Oct-2025 21:42:13 UTC] ═══════════════════════════════════════════════════
+[09-Oct-2025 21:42:13 UTC] 🔍 DELETE HANDLER CALLED
+[09-Oct-2025 21:42:13 UTC] Request Method: GET
+[09-Oct-2025 21:42:13 UTC] POST data: Array
+(
+)
+
+[09-Oct-2025 21:42:13 UTC] ❌ Not a POST request - exiting
+[09-Oct-2025 21:42:13 UTC] 🔍 Truth Social Post Debug - Post ID: 244
+[09-Oct-2025 21:42:13 UTC]   - Platform: truth
+[09-Oct-2025 21:42:13 UTC]   - Display Name: Mjad
+[09-Oct-2025 21:42:13 UTC]   - Handle: majd
+[09-Oct-2025 21:42:13 UTC]   - Text Length: 11
+[09-Oct-2025 21:42:13 UTC]   - Clean Text Length: 11
+[09-Oct-2025 21:42:13 UTC]   - Modal Target: #editTruthModal
+[09-Oct-2025 21:42:13 UTC]   - Raw post content: wdwefweffff
+[09-Oct-2025 21:42:13 UTC]   - Raw meta _social_display_name: Mjad
+[09-Oct-2025 21:42:13 UTC]   - Raw meta _social_handle: majd
+[09-Oct-2025 21:42:13 UTC]   - Button data-display-name will be: "Mjad"
+[09-Oct-2025 21:42:13 UTC]   - Button data-handle will be: "majd"
+[09-Oct-2025 21:42:13 UTC]   - Button data-text will be: "wdwefweffff"
+[09-Oct-2025 21:42:13 UTC] 🔍 Truth Social Post Debug - Post ID: 242
+[09-Oct-2025 21:42:13 UTC]   - Platform: truth
+[09-Oct-2025 21:42:13 UTC]   - Display Name: majd
+[09-Oct-2025 21:42:13 UTC]   - Handle: majd
+[09-Oct-2025 21:42:13 UTC]   - Text Length: 16
+[09-Oct-2025 21:42:13 UTC]   - Clean Text Length: 16
+[09-Oct-2025 21:42:13 UTC]   - Modal Target: #editTruthModal
+[09-Oct-2025 21:42:13 UTC]   - Raw post content: fwefwefwefwef222
+[09-Oct-2025 21:42:13 UTC]   - Raw meta _social_display_name: majd
+[09-Oct-2025 21:42:13 UTC]   - Raw meta _social_handle: majd
+[09-Oct-2025 21:42:13 UTC]   - Button data-display-name will be: "majd"
+[09-Oct-2025 21:42:13 UTC]   - Button data-handle will be: "majd"
+[09-Oct-2025 21:42:13 UTC]   - Button data-text will be: "fwefwefwefwef222"
+[09-Oct-2025 21:42:26 UTC] ═══════════════════════════════════════════════════
+[09-Oct-2025 21:42:26 UTC] 🔍 DELETE HANDLER CALLED
+[09-Oct-2025 21:42:26 UTC] Request Method: GET
+[09-Oct-2025 21:42:26 UTC] POST data: Array
+(
+)
+
+[09-Oct-2025 21:42:26 UTC] ❌ Not a POST request - exiting
+[09-Oct-2025 21:42:26 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 486
+[09-Oct-2025 21:42:26 UTC] 🔍 Truth Social Post Debug - Post ID: 244
+[09-Oct-2025 21:42:26 UTC]   - Platform: truth
+[09-Oct-2025 21:42:26 UTC]   - Display Name: Mjad
+[09-Oct-2025 21:42:26 UTC]   - Handle: majd
+[09-Oct-2025 21:42:26 UTC]   - Text Length: 11
+[09-Oct-2025 21:42:26 UTC]   - Clean Text Length: 11
+[09-Oct-2025 21:42:26 UTC]   - Modal Target: #editTruthModal
+[09-Oct-2025 21:42:26 UTC]   - Raw post content: wdwefweffff
+[09-Oct-2025 21:42:26 UTC]   - Raw meta _social_display_name: Mjad
+[09-Oct-2025 21:42:26 UTC]   - Raw meta _social_handle: majd
+[09-Oct-2025 21:42:26 UTC]   - Button data-display-name will be: "Mjad"
+[09-Oct-2025 21:42:26 UTC]   - Button data-handle will be: "majd"
+[09-Oct-2025 21:42:26 UTC]   - Button data-text will be: "wdwefweffff"
+[09-Oct-2025 21:42:26 UTC] 🔍 Truth Social Post Debug - Post ID: 242
+[09-Oct-2025 21:42:26 UTC]   - Platform: truth
+[09-Oct-2025 21:42:26 UTC]   - Display Name: majd
+[09-Oct-2025 21:42:26 UTC]   - Handle: majd
+[09-Oct-2025 21:42:26 UTC]   - Text Length: 16
+[09-Oct-2025 21:42:26 UTC]   - Clean Text Length: 16
+[09-Oct-2025 21:42:26 UTC]   - Modal Target: #editTruthModal
+[09-Oct-2025 21:42:26 UTC]   - Raw post content: fwefwefwefwef222
+[09-Oct-2025 21:42:26 UTC]   - Raw meta _social_display_name: majd
+[09-Oct-2025 21:42:26 UTC]   - Raw meta _social_handle: majd
+[09-Oct-2025 21:42:26 UTC]   - Button data-display-name will be: "majd"
+[09-Oct-2025 21:42:26 UTC]   - Button data-handle will be: "majd"
+[09-Oct-2025 21:42:26 UTC]   - Button data-text will be: "fwefwefwefwef222"
