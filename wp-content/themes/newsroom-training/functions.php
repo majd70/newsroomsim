@@ -1651,11 +1651,22 @@ function sb_headline_fallback(){
 
         var el = document.createElement('div');
         el.id = 'sb-headline';
-        el.textContent = 'SIGNAL BRIDGE NEWSROOM SIM';
         el.style.textAlign = 'center';
-        el.style.fontWeight = '700';
-        el.style.fontSize = '28px';
         el.style.margin = '20px 0 0';
+
+        var mainTitle = document.createElement('div');
+        mainTitle.textContent = 'SIGNAL BRIDGE NEWSROOM SIM';
+        mainTitle.style.fontWeight = '700';
+        mainTitle.style.fontSize = '28px';
+
+        var subtitle = document.createElement('div');
+        subtitle.textContent = 'THIS IS A DRILL';
+        subtitle.style.fontSize = '14px';
+        subtitle.style.marginTop = '4px';
+        subtitle.style.fontWeight = '400';
+
+        el.appendChild(mainTitle);
+        el.appendChild(subtitle);
 
         function insertAfterHeader() {
             if (document.getElementById('sb-headline')) return true;

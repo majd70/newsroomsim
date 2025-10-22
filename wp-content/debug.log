@@ -15750,3 +15750,38 @@ A nor’easter is just a coastal storm named based on the direction from which i
 [22-Oct-2025 07:19:07 UTC]   - Button data-display-name will be: "majd"
 [22-Oct-2025 07:19:07 UTC]   - Button data-handle will be: "majd"
 [22-Oct-2025 07:19:07 UTC]   - Button data-text will be: "fwefwefwefwef222"
+[22-Oct-2025 07:50:07 UTC] ═══════════════════════════════════════════════════
+[22-Oct-2025 07:50:07 UTC] 🔍 DELETE HANDLER CALLED
+[22-Oct-2025 07:50:07 UTC] Request Method: GET
+[22-Oct-2025 07:50:07 UTC] POST data: Array
+(
+)
+
+[22-Oct-2025 07:50:07 UTC] ❌ Not a POST request - exiting
+[22-Oct-2025 07:50:08 UTC] PHP Warning:  Undefined variable $insert_success in C:\xampp-php8.2-new\htdocs\Upwork\David\newsroomsim\wp-content\themes\newsroom-training\index.php on line 510
+[22-Oct-2025 07:50:08 UTC] 🔍 Truth Social Post Debug - Post ID: 244
+[22-Oct-2025 07:50:08 UTC]   - Platform: truth
+[22-Oct-2025 07:50:08 UTC]   - Display Name: Mjad
+[22-Oct-2025 07:50:08 UTC]   - Handle: majd
+[22-Oct-2025 07:50:08 UTC]   - Text Length: 11
+[22-Oct-2025 07:50:08 UTC]   - Clean Text Length: 11
+[22-Oct-2025 07:50:08 UTC]   - Modal Target: #editTruthModal
+[22-Oct-2025 07:50:08 UTC]   - Raw post content: wdwefweffff
+[22-Oct-2025 07:50:08 UTC]   - Raw meta _social_display_name: Mjad
+[22-Oct-2025 07:50:08 UTC]   - Raw meta _social_handle: majd
+[22-Oct-2025 07:50:08 UTC]   - Button data-display-name will be: "Mjad"
+[22-Oct-2025 07:50:08 UTC]   - Button data-handle will be: "majd"
+[22-Oct-2025 07:50:08 UTC]   - Button data-text will be: "wdwefweffff"
+[22-Oct-2025 07:50:08 UTC] 🔍 Truth Social Post Debug - Post ID: 242
+[22-Oct-2025 07:50:08 UTC]   - Platform: truth
+[22-Oct-2025 07:50:08 UTC]   - Display Name: majd
+[22-Oct-2025 07:50:08 UTC]   - Handle: majd
+[22-Oct-2025 07:50:08 UTC]   - Text Length: 16
+[22-Oct-2025 07:50:08 UTC]   - Clean Text Length: 16
+[22-Oct-2025 07:50:08 UTC]   - Modal Target: #editTruthModal
+[22-Oct-2025 07:50:08 UTC]   - Raw post content: fwefwefwefwef222
+[22-Oct-2025 07:50:08 UTC]   - Raw meta _social_display_name: majd
+[22-Oct-2025 07:50:08 UTC]   - Raw meta _social_handle: majd
+[22-Oct-2025 07:50:08 UTC]   - Button data-display-name will be: "majd"
+[22-Oct-2025 07:50:08 UTC]   - Button data-handle will be: "majd"
+[22-Oct-2025 07:50:08 UTC]   - Button data-text will be: "fwefwefwefwef222"
