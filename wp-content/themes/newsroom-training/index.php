@@ -208,6 +208,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content_type']) && !e
                             update_post_meta($post_id, '_news_all_images', $all_images_json);
                         }
 
+                        // Store the edit event for live updates
+                        set_transient('newsroom_post_edited_' . $post_id, array(
+                            'post_id' => $post_id,
+                            'post_type' => 'news_article',
+                            'edited_by' => get_current_user_id(),
+                            'timestamp' => current_time('Y-m-d H:i:s')
+                        ), 300); // Keep for 5 minutes
+
                         error_log('News article updated successfully: ' . $post_id);
                     }
                 } else {
@@ -332,10 +340,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content_type']) && !e
                             update_post_meta($post_id, '_social_all_media', $all_media_json);
                         }
 
+                        // Store the edit event for live updates
+                        set_transient('newsroom_post_edited_' . $post_id, array(
+                            'post_id' => $post_id,
+                            'post_type' => 'social_post',
+                            'edited_by' => get_current_user_id(),
+                            'timestamp' => current_time('Y-m-d H:i:s')
+                        ), 300); // Keep for 5 minutes
+
                         error_log('Social post updated successfully: ' . $post_id);
                     }
                 } else {
                     // Create new post
+
                     $new_post = array(
                         'post_title'   => $display_name . ' - ' . ucfirst($platform) . ' Post',
                         'post_content' => $text,
@@ -355,6 +372,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content_type']) && !e
                 if ($post_id && !is_wp_error($post_id)) {
                     error_log('Social post ' . ($is_edit_mode ? 'updated' : 'created') . ' successfully: ' . $post_id);
 
+
+
                     // Verify images were saved
                     if (!empty($media_images)) {
                         $saved_media = get_post_meta($post_id, '_social_all_media', true);
@@ -362,6 +381,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content_type']) && !e
                     }
 
                     wp_set_post_terms($post_id, array($platform), 'social_platform');
+
+                    // Force cache flush to ensure meta data is immediately available
+                    wp_cache_delete($post_id, 'post_meta');
+                    clean_post_cache($post_id);
+
                     $insert_success = true;
                 } else {
                     $error_message = is_wp_error($post_id) ? $post_id->get_error_message() : 'Unknown error';

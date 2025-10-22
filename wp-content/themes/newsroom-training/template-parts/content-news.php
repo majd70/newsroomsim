@@ -42,7 +42,7 @@ if (function_exists('get_post_meta')) {
 ?>
 
 <!-- News Article Card -->
-<article class="content-card news-card mb-4 <?php echo $pinned ? 'pinned' : ''; ?>">
+<article class="content-card news-card mb-4 <?php echo $pinned ? 'pinned' : ''; ?>" data-post-id="<?php echo get_the_ID(); ?>">
 
 
     <?php if ($breaking): ?>
@@ -294,21 +294,17 @@ if ( current_user_can('delete_others_posts') ):
             ?>
                 <div class="add-comment-form bg-white p-3 rounded">
                     <h6 class="mb-2">Add a Comment</h6>
-                    <form method="post">
-                        <?php wp_nonce_field('add_comment_action', 'add_comment_nonce'); ?>
-                        <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-                        <input type="hidden" name="redirect_to" value="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>">
+                    <div class="realtime-comment-form" data-post-id="<?php echo $post_id; ?>">
                         <div class="mb-3">
-                            <textarea name="comment_content"
-                                      class="form-control"
+                            <textarea class="form-control comment-textarea"
                                       rows="3"
                                       placeholder="Write your comment here..."
                                       required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary realtime-comment-btn">
                             <i class="fas fa-paper-plane me-1"></i> Post Comment
                         </button>
-                    </form>
+                    </div>
                 </div>
             <?php elseif (!is_user_logged_in()): ?>
                 <p class="text-muted">Please <a href="<?php echo wp_login_url(get_permalink()); ?>">login</a> to comment.</p>

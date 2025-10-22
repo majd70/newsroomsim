@@ -1,4 +1,4 @@
-\
+
 jQuery(function($){
   // ---- 1) Create Content form: file input inject (fallback, যদি টেমপ্লেটে না থাকে) ----
   const $form = $('form#create-content, form.newsroom-create, form#newsroom-create');
@@ -17,7 +17,10 @@ jQuery(function($){
     const content = prompt('New content?');
     if(title===null && content===null) return;
     $.post(nrAjax.url, {action:'nr_edit_post', id, title, content, _wpnonce:nrAjax.nonce}, function(res){
-      if(res && res.success){ location.reload(); }
+      if(res && res.success){
+        // Show success message instead of reloading - let live updates handle the refresh
+        alert('Post updated successfully! The changes will appear shortly.');
+      }
       else { alert(res && res.data ? res.data : 'Failed'); }
     });
   });
@@ -29,7 +32,8 @@ jQuery(function($){
     const id = $(this).data('id');
     $.post(nrAjax.url, {action:'nr_delete_post', id, _wpnonce:nrAjax.nonce}, function(res){
       if(res && res.success){
-        $('#post-'+id).remove();
+        // Show success message instead of manual removal - let live updates handle it
+        alert('Post deleted successfully! The post will disappear shortly.');
       } else {
         alert(res && res.data ? res.data : 'Failed');
       }

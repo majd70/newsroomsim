@@ -89,8 +89,21 @@ add_action('wp_ajax_nr_delete_post', function(){
   if ( get_current_user_id() !== (int)$post->post_author || ! current_user_can('delete_post', $post_id) ) {
     wp_send_json_error('No permission');
   }
-  wp_delete_post($post_id, true);
-  wp_send_json_success();
+
+  $result = wp_delete_post($post_id, true);
+
+  if ($result) {
+    // Store the deletion event for live updates
+    set_transient('newsroom_post_deleted_' . $post_id, array(
+      'post_id' => $post_id,
+      'deleted_by' => get_current_user_id(),
+      'timestamp' => current_time('Y-m-d H:i:s')
+    ), 300); // Keep for 5 minutes
+
+    wp_send_json_success();
+  } else {
+    wp_send_json_error('Failed to delete post');
+  }
 });
 
 add_action('wp_ajax_nr_edit_post', function(){
@@ -108,8 +121,27 @@ add_action('wp_ajax_nr_edit_post', function(){
     'post_title'   => sanitize_text_field($_POST['title'] ?? $post->post_title),
     'post_content' => wp_kses_post($_POST['content'] ?? $post->post_content),
   );
-  wp_update_post($update);
-  wp_send_json_success();
+  $result = wp_update_post($update);
+
+  if ($result && !is_wp_error($result)) {
+    // Refresh post data after update
+    $updated_post = get_post($post_id);
+
+    // Store the edit event for live updates
+    $transient_data = array(
+      'post_id' => $post_id,
+      'post_type' => $updated_post->post_type,
+      'edited_by' => get_current_user_id(),
+      'timestamp' => current_time('Y-m-d H:i:s')
+    );
+
+    error_log("Storing edit transient: " . print_r($transient_data, true));
+    set_transient('newsroom_post_edited_' . $post_id, $transient_data, 300); // Keep for 5 minutes
+
+    wp_send_json_success();
+  } else {
+    wp_send_json_error('Failed to update post');
+  }
 });
 
 /**

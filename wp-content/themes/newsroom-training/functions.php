@@ -48,13 +48,16 @@ function newsroom_enqueue_scripts() {
     // Enqueue scripts
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', array(), '5.1.3', true);
     wp_enqueue_script('newsroom-main', get_template_directory_uri() . '/assets/js/main.js', array('bootstrap-js'), THEME_VERSION, true);
+    wp_enqueue_script('newsroom-realtime', get_template_directory_uri() . '/assets/js/realtime-updates.js', array('newsroom-main'), THEME_VERSION . '-v7', true);
     
-    // Localize script for AJAX
-    wp_localize_script('newsroom-main', 'newsroom_ajax', array(
+    // Localize script for AJAX - attach to real-time script to ensure it's available
+    wp_localize_script('newsroom-realtime', 'newsroom_ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('newsroom_nonce'),
         'add_comment_nonce' => wp_create_nonce('add_comment_inline_nonce'),
-        'get_comments_nonce' => wp_create_nonce('get_comments_nonce')
+        'get_comments_nonce' => wp_create_nonce('get_comments_nonce'),
+        'wp_current_time' => current_time('Y-m-d H:i:s'),
+        'wp_timezone_offset' => get_option('gmt_offset')
     ));
 }
 add_action('wp_enqueue_scripts', 'newsroom_enqueue_scripts');
@@ -1744,6 +1747,13 @@ add_action('wp_ajax_delete_single_post', function() {
     $result = wp_delete_post($post_id, true);
 
     if ($result) {
+        // Store the deletion event for live updates
+        set_transient('newsroom_post_deleted_' . $post_id, array(
+            'post_id' => $post_id,
+            'deleted_by' => get_current_user_id(),
+            'timestamp' => current_time('Y-m-d H:i:s')
+        ), 300); // Keep for 5 minutes
+
         wp_send_json_success('Post deleted successfully');
     } else {
         wp_send_json_error('Failed to delete post');
@@ -1827,6 +1837,14 @@ add_action('wp_ajax_delete_comment', function() {
     $result = wp_delete_comment($comment_id, true);
 
     if ($result) {
+        // Store the deletion event for live updates
+        set_transient('newsroom_comment_deleted_' . $comment_id, array(
+            'comment_id' => $comment_id,
+            'post_id' => $comment->comment_post_ID,
+            'deleted_by' => get_current_user_id(),
+            'timestamp' => current_time('Y-m-d H:i:s')
+        ), 300); // Keep for 5 minutes
+
         wp_send_json_success('Comment deleted successfully');
     } else {
         wp_send_json_error('Failed to delete comment');
@@ -1835,8 +1853,11 @@ add_action('wp_ajax_delete_comment', function() {
 
 // AJAX handler for adding comments inline (logged in users)
 add_action('wp_ajax_add_comment_inline', function() {
-    // Verify nonce
-    if (!wp_verify_nonce($_POST['nonce'], 'add_comment_inline_nonce')) {
+    // Verify nonce - try both nonces for compatibility
+    $nonce_valid = wp_verify_nonce($_POST['nonce'], 'add_comment_inline_nonce') ||
+                   wp_verify_nonce($_POST['nonce'], 'newsroom_nonce');
+
+    if (!$nonce_valid) {
         wp_send_json_error('Security check failed');
         return;
     }
@@ -1907,11 +1928,873 @@ add_action('wp_ajax_add_comment_inline', function() {
 
         wp_send_json_success(array(
             'comment_id' => $comment_id,
+            'author_name' => $comment_author ? $comment_author->display_name : $comment->comment_author,
+            'content' => $comment->comment_content,
+            'date' => 'just now',
+            'can_delete' => $can_delete,
+            'delete_nonce' => $can_delete ? wp_create_nonce('delete_comment_' . $comment_id) : '',
             'comment_html' => $comment_html,
             'message' => 'Comment added successfully'
         ));
     } else {
         wp_send_json_error('Failed to add comment');
+    }
+});
+
+// AJAX handler for getting new posts (logged in users)
+add_action('wp_ajax_get_new_posts', function() {
+    // Verify nonce
+    $nonce_valid = wp_verify_nonce($_POST['nonce'], 'newsroom_nonce') ||
+                   wp_verify_nonce($_POST['nonce'], 'add_comment_inline_nonce');
+
+    if (!$nonce_valid) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $since_timestamp = sanitize_text_field($_POST['since_timestamp']);
+
+    if (empty($since_timestamp)) {
+        wp_send_json_error('Invalid timestamp');
+        return;
+    }
+
+    // Handle special timestamp requests from JavaScript
+    if ($since_timestamp === 'SERVER_TIME_NOW') {
+        $since_date = current_time('Y-m-d H:i:s');
+    } elseif (strpos($since_timestamp, 'SERVER_TIME_MINUS_') === 0) {
+        $minutes = intval(str_replace('SERVER_TIME_MINUS_', '', $since_timestamp));
+        $since_date = date('Y-m-d H:i:s', current_time('timestamp') - ($minutes * 60));
+    } else {
+        // Convert timestamp to MySQL datetime format
+        $since_date = date('Y-m-d H:i:s', strtotime($since_timestamp));
+    }
+
+    // Get current user ID to exclude their own posts
+    $current_user_id = get_current_user_id();
+
+    // Query for new news articles (exclude current user's posts)
+    $news_args = array(
+        'post_type' => 'news_article',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'date_query' => array(
+            array(
+                'after' => $since_date,
+                'inclusive' => false,
+            ),
+        ),
+        'orderby' => 'date',
+        'order' => 'DESC'
+    );
+
+    // Only exclude current user's posts if user is logged in
+    if ($current_user_id > 0) {
+        $news_args['author__not_in'] = array($current_user_id);
+    }
+
+    // Query for new social posts (exclude current user's posts)
+    $social_args = array(
+        'post_type' => 'social_post',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'date_query' => array(
+            array(
+                'after' => $since_date,
+                'inclusive' => false,
+            ),
+        ),
+        'orderby' => 'date',
+        'order' => 'DESC'
+    );
+
+    // Only exclude current user's posts if user is logged in
+    if ($current_user_id > 0) {
+        $social_args['author__not_in'] = array($current_user_id);
+    }
+
+    $news_posts = get_posts($news_args);
+    $social_posts = get_posts($social_args);
+    $all_posts = array_merge($news_posts, $social_posts);
+
+    if (empty($all_posts)) {
+        wp_send_json_success(array(
+            'posts_count' => 0,
+            'posts_html' => '',
+            'latest_timestamp' => $since_timestamp
+        ));
+        return;
+    }
+
+    // Sort all posts by date
+    usort($all_posts, function($a, $b) {
+        return strtotime($b->post_date) - strtotime($a->post_date);
+    });
+
+    // Generate HTML for new posts
+    ob_start();
+    global $post;
+    foreach ($all_posts as $current_post) {
+        $post = $current_post; // Set global $post
+        setup_postdata($post);
+
+
+
+        if ($post->post_type === 'news_article') {
+            get_template_part('template-parts/content', 'news');
+        } else {
+            get_template_part('template-parts/content', 'social');
+        }
+    }
+    wp_reset_postdata();
+
+    $posts_html = ob_get_clean();
+    $latest_timestamp = date('Y-m-d H:i:s', strtotime($all_posts[0]->post_date));
+
+    wp_send_json_success(array(
+        'posts_count' => count($all_posts),
+        'posts_html' => $posts_html,
+        'latest_timestamp' => $latest_timestamp
+    ));
+});
+
+// AJAX handler for getting new posts (non-logged in users)
+add_action('wp_ajax_nopriv_get_new_posts', function() {
+    // Verify nonce
+    $nonce_valid = wp_verify_nonce($_POST['nonce'], 'newsroom_nonce') ||
+                   wp_verify_nonce($_POST['nonce'], 'add_comment_inline_nonce');
+
+    if (!$nonce_valid) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $since_timestamp = sanitize_text_field($_POST['since_timestamp']);
+
+    if (empty($since_timestamp)) {
+        wp_send_json_error('Invalid timestamp');
+        return;
+    }
+
+    // Handle special timestamp requests from JavaScript
+    if ($since_timestamp === 'SERVER_TIME_NOW') {
+        $since_date = current_time('Y-m-d H:i:s');
+    } elseif (strpos($since_timestamp, 'SERVER_TIME_MINUS_') === 0) {
+        $minutes = intval(str_replace('SERVER_TIME_MINUS_', '', $since_timestamp));
+        $since_date = date('Y-m-d H:i:s', current_time('timestamp') - ($minutes * 60));
+    } else {
+        // Convert timestamp to MySQL datetime format
+        $since_date = date('Y-m-d H:i:s', strtotime($since_timestamp));
+    }
+
+    // Get current user ID to exclude their own posts (for non-logged-in users, this will be 0)
+    $current_user_id = get_current_user_id();
+
+    // Query for new news articles (exclude current user's posts if logged in)
+    $news_args = array(
+        'post_type' => 'news_article',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'date_query' => array(
+            array(
+                'after' => $since_date,
+                'inclusive' => false,
+            ),
+        ),
+        'orderby' => 'date',
+        'order' => 'DESC'
+    );
+
+    // Only exclude current user's posts if user is logged in
+    if ($current_user_id > 0) {
+        $news_args['author__not_in'] = array($current_user_id);
+    }
+
+    // Query for new social posts (exclude current user's posts if logged in)
+    $social_args = array(
+        'post_type' => 'social_post',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'date_query' => array(
+            array(
+                'after' => $since_date,
+                'inclusive' => false,
+            ),
+        ),
+        'orderby' => 'date',
+        'order' => 'DESC'
+    );
+
+    // Only exclude current user's posts if user is logged in
+    if ($current_user_id > 0) {
+        $social_args['author__not_in'] = array($current_user_id);
+    }
+
+    $news_posts = get_posts($news_args);
+    $social_posts = get_posts($social_args);
+    $all_posts = array_merge($news_posts, $social_posts);
+
+    if (empty($all_posts)) {
+        wp_send_json_success(array(
+            'posts_count' => 0,
+            'posts_html' => '',
+            'latest_timestamp' => $since_timestamp
+        ));
+        return;
+    }
+
+    // Sort all posts by date
+    usort($all_posts, function($a, $b) {
+        return strtotime($b->post_date) - strtotime($a->post_date);
+    });
+
+    // Generate HTML for new posts
+    ob_start();
+    global $post;
+    foreach ($all_posts as $current_post) {
+        $post = $current_post; // Set global $post
+        setup_postdata($post);
+
+
+
+        if ($post->post_type === 'news_article') {
+            get_template_part('template-parts/content', 'news');
+        } else {
+            get_template_part('template-parts/content', 'social');
+        }
+    }
+    wp_reset_postdata();
+
+    $posts_html = ob_get_clean();
+    $latest_timestamp = date('Y-m-d H:i:s', strtotime($all_posts[0]->post_date));
+
+    wp_send_json_success(array(
+        'posts_count' => count($all_posts),
+        'posts_html' => $posts_html,
+        'latest_timestamp' => $latest_timestamp
+    ));
+});
+
+// AJAX handler for getting new comments (logged in users)
+add_action('wp_ajax_get_new_comments', function() {
+    // Verify nonce
+    $nonce_valid = wp_verify_nonce($_POST['nonce'], 'newsroom_nonce') ||
+                   wp_verify_nonce($_POST['nonce'], 'add_comment_inline_nonce');
+
+    if (!$nonce_valid) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $since_timestamp = sanitize_text_field($_POST['since_timestamp']);
+
+    if (empty($since_timestamp)) {
+        wp_send_json_error('Invalid timestamp');
+        return;
+    }
+
+    // Handle special timestamp requests from JavaScript
+    if ($since_timestamp === 'SERVER_TIME_NOW') {
+        $since_date = current_time('Y-m-d H:i:s');
+    } elseif (strpos($since_timestamp, 'SERVER_TIME_MINUS_') === 0) {
+        $minutes = intval(str_replace('SERVER_TIME_MINUS_', '', $since_timestamp));
+        $since_date = date('Y-m-d H:i:s', current_time('timestamp') - ($minutes * 60));
+    } else {
+        // Convert timestamp to MySQL datetime format
+        $since_date = date('Y-m-d H:i:s', strtotime($since_timestamp));
+    }
+
+    // Get current user ID to exclude their own comments
+    $current_user_id = get_current_user_id();
+
+    // Query for new comments (exclude current user's comments)
+    $comment_args = array(
+        'date_query' => array(
+            array(
+                'after' => $since_date,
+                'inclusive' => false,
+            ),
+        ),
+        'status' => 'approve',
+        'orderby' => 'comment_date',
+        'order' => 'DESC'
+    );
+
+    // Only exclude current user's comments if user is logged in
+    if ($current_user_id > 0) {
+        $comment_args['user__not_in'] = array($current_user_id);
+    }
+
+    $comments = get_comments($comment_args);
+
+    if (empty($comments)) {
+        wp_send_json_success(array(
+            'comments_count' => 0,
+            'comments_by_post' => array(),
+            'latest_timestamp' => $since_timestamp
+        ));
+        return;
+    }
+
+    // Group comments by post
+    $comments_by_post = array();
+    $latest_timestamp = $since_timestamp;
+
+    foreach ($comments as $comment) {
+        $post_id = $comment->comment_post_ID;
+        $comment_author = get_userdata($comment->user_id);
+
+        // Check if user can delete this comment
+        $can_delete = (get_current_user_id() == $comment->user_id && current_user_can('delete_own_reply'))
+                   || current_user_can('moderate_comments')
+                   || current_user_can('delete_others_posts');
+
+        if (!isset($comments_by_post[$post_id])) {
+            $comments_by_post[$post_id] = array();
+        }
+
+        $comments_by_post[$post_id][] = array(
+            'comment_id' => $comment->comment_ID,
+            'author_name' => $comment_author ? $comment_author->display_name : $comment->comment_author,
+            'content' => $comment->comment_content,
+            'date' => human_time_diff(strtotime($comment->comment_date), current_time('timestamp')) . ' ago',
+            'can_delete' => $can_delete,
+            'delete_nonce' => $can_delete ? wp_create_nonce('delete_comment_' . $comment->comment_ID) : ''
+        );
+
+        // Update latest timestamp
+        if (strtotime($comment->comment_date) > strtotime($latest_timestamp)) {
+            $latest_timestamp = $comment->comment_date;
+        }
+    }
+
+    wp_send_json_success(array(
+        'comments_count' => count($comments),
+        'comments_by_post' => $comments_by_post,
+        'latest_timestamp' => $latest_timestamp
+    ));
+});
+
+// AJAX handler for getting new comments (non-logged in users)
+add_action('wp_ajax_nopriv_get_new_comments', function() {
+    // Verify nonce
+    $nonce_valid = wp_verify_nonce($_POST['nonce'], 'newsroom_nonce') ||
+                   wp_verify_nonce($_POST['nonce'], 'add_comment_inline_nonce');
+
+    if (!$nonce_valid) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $since_timestamp = sanitize_text_field($_POST['since_timestamp']);
+
+    if (empty($since_timestamp)) {
+        wp_send_json_error('Invalid timestamp');
+        return;
+    }
+
+    // Handle special timestamp requests from JavaScript
+    if ($since_timestamp === 'SERVER_TIME_NOW') {
+        $since_date = current_time('Y-m-d H:i:s');
+    } elseif (strpos($since_timestamp, 'SERVER_TIME_MINUS_') === 0) {
+        $minutes = intval(str_replace('SERVER_TIME_MINUS_', '', $since_timestamp));
+        $since_date = date('Y-m-d H:i:s', current_time('timestamp') - ($minutes * 60));
+    } else {
+        // Convert timestamp to MySQL datetime format
+        $since_date = date('Y-m-d H:i:s', strtotime($since_timestamp));
+    }
+
+    // Get current user ID to exclude their own comments (for non-logged-in users, this will be 0)
+    $current_user_id = get_current_user_id();
+
+    // Query for new comments (exclude current user's comments if logged in)
+    $comment_args = array(
+        'date_query' => array(
+            array(
+                'after' => $since_date,
+                'inclusive' => false,
+            ),
+        ),
+        'status' => 'approve',
+        'orderby' => 'comment_date',
+        'order' => 'DESC'
+    );
+
+    // Only exclude current user's comments if user is logged in
+    if ($current_user_id > 0) {
+        $comment_args['user__not_in'] = array($current_user_id);
+    }
+
+    $comments = get_comments($comment_args);
+
+    if (empty($comments)) {
+        wp_send_json_success(array(
+            'comments_count' => 0,
+            'comments_by_post' => array(),
+            'latest_timestamp' => $since_timestamp
+        ));
+        return;
+    }
+
+    // Group comments by post
+    $comments_by_post = array();
+    $latest_timestamp = $since_timestamp;
+
+    foreach ($comments as $comment) {
+        $post_id = $comment->comment_post_ID;
+        $comment_author = get_userdata($comment->user_id);
+
+        if (!isset($comments_by_post[$post_id])) {
+            $comments_by_post[$post_id] = array();
+        }
+
+        $comments_by_post[$post_id][] = array(
+            'comment_id' => $comment->comment_ID,
+            'author_name' => $comment_author ? $comment_author->display_name : $comment->comment_author,
+            'content' => $comment->comment_content,
+            'date' => human_time_diff(strtotime($comment->comment_date), current_time('timestamp')) . ' ago',
+            'can_delete' => false, // Non-logged in users can't delete
+            'delete_nonce' => ''
+        );
+
+        // Update latest timestamp
+        if (strtotime($comment->comment_date) > strtotime($latest_timestamp)) {
+            $latest_timestamp = $comment->comment_date;
+        }
+    }
+
+    wp_send_json_success(array(
+        'comments_count' => count($comments),
+        'comments_by_post' => $comments_by_post,
+        'latest_timestamp' => $latest_timestamp
+    ));
+});
+
+// AJAX handler for getting edit operations (logged in users)
+add_action('wp_ajax_get_edit_operations', function() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'newsroom_nonce')) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $since_timestamp = sanitize_text_field($_POST['since_timestamp']);
+
+    if (empty($since_timestamp)) {
+        wp_send_json_error('Invalid timestamp');
+        return;
+    }
+
+    $current_user_id = get_current_user_id();
+    $since_date = date('Y-m-d H:i:s', strtotime($since_timestamp));
+    $operations = array();
+
+    // Get edit operations from transients
+    global $wpdb;
+    $transient_keys = $wpdb->get_results(
+        "SELECT option_name FROM {$wpdb->options}
+         WHERE option_name LIKE '_transient_newsroom_post_edited_%'"
+    );
+
+    foreach ($transient_keys as $key) {
+        $transient_name = str_replace('_transient_', '', $key->option_name);
+        $operation_data = get_transient($transient_name);
+
+        if ($operation_data && isset($operation_data['timestamp'])) {
+            // Debug: Log the operation data
+            error_log("Edit operation data: " . print_r($operation_data, true));
+
+            // Only include operations after the since timestamp and not by current user
+            if (strtotime($operation_data['timestamp']) > strtotime($since_date) &&
+                isset($operation_data['edited_by']) && $operation_data['edited_by'] != $current_user_id) {
+
+                $operations[] = array(
+                    'type' => 'post_edited',
+                    'post_id' => $operation_data['post_id'],
+                    'post_type' => $operation_data['post_type'] ?? 'unknown',
+                    'timestamp' => $operation_data['timestamp']
+                );
+            }
+        }
+    }
+
+    // Sort by timestamp
+    usort($operations, function($a, $b) {
+        return strtotime($a['timestamp']) - strtotime($b['timestamp']);
+    });
+
+    wp_send_json_success(array(
+        'operations' => $operations,
+        'server_time' => current_time('Y-m-d H:i:s')
+    ));
+});
+
+// AJAX handler for getting edit operations (non-logged in users)
+add_action('wp_ajax_nopriv_get_edit_operations', function() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'newsroom_nonce')) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $since_timestamp = sanitize_text_field($_POST['since_timestamp']);
+
+    if (empty($since_timestamp)) {
+        wp_send_json_error('Invalid timestamp');
+        return;
+    }
+
+    $since_date = date('Y-m-d H:i:s', strtotime($since_timestamp));
+    $operations = array();
+
+    // Get edit operations from transients
+    global $wpdb;
+    $transient_keys = $wpdb->get_results(
+        "SELECT option_name FROM {$wpdb->options}
+         WHERE option_name LIKE '_transient_newsroom_post_edited_%'"
+    );
+
+    foreach ($transient_keys as $key) {
+        $transient_name = str_replace('_transient_', '', $key->option_name);
+        $operation_data = get_transient($transient_name);
+
+        if ($operation_data && isset($operation_data['timestamp'])) {
+            // Debug: Log the operation data
+            error_log("Edit operation data (nopriv): " . print_r($operation_data, true));
+
+            // Include all operations after the since timestamp (no user filtering for non-logged-in)
+            if (strtotime($operation_data['timestamp']) > strtotime($since_date)) {
+
+                $operations[] = array(
+                    'type' => 'post_edited',
+                    'post_id' => $operation_data['post_id'],
+                    'post_type' => $operation_data['post_type'] ?? 'unknown',
+                    'timestamp' => $operation_data['timestamp']
+                );
+            }
+        }
+    }
+
+    // Sort by timestamp
+    usort($operations, function($a, $b) {
+        return strtotime($a['timestamp']) - strtotime($b['timestamp']);
+    });
+
+    wp_send_json_success(array(
+        'operations' => $operations,
+        'server_time' => current_time('Y-m-d H:i:s')
+    ));
+});
+
+// AJAX handler for getting delete operations (logged in users)
+add_action('wp_ajax_get_delete_operations', function() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'newsroom_nonce')) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $since_timestamp = sanitize_text_field($_POST['since_timestamp']);
+
+    if (empty($since_timestamp)) {
+        wp_send_json_error('Invalid timestamp');
+        return;
+    }
+
+    // Handle special timestamp requests from JavaScript
+    if ($since_timestamp === 'SERVER_TIME_NOW') {
+        $since_date = current_time('Y-m-d H:i:s');
+    } elseif (strpos($since_timestamp, 'SERVER_TIME_MINUS_') === 0) {
+        $minutes = intval(str_replace('SERVER_TIME_MINUS_', '', $since_timestamp));
+        $since_date = date('Y-m-d H:i:s', current_time('timestamp') - ($minutes * 60));
+    } else {
+        // Convert timestamp to MySQL datetime format
+        $since_date = date('Y-m-d H:i:s', strtotime($since_timestamp));
+    }
+
+    $current_user_id = get_current_user_id();
+    $operations = array();
+
+    // Check for deleted posts and comments only
+    global $wpdb;
+    $transient_keys = $wpdb->get_results(
+        "SELECT option_name FROM {$wpdb->options}
+         WHERE option_name LIKE '_transient_newsroom_post_deleted_%'
+         OR option_name LIKE '_transient_newsroom_comment_deleted_%'"
+    );
+
+    foreach ($transient_keys as $key) {
+        $transient_name = str_replace('_transient_', '', $key->option_name);
+        $operation_data = get_transient($transient_name);
+
+        if ($operation_data && isset($operation_data['timestamp'])) {
+            // Only include operations after the since timestamp
+            if (strtotime($operation_data['timestamp']) > strtotime($since_date)) {
+
+                // Check if operation was performed by current user (skip if so)
+                $skip_operation = false;
+                if (isset($operation_data['deleted_by']) && $operation_data['deleted_by'] == $current_user_id) {
+                    $skip_operation = true;
+                }
+
+                if (!$skip_operation) {
+                    if (strpos($transient_name, 'newsroom_post_deleted_') === 0) {
+                        $operations[] = array(
+                            'type' => 'post_deleted',
+                            'post_id' => $operation_data['post_id'],
+                            'timestamp' => $operation_data['timestamp']
+                        );
+                    } elseif (strpos($transient_name, 'newsroom_comment_deleted_') === 0) {
+                        $operations[] = array(
+                            'type' => 'comment_deleted',
+                            'comment_id' => $operation_data['comment_id'],
+                            'post_id' => $operation_data['post_id'],
+                            'timestamp' => $operation_data['timestamp']
+                        );
+                    }
+                }
+            }
+        }
+    }
+
+    // Sort by timestamp
+    usort($operations, function($a, $b) {
+        return strtotime($a['timestamp']) - strtotime($b['timestamp']);
+    });
+
+    $latest_timestamp = !empty($operations) ? end($operations)['timestamp'] : $since_timestamp;
+
+    wp_send_json_success(array(
+        'operations_count' => count($operations),
+        'operations' => $operations,
+        'latest_timestamp' => $latest_timestamp
+    ));
+});
+
+// AJAX handler for getting delete/edit operations (non-logged in users)
+add_action('wp_ajax_nopriv_get_delete_operations', function() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'newsroom_nonce')) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $since_timestamp = sanitize_text_field($_POST['since_timestamp']);
+
+    if (empty($since_timestamp)) {
+        wp_send_json_error('Invalid timestamp');
+        return;
+    }
+
+    // Handle special timestamp requests from JavaScript
+    if ($since_timestamp === 'SERVER_TIME_NOW') {
+        $since_date = current_time('Y-m-d H:i:s');
+    } elseif (strpos($since_timestamp, 'SERVER_TIME_MINUS_') === 0) {
+        $minutes = intval(str_replace('SERVER_TIME_MINUS_', '', $since_timestamp));
+        $since_date = date('Y-m-d H:i:s', current_time('timestamp') - ($minutes * 60));
+    } else {
+        // Convert timestamp to MySQL datetime format
+        $since_date = date('Y-m-d H:i:s', strtotime($since_timestamp));
+    }
+
+    $operations = array();
+
+    // Check for deleted posts and comments only
+    global $wpdb;
+    $transient_keys = $wpdb->get_results(
+        "SELECT option_name FROM {$wpdb->options}
+         WHERE option_name LIKE '_transient_newsroom_post_deleted_%'
+         OR option_name LIKE '_transient_newsroom_comment_deleted_%'"
+    );
+
+    foreach ($transient_keys as $key) {
+        $transient_name = str_replace('_transient_', '', $key->option_name);
+        $operation_data = get_transient($transient_name);
+
+        if ($operation_data && isset($operation_data['timestamp'])) {
+            // Include all operations after the since timestamp (no user filtering for non-logged-in)
+            if (strtotime($operation_data['timestamp']) > strtotime($since_date)) {
+
+                if (strpos($transient_name, 'newsroom_post_deleted_') === 0) {
+                    $operations[] = array(
+                        'type' => 'post_deleted',
+                        'post_id' => $operation_data['post_id'],
+                        'timestamp' => $operation_data['timestamp']
+                    );
+                } elseif (strpos($transient_name, 'newsroom_comment_deleted_') === 0) {
+                    $operations[] = array(
+                        'type' => 'comment_deleted',
+                        'comment_id' => $operation_data['comment_id'],
+                        'post_id' => $operation_data['post_id'],
+                        'timestamp' => $operation_data['timestamp']
+                    );
+                }
+            }
+        }
+    }
+
+    // Sort by timestamp
+    usort($operations, function($a, $b) {
+        return strtotime($a['timestamp']) - strtotime($b['timestamp']);
+    });
+
+    $latest_timestamp = !empty($operations) ? end($operations)['timestamp'] : $since_timestamp;
+
+    wp_send_json_success(array(
+        'operations_count' => count($operations),
+        'operations' => $operations,
+        'latest_timestamp' => $latest_timestamp
+    ));
+});
+
+// AJAX handler for getting updated post content (logged in users)
+add_action('wp_ajax_get_updated_post', function() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'newsroom_nonce')) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $post_id = intval($_POST['post_id']);
+
+    if (!$post_id) {
+        wp_send_json_error('Invalid post ID');
+        return;
+    }
+
+    // Get the post
+    $post = get_post($post_id);
+
+    if (!$post) {
+        wp_send_json_error('Post not found');
+        return;
+    }
+
+    // Debug: Log post type
+    $expected_type = sanitize_text_field($_POST['expected_post_type'] ?? 'not provided');
+    error_log("get_updated_post: Post ID {$post_id}, Type: {$post->post_type}, Status: {$post->post_status}, Expected: {$expected_type}");
+
+    // Set up post data for template rendering
+    global $post;
+    $original_post = $post; // Save original post
+    $post = get_post($post_id); // Set the post we want to render
+    setup_postdata($post);
+
+    // Render the appropriate template based on post type
+    ob_start();
+
+    if ($post->post_type === 'social_post') {
+        get_template_part('template-parts/content', 'social');
+    } elseif ($post->post_type === 'news_article') {
+        get_template_part('template-parts/content', 'news');
+    } else {
+        error_log("get_updated_post: Unsupported post type '{$post->post_type}' for post ID {$post_id}");
+        wp_send_json_error("Unsupported post type: {$post->post_type}");
+        wp_reset_postdata();
+        return;
+    }
+
+    $post_html = ob_get_clean();
+    wp_reset_postdata();
+
+    wp_send_json_success(array(
+        'post_html' => $post_html,
+        'post_id' => $post_id,
+        'post_type' => $post->post_type
+    ));
+});
+
+// AJAX handler for getting updated post content (non-logged in users)
+add_action('wp_ajax_nopriv_get_updated_post', function() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'newsroom_nonce')) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    $post_id = intval($_POST['post_id']);
+
+    if (!$post_id) {
+        wp_send_json_error('Invalid post ID');
+        return;
+    }
+
+    // Get the post
+    $post = get_post($post_id);
+
+    if (!$post) {
+        wp_send_json_error('Post not found');
+        return;
+    }
+
+    // Debug: Log post type
+    $expected_type = sanitize_text_field($_POST['expected_post_type'] ?? 'not provided');
+    error_log("get_updated_post (nopriv): Post ID {$post_id}, Type: {$post->post_type}, Status: {$post->post_status}, Expected: {$expected_type}");
+
+    // Set up post data for template rendering
+    global $post;
+    $original_post = $post; // Save original post
+    $post = get_post($post_id); // Set the post we want to render
+    setup_postdata($post);
+
+    // Render the appropriate template based on post type
+    ob_start();
+
+    if ($post->post_type === 'social_post') {
+        get_template_part('template-parts/content', 'social');
+    } elseif ($post->post_type === 'news_article') {
+        get_template_part('template-parts/content', 'news');
+    } else {
+        error_log("get_updated_post (nopriv): Unsupported post type '{$post->post_type}' for post ID {$post_id}");
+        wp_send_json_error("Unsupported post type: {$post->post_type}");
+        wp_reset_postdata();
+        return;
+    }
+
+    $post_html = ob_get_clean();
+    wp_reset_postdata();
+
+    wp_send_json_success(array(
+        'post_html' => $post_html,
+        'post_id' => $post_id,
+        'post_type' => $post->post_type
+    ));
+});
+
+// AJAX handler for creating test posts (for debugging)
+add_action('wp_ajax_create_test_post', function() {
+    // Verify nonce
+    $nonce_valid = wp_verify_nonce($_POST['nonce'], 'newsroom_nonce');
+
+    if (!$nonce_valid) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
+    // Create a test social post with proper meta data
+    $post_data = array(
+        'post_title' => 'Test User - Twitter Post',
+        'post_content' => 'This is a test post created for real-time update testing at ' . current_time('Y-m-d H:i:s'),
+        'post_status' => 'publish',
+        'post_type' => 'social_post',
+        'post_author' => get_current_user_id(),
+        'meta_input' => array(
+            '_social_platform' => 'twitter',
+            '_social_display_name' => 'Test User',
+            '_social_handle' => 'testuser',
+            '_social_avatar' => get_template_directory_uri() . '/assets/images/default-avatar.svg'
+        )
+    );
+
+    $post_id = wp_insert_post($post_data);
+
+    if ($post_id && !is_wp_error($post_id)) {
+        wp_send_json_success(array(
+            'post_id' => $post_id,
+            'message' => 'Test post created successfully'
+        ));
+    } else {
+        wp_send_json_error('Failed to create test post');
     }
 });
 
